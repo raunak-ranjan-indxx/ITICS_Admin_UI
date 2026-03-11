@@ -6691,11 +6691,11 @@ function caRender(){
       var statusPill = '<span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:#e8edf5"><span style="width:7px;height:7px;border-radius:50%;background:'+dotColor+';flex-shrink:0;display:inline-block"></span>'+r.status+'</span>';
 
       return '<div style="display:grid;grid-template-columns:2fr 1.3fr 1.4fr 1.5fr 1.5fr 1fr 1.4fr;border-bottom:1px solid rgba(59,130,246,.06);background:'+bg+';transition:background .12s;align-items:center" onmouseenter="this.style.background=\'rgba(59,130,246,.05)\'" onmouseleave="this.style.background=\''+bg+'\'">'
-        + '<div style="padding:11px 16px;font-size:12.5px;font-weight:600;color:#e8edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.company+'</div>'
-        + '<div style="padding:11px 16px;font-size:12px;font-family:\'IBM Plex Mono\',monospace;color:#e2edf5;white-space:nowrap">'+r.date+'</div>'
-        + '<div style="padding:11px 16px;font-size:12px;font-weight:500;color:#e2edf5;white-space:nowrap">'+r.caType+'</div>'
-        + '<div style="padding:11px 16px;font-size:12px;font-family:\'IBM Plex Mono\',monospace;color:#e2edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.oldVal+'</div>'
-        + '<div style="padding:11px 16px;font-size:12px;font-family:\'IBM Plex Mono\',monospace;color:#e2edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.newVal+'</div>'
+        + '<div style="padding:11px 16px;font-size:12px;font-weight:500;color:#e8edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.company+'</div>'
+        + '<div style="padding:11px 16px;font-size:11.5px;font-family:\'IBM Plex Mono\',monospace;color:#e8edf5;white-space:nowrap">'+r.date+'</div>'
+        + '<div style="padding:11px 16px;font-size:11.5px;color:#e8edf5;white-space:nowrap">'+r.caType+'</div>'
+        + '<div style="padding:11px 16px;font-size:11.5px;font-family:\'IBM Plex Mono\',monospace;color:#e8edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.oldVal+'</div>'
+        + '<div style="padding:11px 16px;font-size:11.5px;font-family:\'IBM Plex Mono\',monospace;color:#e8edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.newVal+'</div>'
         + '<div style="padding:11px 16px">'+statePill+'</div>'
         + '<div style="padding:11px 16px">'+statusPill+'</div>'
         + '</div>';
@@ -7132,13 +7132,13 @@ function gcRender(){
       var bg = i%2===0 ? 'transparent' : 'rgba(255,255,255,.015)';
       var dotColor = '#4ade80'; // green for Approved by QC
       return '<div style="display:grid;grid-template-columns:2fr 1.3fr 1.4fr 1.5fr 1.5fr 1fr 1.4fr;border-bottom:1px solid rgba(59,130,246,.05);background:'+bg+';transition:background .12s" onmouseenter="this.style.background=\'rgba(59,130,246,.04)\'" onmouseleave="this.style.background=\''+bg+'\'">'
-        + '<div style="padding:11px 16px;font-size:13px;font-weight:600;color:#e8edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.company+'</div>'
-        + '<div style="padding:11px 16px;font-size:13px;color:#e8edf5;font-family:\'IBM Plex Mono\',monospace">'+r.date+'</div>'
-        + '<div style="padding:11px 16px;font-size:13px;color:#e8edf5">'+r.caType+'</div>'
-        + '<div style="padding:11px 16px;font-size:13px;color:#e8edf5;font-family:\'IBM Plex Mono\',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.oldVal+'</div>'
-        + '<div style="padding:11px 16px;font-size:13px;color:#e8edf5;font-family:\'IBM Plex Mono\',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.newVal+'</div>'
-        + '<div style="padding:11px 16px;font-size:13px;color:#e8edf5">'+r.state+'</div>'
-        + '<div style="padding:11px 16px;font-size:13px;color:#e8edf5;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:'+dotColor+';flex-shrink:0;display:inline-block"></span>'+r.status+'</div>'
+        + '<div style="padding:11px 16px;font-size:12px;font-weight:500;color:#e8edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.company+'</div>'
+        + '<div style="padding:11px 16px;font-size:11.5px;color:#e8edf5;font-family:\'IBM Plex Mono\',monospace;white-space:nowrap">'+r.date+'</div>'
+        + '<div style="padding:11px 16px;font-size:11.5px;color:#e8edf5;white-space:nowrap">'+r.caType+'</div>'
+        + '<div style="padding:11px 16px;font-size:11.5px;color:#e8edf5;font-family:\'IBM Plex Mono\',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.oldVal+'</div>'
+        + '<div style="padding:11px 16px;font-size:11.5px;color:#e8edf5;font-family:\'IBM Plex Mono\',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.newVal+'</div>'
+        + '<div style="padding:11px 16px;font-size:11.5px;color:#e8edf5">'+r.state+'</div>'
+        + '<div style="padding:11px 16px;font-size:11.5px;color:#e8edf5;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:'+dotColor+';flex-shrink:0;display:inline-block"></span>'+r.status+'</div>'
         + '</div>';
     }).join('');
   }
