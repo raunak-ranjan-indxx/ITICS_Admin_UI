@@ -594,19 +594,15 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
           <span class="s-module-chevron">&#9660;</span>
         </button>
         <div class="s-module-body" id="ca-body">
-          <!-- CA Analyst -->
+          <!-- CA Handling -->
           <button class="s-subitem" data-view="ca-analyst" onclick="setSubNav(this)">
             <span class="s-subitem-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
-            CA Analyst
+            CA Handling
           </button>
-          <!-- CA QC -->
-          <button class="s-subitem" data-view="ca-qc" onclick="setSubNav(this)">
-            <span class="s-subitem-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
-            CA QC
-          </button>
+
           <!-- Golden Copy -->
           <button class="s-subitem" data-view="golden-copy" onclick="setSubNav(this)">
-            <span class="s-subitem-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+            <span class="s-subitem-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span>
             Golden Copy
           </button>
         </div>
@@ -664,7 +660,8 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
       <div id="topbar-itics-committee-title" style="display:none;font-size:18px;font-weight:700;color:var(--text-primary);letter-spacing:.3px">ITICS Committee</div>
       <div id="topbar-audit-trail-title" style="display:none;font-size:18px;font-weight:700;color:var(--text-primary);letter-spacing:.3px">Audit Trail</div>
       <div id="topbar-reports-title" style="display:none;font-size:18px;font-weight:700;color:var(--text-primary);letter-spacing:.3px">Reports</div>
-      <div id="topbar-ca-analyst-title" style="display:none;font-size:18px;font-weight:700;color:var(--text-primary);letter-spacing:.3px">CA Analyst</div>
+      <div id="topbar-ca-analyst-title" style="display:none;font-size:18px;font-weight:700;color:var(--text-primary);letter-spacing:.3px">CA Handling</div>
+      <div id="topbar-ca-upload-title" style="display:none;font-size:18px;font-weight:700;color:var(--text-primary);letter-spacing:.3px">CA Upload</div>
       <div id="topbar-ca-qc-title" style="display:none;font-size:18px;font-weight:700;color:var(--text-primary);letter-spacing:.3px">CA QC</div>
       <div id="topbar-golden-copy-title" style="display:none;font-size:18px;font-weight:700;color:var(--text-primary);letter-spacing:.3px">Golden Copy</div>
       <div id="topbar-profile-title" style="display:none;font-size:18px;font-weight:700;color:var(--text-primary);letter-spacing:.3px">Profile</div>
@@ -825,11 +822,11 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
               </colgroup>
               <thead id="gd-thead">
                 <tr style="background:#091220;border-bottom:1px solid rgba(255,255,255,.07)">
-                  <th onclick="gdSort(0)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#b0c8e0;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#e2edf5'" onmouseleave="this.style.color=gdSortCol===0?'#60a5fa':'#b0c8e0'"><span style="display:inline-flex;align-items:center;gap:5px">Company ID <span id="gd-sort-icon-0" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th onclick="gdSort(1)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#b0c8e0;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#e2edf5'" onmouseleave="this.style.color=gdSortCol===1?'#60a5fa':'#b0c8e0'"><span style="display:inline-flex;align-items:center;gap:5px">Company Name <span id="gd-sort-icon-1" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th onclick="gdSort(2)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#b0c8e0;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#e2edf5'" onmouseleave="this.style.color=gdSortCol===2?'#60a5fa':'#b0c8e0'"><span style="display:inline-flex;align-items:center;gap:5px">ISIN <span id="gd-sort-icon-2" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th onclick="gdSort(3)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#b0c8e0;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#e2edf5'" onmouseleave="this.style.color=gdSortCol===3?'#60a5fa':'#b0c8e0'"><span style="display:inline-flex;align-items:center;gap:5px">SEDOL <span id="gd-sort-icon-3" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th onclick="gdSort(4)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#b0c8e0;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#e2edf5'" onmouseleave="this.style.color=gdSortCol===4?'#60a5fa':'#b0c8e0'"><span style="display:inline-flex;align-items:center;gap:5px">FY Ending Date <span id="gd-sort-icon-4" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
+                  <th onclick="gdSort(0)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=gdSortCol===0?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Company ID <span id="gd-sort-icon-0" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
+                  <th onclick="gdSort(1)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=gdSortCol===1?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Company Name <span id="gd-sort-icon-1" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
+                  <th onclick="gdSort(2)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=gdSortCol===2?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">ISIN <span id="gd-sort-icon-2" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
+                  <th onclick="gdSort(3)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=gdSortCol===3?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">SEDOL <span id="gd-sort-icon-3" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
+                  <th onclick="gdSort(4)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=gdSortCol===4?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">FY Ending Date <span id="gd-sort-icon-4" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
                 </tr>
               </thead>
               <tbody id="gd-tbody"></tbody>
@@ -1653,13 +1650,356 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
       </div><!-- /view-reports -->
 
       <!-- ══ CA ANALYST VIEW ══ -->
-      <div id="view-ca-analyst" style="display:none;grid-column:1/-1;flex-direction:column;height:100%;overflow-y:auto;box-sizing:border-box"></div>
+      <div id="view-ca-analyst" style="display:none;grid-column:1/-1;flex-direction:column;height:100%;overflow-y:auto;box-sizing:border-box">
 
-      <!-- ══ CA QC VIEW ══ -->
+        <!-- CA Handling Toolbar -->
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;flex-shrink:0;border-bottom:1px solid rgba(59,130,246,.1);background:rgba(13,17,35,.6)">
+
+          <!-- Accent bar inline -->
+          <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+            <div style="width:3px;height:18px;border-radius:2px;background:linear-gradient(180deg,#3b82f6,#1d4ed8);flex-shrink:0"></div>
+            <div style="font-size:13px;font-weight:600;color:var(--text-secondary);letter-spacing:.2px;white-space:nowrap">Companies having ISIN Change, Name Change, Delisting or M&amp;A in them</div>
+          </div>
+
+          <div style="flex:1"></div>
+
+          <!-- + Add button -->
+          <button onclick="caAddRow()"
+            style="display:flex;align-items:center;gap:6px;padding:5px 13px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;background:linear-gradient(135deg,#1d4ed8,#2563eb);border:1px solid rgba(59,130,246,.5);color:#fff;box-shadow:0 2px 10px rgba(37,99,235,.25);transition:filter .15s"
+            onmouseenter="this.style.filter='brightness(1.12)'" onmouseleave="this.style.filter=''">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add
+          </button>
+
+          <!-- Refresh -->
+          <button onclick="caRefresh()"
+            style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px;background:rgba(255,255,255,.04);border:1px solid rgba(59,130,246,.15);color:#5d7a99;cursor:pointer;transition:all .15s"
+            onmouseenter="this.style.borderColor='rgba(59,130,246,.4)';this.style.color='#93c5fd'" onmouseleave="this.style.borderColor='rgba(59,130,246,.15)';this.style.color='#5d7a99'">
+            <svg id="ca-refresh-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          </button>
+
+          <!-- Date Range (matches Reports module) -->
+          <div style="display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:7px;padding:6px 12px">
+            <input type="date" id="ca-date-from" value="2026-01-05"
+              style="background:transparent;border:none;outline:none;font-size:12.5px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;cursor:pointer;color-scheme:dark"/>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4b6a8a" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <input type="date" id="ca-date-to" value="2026-03-21"
+              style="background:transparent;border:none;outline:none;font-size:12.5px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;cursor:pointer;color-scheme:dark"/>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#5d7a99" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+
+          <!-- Upload -->
+          <button onclick="showView('ca-upload')"
+            style="display:flex;align-items:center;gap:6px;padding:5px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;background:linear-gradient(135deg,#1d4ed8,#2563eb);border:1px solid rgba(59,130,246,.5);color:#fff;box-shadow:0 2px 10px rgba(37,99,235,.25);transition:filter .15s"
+            onmouseenter="this.style.filter='brightness(1.12)'" onmouseleave="this.style.filter=''">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Upload
+          </button>
+
+          <!-- Download dropdown -->
+          <div style="position:relative" id="ca-dl-wrap"
+            onmouseenter="document.getElementById('ca-dl-menu').style.display='block'"
+            onmouseleave="document.getElementById('ca-dl-menu').style.display='none'">
+            <button style="display:flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1e40af,#2563eb);border:1px solid rgba(59,130,246,.35);border-radius:7px;padding:7px 16px;font-size:12px;font-weight:600;color:rgba(255,255,255,.92);cursor:pointer;font-family:'IBM Plex Sans',sans-serif;white-space:nowrap;box-shadow:0 2px 8px rgba(37,99,235,.2)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div id="ca-dl-menu" style="display:none;position:absolute;top:100%;right:0;z-index:9999;background:rgba(13,18,38,.97);border:1px solid rgba(59,130,246,.2);border-radius:8px;padding:5px;min-width:180px;box-shadow:0 8px 32px rgba(0,0,0,.7);margin-top:4px">
+              <button onclick="caDownload()" style="width:100%;text-align:left;background:transparent;border:none;border-radius:5px;padding:8px 12px;font-size:12px;color:#e8edf5;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;display:flex;align-items:center;gap:8px;transition:background .12s" onmouseenter="this.style.background='rgba(59,130,246,.12)'" onmouseleave="this.style.background='transparent'">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download
+              </button>
+              <button onclick="caDownloadTemplate()" style="width:100%;text-align:left;background:transparent;border:none;border-radius:5px;padding:8px 12px;font-size:12px;color:#e8edf5;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;display:flex;align-items:center;gap:8px;transition:background .12s" onmouseenter="this.style.background='rgba(59,130,246,.12)'" onmouseleave="this.style.background='transparent'">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Download Template
+              </button>
+            </div>
+          </div>
+
+          <!-- Search -->
+          <div style="position:relative;display:flex;align-items:center">
+            <svg style="position:absolute;left:10px;pointer-events:none;color:#4a6580" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input id="ca-search" type="text" placeholder="Search..."
+              oninput="CA_SEARCH=this.value;CA_CUR_PAGE=1;caRender()"
+              style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:7px;padding:7px 12px 7px 30px;font-size:12px;color:var(--text-secondary);font-family:'IBM Plex Sans',sans-serif;width:210px;outline:none;transition:all .15s;-webkit-font-smoothing:antialiased"
+              onfocus="this.style.borderColor='rgba(59,130,246,.45)';this.style.background='rgba(59,130,246,.05)';this.style.boxShadow='0 0 0 2px rgba(59,130,246,.08)'"
+              onblur="this.style.borderColor='rgba(255,255,255,.08)';this.style.background='rgba(255,255,255,.04)';this.style.boxShadow=''"
+            />
+          </div>
+        </div>
+
+        <!-- CA Handling Table Area -->
+        <div style="flex:1;overflow:auto;padding:14px">
+          <div style="background:rgba(20,28,46,.85);border:1px solid rgba(59,130,246,.1);border-radius:10px;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 4px 20px rgba(0,0,0,.4)">
+
+            <!-- Table header -->
+            <div style="display:grid;grid-template-columns:2fr 1.3fr 1.4fr 1.5fr 1.5fr 1fr 1.4fr;border-bottom:1px solid rgba(59,130,246,.1);background:rgba(13,17,35,.5)">
+
+              <!-- Company Name — sortable -->
+              <div id="ca-th-0" onclick="caSort('company')" style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;cursor:pointer;user-select:none;white-space:nowrap" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=caSortCol==='company'?'#60a5fa':'#e8edf5'">
+                <span style="display:inline-flex;align-items:center;gap:5px">Company Name <span id="ca-sort-icon-company" style="font-size:13px;color:#e8edf5">&#8645;</span></span>
+              </div>
+
+              <!-- Effective Date — sortable -->
+              <div id="ca-th-1" onclick="caSort('date')" style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;cursor:pointer;user-select:none;white-space:nowrap" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=caSortCol==='date'?'#60a5fa':'#e8edf5'">
+                <span style="display:inline-flex;align-items:center;gap:5px">Effective Date <span id="ca-sort-icon-date" style="font-size:13px;color:#e8edf5">&#8645;</span></span>
+              </div>
+
+              <!-- CA Type — sortable -->
+              <div id="ca-th-2" onclick="caSort('caType')" style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;cursor:pointer;user-select:none;white-space:nowrap" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=caSortCol==='caType'?'#60a5fa':'#e8edf5'">
+                <span style="display:inline-flex;align-items:center;gap:5px">CA Type <span id="ca-sort-icon-caType" style="font-size:13px;color:#e8edf5">&#8645;</span></span>
+              </div>
+
+              <!-- Old Value — sortable -->
+              <div id="ca-th-3" onclick="caSort('oldVal')" style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;cursor:pointer;user-select:none;white-space:nowrap" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=caSortCol==='oldVal'?'#60a5fa':'#e8edf5'">
+                <span style="display:inline-flex;align-items:center;gap:5px">Old Value <span id="ca-sort-icon-oldVal" style="font-size:13px;color:#e8edf5">&#8645;</span></span>
+              </div>
+
+              <!-- New Value — sortable -->
+              <div id="ca-th-4" onclick="caSort('newVal')" style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;cursor:pointer;user-select:none;white-space:nowrap" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=caSortCol==='newVal'?'#60a5fa':'#e8edf5'">
+                <span style="display:inline-flex;align-items:center;gap:5px">New Value <span id="ca-sort-icon-newVal" style="font-size:13px;color:#e8edf5">&#8645;</span></span>
+              </div>
+
+              <!-- State — filter -->
+              <div style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;white-space:nowrap;position:relative">
+                <span style="display:inline-flex;align-items:center;gap:8px">State
+                  <button onclick="caToggleStateFilter(event)" id="ca-state-filter-btn" title="Filter by State" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;border-radius:4px;padding:2px 4px;cursor:pointer;transition:opacity .15s;opacity:.7" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity=caStateFilter?'1':'.7'">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" id="ca-state-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                  </button>
+                </span>
+                <div id="ca-state-dropdown" style="display:none;position:absolute;top:100%;left:0;z-index:9999;background:#111827;border:1px solid rgba(59,130,246,.25);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.7);min-width:160px;padding:6px;margin-top:4px"></div>
+              </div>
+
+              <!-- Status — filter -->
+              <div style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;white-space:nowrap;position:relative">
+                <span style="display:inline-flex;align-items:center;gap:8px">Status
+                  <button onclick="caToggleStatusFilter(event)" id="ca-status-filter-btn" title="Filter by Status" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;border-radius:4px;padding:2px 4px;cursor:pointer;transition:opacity .15s;opacity:.7" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity=caStatusFilter?'1':'.7'">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" id="ca-status-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                  </button>
+                </span>
+                <div id="ca-status-dropdown" style="display:none;position:absolute;top:100%;left:0;z-index:9999;background:#111827;border:1px solid rgba(59,130,246,.25);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.7);min-width:190px;padding:6px;margin-top:4px"></div>
+              </div>
+
+            </div>
+
+            <!-- Table body -->
+            <div id="ca-table-body"></div>
+
+            <!-- Pagination -->
+            <div id="ca-pagination"></div>
+
+          </div>
+        </div>
+
+        <!-- CA Analyst Add/Edit Modal -->
+        <div id="ca-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center">
+          <div style="background:rgba(15,23,42,.97);border:1px solid rgba(59,130,246,.25);border-radius:12px;padding:24px;width:480px;max-width:95vw;box-shadow:0 24px 80px rgba(0,0,0,.8)">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+              <div style="font-size:14px;font-weight:700;color:#e8edf5;letter-spacing:.3px" id="ca-modal-title">Add Delisting Record</div>
+              <button onclick="caCloseModal()" style="background:none;border:none;color:#5d7a99;cursor:pointer;font-size:18px;line-height:1;padding:2px 6px" onmouseenter="this.style.color='#e8edf5'" onmouseleave="this.style.color='#5d7a99'">&#x2715;</button>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div style="grid-column:1/-1">
+                <label style="display:block;font-size:10px;font-weight:600;color:#5d7a99;letter-spacing:1px;margin-bottom:5px;text-transform:uppercase">Company Name</label>
+                <input id="ca-f-company" type="text" placeholder="e.g. Zoetis Inc" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(59,130,246,.2);border-radius:6px;padding:7px 10px;font-size:12px;color:#e8edf5;font-family:'IBM Plex Sans',sans-serif;outline:none;transition:border-color .15s" onfocus="this.style.borderColor='rgba(59,130,246,.6)'" onblur="this.style.borderColor='rgba(59,130,246,.2)'"/>
+              </div>
+              <div style="grid-column:1/-1">
+                <label style="display:block;font-size:10px;font-weight:600;color:#5d7a99;letter-spacing:1px;margin-bottom:5px;text-transform:uppercase">ISIN</label>
+                <input id="ca-f-isin" type="text" placeholder="e.g. US98978V1035" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(59,130,246,.2);border-radius:6px;padding:7px 10px;font-size:12px;color:#60a5fa;font-family:'IBM Plex Mono',monospace;outline:none;transition:border-color .15s" onfocus="this.style.borderColor='rgba(59,130,246,.6)'" onblur="this.style.borderColor='rgba(59,130,246,.2)'"/>
+              </div>
+              <div>
+                <label style="display:block;font-size:10px;font-weight:600;color:#5d7a99;letter-spacing:1px;margin-bottom:5px;text-transform:uppercase">Delisting Type</label>
+                <select id="ca-f-type" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(59,130,246,.2);border-radius:6px;padding:7px 10px;font-size:12px;color:#e8edf5;font-family:'IBM Plex Sans',sans-serif;outline:none">
+                  <option value="">Select type</option>
+                  <option>Voluntary Delisting</option>
+                  <option>Compulsory Delisting</option>
+                  <option>Merger Delisting</option>
+                  <option>Acquisition Delisting</option>
+                </select>
+              </div>
+              <div>
+                <label style="display:block;font-size:10px;font-weight:600;color:#5d7a99;letter-spacing:1px;margin-bottom:5px;text-transform:uppercase">Effective Date</label>
+                <input id="ca-f-date" type="date" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(59,130,246,.2);border-radius:6px;padding:7px 10px;font-size:12px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;outline:none;transition:border-color .15s" onfocus="this.style.borderColor='rgba(59,130,246,.6)'" onblur="this.style.borderColor='rgba(59,130,246,.2)'"/>
+              </div>
+              <div>
+                <label style="display:block;font-size:10px;font-weight:600;color:#5d7a99;letter-spacing:1px;margin-bottom:5px;text-transform:uppercase">Exchange</label>
+                <select id="ca-f-exchange" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(59,130,246,.2);border-radius:6px;padding:7px 10px;font-size:12px;color:#e8edf5;font-family:'IBM Plex Sans',sans-serif;outline:none">
+                  <option value="">Select exchange</option>
+                  <option>NYSE</option>
+                  <option>NASDAQ</option>
+                  <option>BSE</option>
+                  <option>NSE</option>
+                  <option>LSE</option>
+                  <option>TSX</option>
+                </select>
+              </div>
+              <div>
+                <label style="display:block;font-size:10px;font-weight:600;color:#5d7a99;letter-spacing:1px;margin-bottom:5px;text-transform:uppercase">State</label>
+                <select id="ca-f-state" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(59,130,246,.2);border-radius:6px;padding:7px 10px;font-size:12px;color:#e8edf5;font-family:'IBM Plex Sans',sans-serif;outline:none">
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+              <div style="grid-column:1/-1">
+                <label style="display:block;font-size:10px;font-weight:600;color:#5d7a99;letter-spacing:1px;margin-bottom:5px;text-transform:uppercase">Reason</label>
+                <input id="ca-f-reason" type="text" placeholder="e.g. Strategic restructuring" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(59,130,246,.2);border-radius:6px;padding:7px 10px;font-size:12px;color:#e8edf5;font-family:'IBM Plex Sans',sans-serif;outline:none;transition:border-color .15s" onfocus="this.style.borderColor='rgba(59,130,246,.6)'" onblur="this.style.borderColor='rgba(59,130,246,.2)'"/>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:20px">
+              <button onclick="caCloseModal()" style="padding:8px 20px;border-radius:6px;font-size:12px;font-weight:500;background:transparent;border:1px solid rgba(255,255,255,.1);color:#a8b8d0;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:all .15s" onmouseenter="this.style.borderColor='rgba(255,255,255,.25)'" onmouseleave="this.style.borderColor='rgba(255,255,255,.1)'">Cancel</button>
+              <button onclick="caSaveRecord()" style="padding:8px 20px;border-radius:6px;font-size:12px;font-weight:600;background:linear-gradient(135deg,#1d4ed8,#2563eb);border:1px solid rgba(59,130,246,.5);color:#fff;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;box-shadow:0 2px 10px rgba(37,99,235,.3);transition:filter .15s" onmouseenter="this.style.filter='brightness(1.12)'" onmouseleave="this.style.filter=''">Save Record</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ══ CA UPLOAD VIEW ══ -->
+      <div id="view-ca-upload" style="display:none;grid-column:1/-1;flex-direction:column;height:100%;overflow-y:auto;box-sizing:border-box;padding:16px 20px">
+        <!-- Header bar — matches Assign Company Upload exactly -->
+        <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:28px;flex-shrink:0">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:3px;height:18px;border-radius:2px;background:linear-gradient(180deg,#3b82f6,#1d4ed8);flex-shrink:0"></div>
+            <div style="font-size:13px;font-weight:600;color:var(--text-secondary);letter-spacing:.2px">Upload and validate CA records</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <button onclick="caUploadCancel()" style="background:transparent;border:1px solid rgba(255,255,255,.15);border-radius:7px;padding:7px 20px;font-size:12.5px;font-weight:600;color:#94a3b8;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:all .15s" onmouseenter="this.style.borderColor='rgba(255,255,255,.35)';this.style.color='#e8edf5'" onmouseleave="this.style.borderColor='rgba(255,255,255,.15)';this.style.color='#94a3b8'">Cancel</button>
+            <button onclick="caUploadSubmit()" style="background:linear-gradient(135deg,#1e40af,#2563eb);border:1px solid rgba(59,130,246,.4);border-radius:7px;padding:7px 20px;font-size:12.5px;font-weight:600;color:#fff;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:filter .15s;box-shadow:0 2px 8px rgba(37,99,235,.25)" onmouseenter="this.style.filter='brightness(1.12)'" onmouseleave="this.style.filter=''">Upload</button>
+          </div>
+        </div>
+
+        <!-- Drop zone -->
+        <div id="ca-upload-dropzone"
+          style="border:1.5px dashed rgba(255,255,255,.15);border-radius:10px;padding:64px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;cursor:pointer;transition:all .2s;background:rgba(255,255,255,.02);width:100%"
+          onmouseenter="this.style.borderColor='rgba(59,130,246,.5)';this.style.background='rgba(59,130,246,.04)'"
+          onmouseleave="this.style.borderColor='rgba(255,255,255,.15)';this.style.background='rgba(255,255,255,.02)'"
+          onclick="document.getElementById('ca-upload-file-input').click()"
+          ondragover="event.preventDefault();this.style.borderColor='rgba(59,130,246,.8)';this.style.background='rgba(59,130,246,.08)'"
+          ondragleave="this.style.borderColor='rgba(255,255,255,.15)';this.style.background='rgba(255,255,255,.02)'"
+          ondrop="event.preventDefault();caUploadHandleFile(event.dataTransfer.files[0]);this.style.borderColor='rgba(255,255,255,.15)';this.style.background='rgba(255,255,255,.02)'">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+          <div style="text-align:center;display:flex;flex-direction:column;gap:4px">
+            <div style="font-size:14px;font-weight:500;color:#e8edf5">Drop your File Here Or Browse</div>
+            <div style="font-size:12.5px;color:#5d7a99">Only xlsx file here</div>
+          </div>
+          <input id="ca-upload-file-input" type="file" accept=".xlsx" style="display:none" onchange="caUploadHandleFile(this.files[0])">
+        </div>
+        <div id="ca-upload-file-info" style="display:none;margin-top:16px;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.2);border-radius:8px;padding:12px 16px;align-items:center;justify-content:space-between;gap:12px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <div>
+              <div id="ca-upload-file-name" style="font-size:13px;font-weight:600;color:#e8edf5"></div>
+              <div id="ca-upload-file-size" style="font-size:11px;color:#5d7a99;margin-top:2px"></div>
+            </div>
+          </div>
+          <button onclick="caUploadClearFile()" style="background:none;border:none;color:#5d7a99;cursor:pointer;font-size:18px;line-height:1;padding:2px 6px" onmouseenter="this.style.color='#fca5a5'" onmouseleave="this.style.color='#5d7a99'">&#215;</button>
+        </div>
+      </div>
+
       <div id="view-ca-qc" style="display:none;grid-column:1/-1;flex-direction:column;height:100%;overflow-y:auto;box-sizing:border-box"></div>
 
       <!-- ══ GOLDEN COPY VIEW ══ -->
-      <div id="view-golden-copy" style="display:none;grid-column:1/-1;flex-direction:column;height:100%;overflow-y:auto;box-sizing:border-box"></div>
+      <div id="view-golden-copy" style="display:none;grid-column:1/-1;flex-direction:column;height:100%;overflow-y:auto;box-sizing:border-box">
+
+        <!-- Golden Copy Toolbar -->
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;flex-shrink:0;border-bottom:1px solid rgba(59,130,246,.1);background:rgba(13,17,35,.6)">
+
+          <!-- Accent bar inline -->
+          <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+            <div style="width:3px;height:18px;border-radius:2px;background:linear-gradient(180deg,#3b82f6,#1d4ed8);flex-shrink:0"></div>
+            <div style="font-size:13px;font-weight:600;color:var(--text-secondary);letter-spacing:.2px;white-space:nowrap">Approved CA's - Passed all QC checks</div>
+          </div>
+
+          <div style="flex:1"></div>
+
+          <!-- Date Range -->
+          <div style="display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:7px;padding:6px 12px">
+            <input type="date" id="gc-date-from" value="2026-01-05"
+              style="background:transparent;border:none;outline:none;font-size:12.5px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;cursor:pointer;color-scheme:dark"/>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4b6a8a" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <input type="date" id="gc-date-to" value="2026-03-21"
+              style="background:transparent;border:none;outline:none;font-size:12.5px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;cursor:pointer;color-scheme:dark"/>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#5d7a99" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+
+          <!-- Download CA button -->
+          <button onclick="gcDownload()" style="display:flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1e40af,#2563eb);border:1px solid rgba(59,130,246,.35);border-radius:7px;padding:7px 16px;font-size:12px;font-weight:600;color:rgba(255,255,255,.92);cursor:pointer;font-family:'IBM Plex Sans',sans-serif;white-space:nowrap;box-shadow:0 2px 8px rgba(37,99,235,.2);transition:filter .15s" onmouseenter="this.style.filter='brightness(1.12)'" onmouseleave="this.style.filter=''">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CA
+          </button>
+
+          <!-- Search -->
+          <div style="position:relative;display:flex;align-items:center">
+            <svg style="position:absolute;left:10px;pointer-events:none;color:#4a6580" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input id="gc-search" type="text" placeholder="Search..."
+              oninput="GC_SEARCH=this.value;GC_CUR_PAGE=1;gcRender()"
+              style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:7px;padding:7px 12px 7px 30px;font-size:12px;color:var(--text-secondary);font-family:'IBM Plex Sans',sans-serif;width:210px;outline:none;transition:all .15s"
+              onfocus="this.style.borderColor='rgba(59,130,246,.45)';this.style.background='rgba(59,130,246,.05)';this.style.boxShadow='0 0 0 2px rgba(59,130,246,.08)'"
+              onblur="this.style.borderColor='rgba(255,255,255,.08)';this.style.background='rgba(255,255,255,.04)';this.style.boxShadow=''"
+            />
+          </div>
+        </div>
+
+        <!-- Table Area -->
+        <div style="flex:1;overflow:auto;padding:14px">
+          <div style="background:rgba(20,28,46,.85);border:1px solid rgba(59,130,246,.1);border-radius:10px;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 4px 20px rgba(0,0,0,.4)">
+
+            <!-- Table header -->
+            <div style="display:grid;grid-template-columns:2fr 1.3fr 1.4fr 1.5fr 1.5fr 1fr 1.4fr;border-bottom:1px solid rgba(59,130,246,.1);background:rgba(13,17,35,.5)">
+
+              <div id="gc-th-0" onclick="gcSort('company')" style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;cursor:pointer;user-select:none;white-space:nowrap" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=gcSortCol==='company'?'#60a5fa':'#e8edf5'">
+                <span style="display:inline-flex;align-items:center;gap:5px">Company Name <span id="gc-sort-icon-company" style="font-size:13px;color:#e8edf5">\u21C5</span></span>
+              </div>
+
+              <div id="gc-th-1" onclick="gcSort('date')" style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;cursor:pointer;user-select:none;white-space:nowrap" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=gcSortCol==='date'?'#60a5fa':'#e8edf5'">
+                <span style="display:inline-flex;align-items:center;gap:5px">Effective Date <span id="gc-sort-icon-date" style="font-size:13px;color:#e8edf5">\u21C5</span></span>
+              </div>
+
+              <div id="gc-th-2" onclick="gcSort('caType')" style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;cursor:pointer;user-select:none;white-space:nowrap" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=gcSortCol==='caType'?'#60a5fa':'#e8edf5'">
+                <span style="display:inline-flex;align-items:center;gap:5px">CA Type <span id="gc-sort-icon-caType" style="font-size:13px;color:#e8edf5">\u21C5</span></span>
+              </div>
+
+              <div id="gc-th-3" onclick="gcSort('oldVal')" style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;cursor:pointer;user-select:none;white-space:nowrap" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=gcSortCol==='oldVal'?'#60a5fa':'#e8edf5'">
+                <span style="display:inline-flex;align-items:center;gap:5px">Old Value <span id="gc-sort-icon-oldVal" style="font-size:13px;color:#e8edf5">\u21C5</span></span>
+              </div>
+
+              <div id="gc-th-4" onclick="gcSort('newVal')" style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;cursor:pointer;user-select:none;white-space:nowrap" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=gcSortCol==='newVal'?'#60a5fa':'#e8edf5'">
+                <span style="display:inline-flex;align-items:center;gap:5px">New Value <span id="gc-sort-icon-newVal" style="font-size:13px;color:#e8edf5">\u21C5</span></span>
+              </div>
+
+              <!-- State filter -->
+              <div style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;white-space:nowrap;position:relative">
+                <span style="display:inline-flex;align-items:center;gap:8px">State
+                  <button onclick="gcToggleStateFilter(event)" id="gc-state-filter-btn" title="Filter by State" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;border-radius:4px;padding:2px 4px;cursor:pointer;transition:opacity .15s;opacity:.7" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity=gcStateFilter?'1':'.7'">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" id="gc-state-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                  </button>
+                </span>
+                <div id="gc-state-dropdown" style="display:none;position:absolute;top:100%;left:0;z-index:9999;background:#111827;border:1px solid rgba(59,130,246,.25);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.7);min-width:160px;padding:6px;margin-top:4px"></div>
+              </div>
+
+              <!-- Status filter -->
+              <div style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;white-space:nowrap;position:relative">
+                <span style="display:inline-flex;align-items:center;gap:8px">Status
+                  <button onclick="gcToggleStatusFilter(event)" id="gc-status-filter-btn" title="Filter by Status" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;border-radius:4px;padding:2px 4px;cursor:pointer;transition:opacity .15s;opacity:.7" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity=gcStatusFilter?'1':'.7'">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" id="gc-status-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                  </button>
+                </span>
+                <div id="gc-status-dropdown" style="display:none;position:absolute;top:100%;left:0;z-index:9999;background:#111827;border:1px solid rgba(59,130,246,.25);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.7);min-width:190px;padding:6px;margin-top:4px"></div>
+              </div>
+
+            </div>
+
+            <!-- Table body -->
+            <div id="gc-table-body"></div>
+
+            <!-- Pagination -->
+            <div id="gc-pagination"></div>
+
+          </div>
+        </div>
+
+      </div>
 
       <!-- ══ GD COMPANY LANDING VIEW ══ -->
       <div id="view-gd-company-landing" style="display:none;width:100%;height:100%;padding:12px;gap:12px;box-sizing:border-box;overflow:hidden">
@@ -2160,7 +2500,7 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
   </div><!-- /main -->
 </div><!-- /app -->
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false">
 var PANEL_IDS = ['panel-meta','panel-rev','panel-audit'];
 var _reviewMode = 'qc'; /* 'qc' | 'analyst' */
 var PANEL_HEIGHT = 300;
@@ -2182,6 +2522,7 @@ function showView(name){
   var at      = document.getElementById('view-audit-trail');
   var rp      = document.getElementById('view-reports');
   var caan    = document.getElementById('view-ca-analyst');
+  var caup2   = document.getElementById('view-ca-upload');
   var caqc    = document.getElementById('view-ca-qc');
   var gc      = document.getElementById('view-golden-copy');
   var pf      = document.getElementById('view-profile');
@@ -2206,6 +2547,7 @@ function showView(name){
   at.style.display   = 'none';
   if(rp) rp.style.display = 'none';
   caan.style.display = 'none';
+  if(caup2) caup2.style.display = 'none';
   caqc.style.display = 'none';
   gc.style.display   = 'none';
   pf.style.display   = 'none';
@@ -2226,6 +2568,7 @@ function showView(name){
   document.getElementById('topbar-audit-trail-title').style.display = 'none';
   var _trp = document.getElementById('topbar-reports-title'); if(_trp) _trp.style.display='none';
   document.getElementById('topbar-ca-analyst-title').style.display = 'none';
+  var _tcaup2 = document.getElementById('topbar-ca-upload-title'); if(_tcaup2) _tcaup2.style.display='none';
   document.getElementById('topbar-ca-qc-title').style.display = 'none';
   document.getElementById('topbar-golden-copy-title').style.display = 'none';
   document.getElementById('topbar-profile-title').style.display = 'none';
@@ -2339,6 +2682,12 @@ function showView(name){
     caan.style.display = 'flex';
     caan.style.flexDirection = 'column';
     document.getElementById('topbar-ca-analyst-title').style.display = 'block';
+    initCaAnalyst();
+  } else if(name === 'ca-upload'){
+    content.classList.add('dashboard-mode');
+    if(caup2){ caup2.style.display = 'flex'; caup2.style.flexDirection = 'column'; }
+    var _tcaup2b = document.getElementById('topbar-ca-upload-title'); if(_tcaup2b) _tcaup2b.style.display='block';
+    caUploadClearFile();
   } else if(name === 'ca-qc'){
     content.classList.add('dashboard-mode');
     caqc.style.display = 'flex';
@@ -2349,6 +2698,7 @@ function showView(name){
     gc.style.display = 'flex';
     gc.style.flexDirection = 'column';
     document.getElementById('topbar-golden-copy-title').style.display = 'block';
+    initGoldenCopy();
   } else if(name === 'profile'){
     content.classList.add('dashboard-mode');
     pf.style.display = 'flex';
@@ -3628,7 +3978,7 @@ function iticsSort(tab, col){
   }
   for(var c = 0; c < 7; c++){
     var ic = document.getElementById('itics-sort-' + tab + '-' + c);
-    if(ic) ic.innerHTML = c === col ? (iticsSortAsc[tab] ? '&#8593;' : '&#8595;') : '&#8645;';
+    if(ic) ic.innerHTML = c === col ? (iticsSortAsc[tab] ? '\u2191' : '\u2193') : '\u21C5';
     if(ic) ic.style.color = c === col ? '#60a5fa' : '#e8edf5';
   }
   var asc = iticsSortAsc[tab];
@@ -6139,6 +6489,745 @@ document.addEventListener('click', function(e){
   var rbtn = document.getElementById('at-role-filter-btn');
   if(rdd && rdd.style.display!=='none' && rbtn && !rbtn.contains(e.target) && !rdd.contains(e.target)){
     rdd.style.display='none';
+  }
+});
+
+// ══════════════════════════════════════
+// CA ANALYST MODULE
+// ══════════════════════════════════════
+
+var CA_DATA = [
+  { id:1,  company:'Apple Inc',                 date:'2026-01-05', caType:'ISIN Change',  oldVal:'US0378331005',  newVal:'US0378331099',                     state:'Active',   status:'Pending QC'     },
+  { id:2,  company:'Infosys Ltd',               date:'2026-01-12', caType:'Name Change',  oldVal:'Infosys BPO',  newVal:'Infosys Ltd',                      state:'Active',   status:'Pending QC'     },
+  { id:3,  company:'Amazon.com Inc',            date:'2026-01-18', caType:'ISIN Change',  oldVal:'US0231351067',  newVal:'US0231351099',                     state:'Active',   status:'Pending QC'     },
+  { id:4,  company:'Tata Consultancy Services', date:'2026-01-24', caType:'Name Change',  oldVal:'TCS Ltd',      newVal:'Tata Consultancy Services Ltd',     state:'Active',   status:'Pending QC'     },
+  { id:5,  company:'Samsung Electronics',       date:'2026-02-02', caType:'ISIN Change',  oldVal:'KR7005930003',  newVal:'KR7005930099',                     state:'Active',   status:'Pending QC'     },
+  { id:6,  company:'Adobe Inc',                 date:'2026-02-05', caType:'ISIN Change',  oldVal:'US00724F1012',  newVal:'US00724F2012',                     state:'Active',   status:'Pending QC'     },
+  { id:7,  company:'HDFC Bank Ltd',             date:'2026-02-11', caType:'Name Change',  oldVal:'HDFC Bank',    newVal:'HDFC Bank Ltd',                    state:'Active',   status:'Rejected by QC' },
+  { id:8,  company:'Kotak Mahindra Bank',       date:'2026-02-17', caType:'Name Change',  oldVal:'Kotak Bank',   newVal:'Kotak Mahindra Bank Ltd',           state:'Active',   status:'Rejected by QC' },
+  { id:9,  company:'ASML Holding NV',           date:'2026-02-23', caType:'ISIN Change',  oldVal:'NL0010273215',  newVal:'NL0010273299',                     state:'Active',   status:'Rejected by QC' },
+  { id:10, company:'Broadcom Inc',              date:'2026-02-26', caType:'ISIN Change',  oldVal:'US11135F1012',  newVal:'US11135F2012',                     state:'Active',   status:'Invalidated'    },
+  { id:11, company:'Microsoft Corp',            date:'2026-03-01', caType:'ISIN Change',  oldVal:'US5949181045',  newVal:'US5949181099',                     state:'Inactive', status:'Invalidated'    },
+  { id:12, company:'ICICI Bank Ltd',            date:'2026-03-04', caType:'Name Change',  oldVal:'ICICI Bank',   newVal:'ICICI Bank Ltd',                   state:'Inactive', status:'Invalidated'    },
+  { id:13, company:'Sun Pharmaceutical',        date:'2026-03-07', caType:'Name Change',  oldVal:'Sun Pharma',   newVal:'Sun Pharmaceutical Industries Ltd', state:'Inactive', status:'Invalidated'    },
+  { id:14, company:'Salesforce Inc',            date:'2026-03-10', caType:'ISIN Change',  oldVal:'US79466L3024',  newVal:'US79466L4024',                     state:'Inactive', status:'Invalidated'    },
+  { id:15, company:'TSMC',                      date:'2026-03-13', caType:'ISIN Change',  oldVal:'US8740391003',  newVal:'US8740391099',                     state:'Inactive', status:'Invalidated'    },
+  { id:16, company:'Oracle Corporation',        date:'2026-03-16', caType:'ISIN Change',  oldVal:'US68389X1054',  newVal:'US68389X2054',                     state:'Inactive', status:'Invalidated'    },
+  { id:17, company:'Zomato Ltd',                date:'2026-03-21', caType:'Name Change',  oldVal:'Zomato Ltd',   newVal:'Zomato Global Ltd',                state:'Inactive', status:'Invalidated'    },
+  { id:18, company:'Tesla Inc',                 date:'2026-01-08', caType:'Delisting',    oldVal:'',             newVal:'',                                 state:'Active',   status:'Pending QC'     },
+  { id:19, company:'Reliance Industries',       date:'2026-01-15', caType:'M\x26A',        oldVal:'',             newVal:'',                                 state:'Active',   status:'Pending QC'     },
+  { id:20, company:'Alphabet Inc',              date:'2026-01-21', caType:'Delisting',    oldVal:'',             newVal:'',                                 state:'Active',   status:'Pending QC'     },
+  { id:21, company:'NVIDIA Corporation',        date:'2026-01-27', caType:'M\x26A',        oldVal:'',             newVal:'',                                 state:'Active',   status:'Pending QC'     },
+  { id:22, company:'Wipro Ltd',                 date:'2026-02-08', caType:'Delisting',    oldVal:'',             newVal:'',                                 state:'Active',   status:'Rejected by QC' },
+  { id:23, company:'Bajaj Finance Ltd',         date:'2026-02-14', caType:'M\x26A',        oldVal:'',             newVal:'',                                 state:'Active',   status:'Rejected by QC' },
+  { id:24, company:'HCL Technologies Ltd',      date:'2026-02-20', caType:'Delisting',    oldVal:'',             newVal:'',                                 state:'Active',   status:'Rejected by QC' },
+  { id:25, company:'Meta Platforms Inc',        date:'2026-03-02', caType:'Delisting',    oldVal:'',             newVal:'',                                 state:'Inactive', status:'Invalidated'    },
+  { id:26, company:'Netflix Inc',               date:'2026-03-06', caType:'M\x26A',        oldVal:'',             newVal:'',                                 state:'Inactive', status:'Invalidated'    },
+  { id:27, company:'Maruti Suzuki India',       date:'2026-03-08', caType:'Delisting',    oldVal:'',             newVal:'',                                 state:'Inactive', status:'Invalidated'    },
+  { id:28, company:'Axis Bank Ltd',             date:'2026-03-11', caType:'M\x26A',        oldVal:'',             newVal:'',                                 state:'Inactive', status:'Invalidated'    },
+  { id:29, company:'Larsen \x26 Toubro Ltd',    date:'2026-03-14', caType:'Delisting',    oldVal:'',             newVal:'',                                 state:'Inactive', status:'Invalidated'    },
+  { id:30, company:'Power Grid Corp of India',  date:'2026-03-18', caType:'M\x26A',        oldVal:'',             newVal:'',                                 state:'Inactive', status:'Invalidated'    },
+];
+var CA_NEXT_ID  = 31;
+var CA_EDIT_ID  = null;
+var CA_SEARCH   = '';
+var CA_CUR_PAGE = 1;
+var CA_PER_PAGE = 20;
+var caSortCol   = null;   // field key or null
+var caSortAsc   = true;
+var caStateFilter  = null; // null = all
+var caStatusFilter = null; // null = all
+
+function caGetFiltered(){
+  var q = CA_SEARCH.toLowerCase();
+  var rows = CA_DATA.filter(function(r){
+    var matchSearch = !q || r.company.toLowerCase().includes(q) || r.caType.toLowerCase().includes(q)
+        || r.oldVal.toLowerCase().includes(q) || r.newVal.toLowerCase().includes(q) || r.status.toLowerCase().includes(q);
+    var matchState  = caStateFilter  === null || r.state  === caStateFilter;
+    var matchStatus = caStatusFilter === null || r.status === caStatusFilter;
+    return matchSearch && matchState && matchStatus;
+  });
+  if(caSortCol){
+    var key = caSortCol;
+    rows.sort(function(a,b){
+      var av = String(a[key]||'').toLowerCase();
+      var bv = String(b[key]||'').toLowerCase();
+      return caSortAsc ? (av<bv?-1:av>bv?1:0) : (av<bv?1:av>bv?-1:0);
+    });
+  }
+  return rows;
+}
+
+/* ── SORT ── */
+function caSort(field){
+  if(caSortCol === field){ caSortAsc = !caSortAsc; } else { caSortCol = field; caSortAsc = true; }
+  CA_CUR_PAGE = 1;
+  caRender();
+  // Update sort icons
+  ['company','date','caType','oldVal','newVal'].forEach(function(f){
+    var ic = document.getElementById('ca-sort-icon-'+f);
+    var th = ic ? ic.closest('div[id^="ca-th-"]') : null;
+    if(ic){
+      if(f === caSortCol){ ic.textContent = caSortAsc ? '↑' : '↓'; ic.style.color='#60a5fa'; if(th) th.style.color='#60a5fa'; }
+      else { ic.innerHTML='\u21C5'; ic.style.color='#e8edf5'; if(th) th.style.color='#e8edf5'; }
+    }
+  });
+}
+
+/* ── STATE FILTER ── */
+function caBuildStateFilter(){
+  var dd = document.getElementById('ca-state-dropdown'); if(!dd) return;
+  var vals = ['Active','Inactive'];
+  dd.innerHTML = '';
+  // All option
+  var allBtn = document.createElement('button');
+  allBtn.textContent = 'All';
+  allBtn.style.cssText = 'width:100%;text-align:left;background:'+(caStateFilter===null?'rgba(59,130,246,.2)':'transparent')+';border:none;border-radius:5px;padding:7px 10px;font-size:12px;color:#e8edf5;cursor:pointer;font-family:"IBM Plex Sans",sans-serif;transition:background .12s;display:block';
+  allBtn.onmouseenter = function(){ if(caStateFilter!==null) this.style.background='rgba(255,255,255,.06)'; };
+  allBtn.onmouseleave = function(){ this.style.background = caStateFilter===null?'rgba(59,130,246,.2)':'transparent'; };
+  allBtn.onclick = function(){ caStateFilter=null; caApplyFilters(); closeCaStateDropdown(); };
+  dd.appendChild(allBtn);
+  vals.forEach(function(s){
+    var btn = document.createElement('button');
+    btn.textContent = s;
+    var isActive = caStateFilter === s;
+    btn.style.cssText = 'width:100%;text-align:left;background:'+(isActive?'rgba(59,130,246,.2)':'transparent')+';border:none;border-radius:5px;padding:7px 10px;font-size:12px;color:#e8edf5;cursor:pointer;font-family:"IBM Plex Sans",sans-serif;transition:background .12s;display:block';
+    btn.onmouseenter = function(){ if(caStateFilter!==s) this.style.background='rgba(255,255,255,.06)'; };
+    btn.onmouseleave = function(){ this.style.background = caStateFilter===s?'rgba(59,130,246,.2)':'transparent'; };
+    btn.onclick = function(){ caStateFilter=s; caApplyFilters(); closeCaStateDropdown(); };
+    dd.appendChild(btn);
+  });
+}
+
+function caToggleStateFilter(e){
+  e.stopPropagation();
+  caBuildStateFilter();
+  var dd = document.getElementById('ca-state-dropdown'); if(!dd) return;
+  var open = dd.style.display !== 'none';
+  closeCaStatusDropdown();
+  dd.style.display = open ? 'none' : 'block';
+}
+function closeCaStateDropdown(){ var dd=document.getElementById('ca-state-dropdown'); if(dd) dd.style.display='none'; }
+
+/* ── STATUS FILTER ── */
+function caBuildStatusFilter(){
+  var dd = document.getElementById('ca-status-dropdown'); if(!dd) return;
+  var vals = ['Pending QC','Rejected by QC','Invalidated'];
+  dd.innerHTML = '';
+  var allBtn = document.createElement('button');
+  allBtn.textContent = 'All';
+  allBtn.style.cssText = 'width:100%;text-align:left;background:'+(caStatusFilter===null?'rgba(59,130,246,.2)':'transparent')+';border:none;border-radius:5px;padding:7px 10px;font-size:12px;color:#e8edf5;cursor:pointer;font-family:"IBM Plex Sans",sans-serif;transition:background .12s;display:block';
+  allBtn.onmouseenter = function(){ if(caStatusFilter!==null) this.style.background='rgba(255,255,255,.06)'; };
+  allBtn.onmouseleave = function(){ this.style.background = caStatusFilter===null?'rgba(59,130,246,.2)':'transparent'; };
+  allBtn.onclick = function(){ caStatusFilter=null; caApplyFilters(); closeCaStatusDropdown(); };
+  dd.appendChild(allBtn);
+  vals.forEach(function(s){
+    var btn = document.createElement('button');
+    btn.textContent = s;
+    var isActive = caStatusFilter === s;
+    btn.style.cssText = 'width:100%;text-align:left;background:'+(isActive?'rgba(59,130,246,.2)':'transparent')+';border:none;border-radius:5px;padding:7px 10px;font-size:12px;color:#e8edf5;cursor:pointer;font-family:"IBM Plex Sans",sans-serif;transition:background .12s;display:block';
+    btn.onmouseenter = function(){ if(caStatusFilter!==s) this.style.background='rgba(255,255,255,.06)'; };
+    btn.onmouseleave = function(){ this.style.background = caStatusFilter===s?'rgba(59,130,246,.2)':'transparent'; };
+    btn.onclick = function(){ caStatusFilter=s; caApplyFilters(); closeCaStatusDropdown(); };
+    dd.appendChild(btn);
+  });
+}
+
+function caToggleStatusFilter(e){
+  e.stopPropagation();
+  caBuildStatusFilter();
+  var dd = document.getElementById('ca-status-dropdown'); if(!dd) return;
+  var open = dd.style.display !== 'none';
+  closeCaStateDropdown();
+  dd.style.display = open ? 'none' : 'block';
+}
+function closeCaStatusDropdown(){ var dd=document.getElementById('ca-status-dropdown'); if(dd) dd.style.display='none'; }
+
+/* update filter icon highlight */
+function caUpdateFilterIcons(){
+  var si = document.getElementById('ca-state-filter-icon');
+  var sb = document.getElementById('ca-state-filter-btn');
+  if(si){ si.setAttribute('stroke', caStateFilter ? '#60a5fa' : '#e8edf5'); si.setAttribute('fill', caStateFilter ? 'rgba(59,130,246,.25)' : 'none'); }
+  if(sb) sb.style.opacity = caStateFilter ? '1' : '.7';
+  var ti = document.getElementById('ca-status-filter-icon');
+  var tb = document.getElementById('ca-status-filter-btn');
+  if(ti){ ti.setAttribute('stroke', caStatusFilter ? '#60a5fa' : '#e8edf5'); ti.setAttribute('fill', caStatusFilter ? 'rgba(59,130,246,.25)' : 'none'); }
+  if(tb) tb.style.opacity = caStatusFilter ? '1' : '.7';
+}
+
+function caApplyFilters(){
+  CA_CUR_PAGE = 1;
+  caUpdateFilterIcons();
+  caRender();
+}
+
+/* close both dropdowns on outside click */
+document.addEventListener('click', function(e){
+  var sdd=document.getElementById('ca-state-dropdown'),  sb=document.getElementById('ca-state-filter-btn');
+  if(sdd && sdd.style.display!=='none' && sb && !sb.contains(e.target) && !sdd.contains(e.target)) sdd.style.display='none';
+  var tdd=document.getElementById('ca-status-dropdown'), tb=document.getElementById('ca-status-filter-btn');
+  if(tdd && tdd.style.display!=='none' && tb && !tb.contains(e.target) && !tdd.contains(e.target)) tdd.style.display='none';
+});
+
+function caRender(){
+  var tbody = document.getElementById('ca-table-body');
+  if(!tbody) return;
+  var all   = caGetFiltered();
+  var total = all.length;
+  var pages = Math.max(1, Math.ceil(total / CA_PER_PAGE));
+  if(CA_CUR_PAGE > pages) CA_CUR_PAGE = pages;
+  var start = (CA_CUR_PAGE - 1) * CA_PER_PAGE;
+  var rows  = all.slice(start, start + CA_PER_PAGE);
+
+  if(rows.length === 0){
+    tbody.innerHTML = '<div style="padding:40px;text-align:center;color:#5d7a99;font-size:12px">No records found</div>';
+  } else {
+    tbody.innerHTML = rows.map(function(r, i){
+      var bg = i % 2 === 0 ? 'transparent' : 'rgba(59,130,246,.02)';
+
+      var statePill = '<span style="font-size:12px;font-weight:500;color:#e8edf5">'+r.state+'</span>';
+
+      var dotColor = r.status === 'Pending QC' ? '#60a5fa' : r.status === 'Rejected by QC' ? '#f87171' : '#a78bfa';
+      var statusPill = '<span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:#e8edf5"><span style="width:7px;height:7px;border-radius:50%;background:'+dotColor+';flex-shrink:0;display:inline-block"></span>'+r.status+'</span>';
+
+      return '<div style="display:grid;grid-template-columns:2fr 1.3fr 1.4fr 1.5fr 1.5fr 1fr 1.4fr;border-bottom:1px solid rgba(59,130,246,.06);background:'+bg+';transition:background .12s;align-items:center" onmouseenter="this.style.background=\'rgba(59,130,246,.05)\'" onmouseleave="this.style.background=\''+bg+'\'">'
+        + '<div style="padding:11px 16px;font-size:12.5px;font-weight:600;color:#e8edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.company+'</div>'
+        + '<div style="padding:11px 16px;font-size:12px;font-family:\'IBM Plex Mono\',monospace;color:#e2edf5;white-space:nowrap">'+r.date+'</div>'
+        + '<div style="padding:11px 16px;font-size:12px;font-weight:500;color:#e2edf5;white-space:nowrap">'+r.caType+'</div>'
+        + '<div style="padding:11px 16px;font-size:12px;font-family:\'IBM Plex Mono\',monospace;color:#e2edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.oldVal+'</div>'
+        + '<div style="padding:11px 16px;font-size:12px;font-family:\'IBM Plex Mono\',monospace;color:#e2edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.newVal+'</div>'
+        + '<div style="padding:11px 16px">'+statePill+'</div>'
+        + '<div style="padding:11px 16px">'+statusPill+'</div>'
+        + '</div>';
+    }).join('');
+  }
+
+  caRenderPagination(total, pages);
+}
+
+function caRenderPagination(total, pages){
+  var wrap = document.getElementById('ca-pagination');
+  if(!wrap) return;
+  var btns = '';
+  var start = Math.max(1, CA_CUR_PAGE - 2);
+  var end   = Math.min(pages, start + 4);
+  if(end - start < 4) start = Math.max(1, end - 4);
+
+  for(var p = start; p <= end; p++){
+    var active = p === CA_CUR_PAGE;
+    btns += '<button onclick="caGoPage('+p+')" style="min-width:28px;height:28px;padding:0 8px;border-radius:6px;font-size:12px;font-weight:'+(active?'700':'400')+';'
+      + (active ? 'background:rgba(59,130,246,.35);border:1px solid rgba(59,130,246,.6);color:#93c5fd;' : 'background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:#5d7a99;')
+      + 'cursor:pointer;font-family:\'IBM Plex Sans\',sans-serif;transition:all .13s">'+p+'</button>';
+  }
+
+  wrap.innerHTML =
+    '<div style="display:flex;align-items:center;justify-content:flex-end;gap:5px;padding:10px 16px;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap">'
+    + '<button onclick="caGoPage(CA_CUR_PAGE-1)" style="width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:#5d7a99;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s" onmouseenter="this.style.borderColor=\'rgba(59,130,246,.4)\';this.style.color=\'#60a5fa\'" onmouseleave="this.style.borderColor=\'rgba(255,255,255,.08)\';this.style.color=\'\'">&#8249;</button>'
+    + btns
+    + '<button onclick="caGoPage(CA_CUR_PAGE+1)" style="width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:#5d7a99;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s" onmouseenter="this.style.borderColor=\'rgba(59,130,246,.4)\';this.style.color=\'#60a5fa\'" onmouseleave="this.style.borderColor=\'rgba(255,255,255,.08)\';this.style.color=\'\'">&#8250;</button>'
+    + '<select onchange="caChangePerPage(this.value)" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:#a8b8d0;font-size:11px;padding:5px 10px;cursor:pointer;outline:none;font-family:\'IBM Plex Sans\',sans-serif;margin-left:8px">'
+    + ['10','20','50'].map(function(v){ return '<option value="'+v+'" '+(parseInt(v)===CA_PER_PAGE?'selected':'')+' style="background:#0f1729">'+v+' / page</option>'; }).join('')
+    + '</select>'
+    + '</div>';
+}
+
+function caGoPage(p){
+  var all = caGetFiltered();
+  var pages = Math.max(1, Math.ceil(all.length / CA_PER_PAGE));
+  if(p < 1 || p > pages) return;
+  CA_CUR_PAGE = p;
+  caRender();
+}
+
+function caChangePerPage(v){
+  CA_PER_PAGE = parseInt(v);
+  CA_CUR_PAGE = 1;
+  caRender();
+}
+
+function caSetTab(tab){ /* tabs removed - no-op kept for compatibility */ }
+
+function caAddRow(){
+  var m = document.getElementById('ca-add-modal');
+  if(m){ m.style.display='flex'; return; }
+  m = document.createElement('div');
+  m.id = 'ca-add-modal';
+  m.style.cssText = 'position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(5,10,22,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:fadeSlideIn .18s ease';
+
+  var inputStyle   = "width:100%;box-sizing:border-box;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:9px 13px;font-size:13px;color:#e8edf5;font-family:'IBM Plex Sans',sans-serif;outline:none;transition:all .15s";
+  var monoStyle    = "width:100%;box-sizing:border-box;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:9px 13px;font-size:13px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;outline:none;transition:all .15s";
+  var selectStyle  = "width:100%;box-sizing:border-box;background:#0f1829;border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:9px 36px 9px 13px;font-size:13px;color:#e8edf5;font-family:'IBM Plex Sans',sans-serif;outline:none;transition:all .15s;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' stroke='%235d7a99' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='1 1 5 5 9 1'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 13px center";
+  var focusOn  = "this.style.borderColor='rgba(59,130,246,.5)';this.style.background='rgba(59,130,246,.06)';this.style.boxShadow='0 0 0 2px rgba(59,130,246,.1)'";
+  var focusOff = "this.style.borderColor='rgba(255,255,255,.1)';this.style.background='rgba(255,255,255,.04)';this.style.boxShadow=''";
+  var focusOffMono = "this.style.borderColor='rgba(255,255,255,.1)';this.style.background='rgba(255,255,255,.04)';this.style.boxShadow=''";
+  var labelStyle   = "display:block;font-size:10px;font-weight:700;color:#e8edf5;letter-spacing:1.1px;text-transform:uppercase;margin-bottom:6px";
+
+  m.innerHTML =
+    '<div style="background:#0f1829;border:1px solid rgba(59,130,246,.22);border-radius:14px;width:720px;max-width:96vw;max-height:92vh;display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,.85),inset 0 1px 0 rgba(255,255,255,.07);font-family:\'IBM Plex Sans\',sans-serif;overflow:hidden">'
+
+    // ── Header
+    + '<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 22px 14px;border-bottom:1px solid rgba(59,130,246,.14);flex-shrink:0">'
+    +   '<div>'
+    +     '<div style="font-size:15px;font-weight:700;color:#e8edf5;letter-spacing:.3px">CA Add</div>'
+    +     '<div style="font-size:10px;color:#5d7a99;margin-top:1px">Fill in the details to add a new CA record</div>'
+    +   '</div>'
+    +   '<div style="display:flex;align-items:center;gap:8px">'
+    +     '<button id="ca-add-save-btn" style="background:linear-gradient(135deg,#1e40af,#2563eb);border:1px solid rgba(59,130,246,.4);border-radius:7px;padding:7px 18px;font-size:12.5px;font-weight:600;color:#fff;cursor:pointer;font-family:\'IBM Plex Sans\',sans-serif;box-shadow:0 2px 10px rgba(37,99,235,.3);transition:filter .15s" onmouseenter="this.style.filter=\'brightness(1.12)\'" onmouseleave="this.style.filter=\'\'">Save</button>'
+    +     '<button id="ca-add-close-btn" style="width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#7a96b4;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;line-height:1" onmouseenter="this.style.background=\'rgba(239,68,68,.18)\';this.style.color=\'#fca5a5\'" onmouseleave="this.style.background=\'rgba(255,255,255,.05)\';this.style.color=\'#7a96b4\'">&#215;</button>'
+    +   '</div>'
+    + '</div>'
+
+    // ── Form body
+    + '<div style="overflow-y:auto;padding:20px 22px 24px;flex:1">'
+    +   '<div style="background:rgba(59,130,246,.04);border:1px solid rgba(59,130,246,.1);border-radius:10px;padding:20px 18px;display:grid;grid-template-columns:1fr 1fr;gap:16px 20px">'
+
+    // Company Name — full width
+    +     '<div style="grid-column:1/-1">'
+    +       '<label style="'+labelStyle+'">Company Name</label>'
+    +       '<input id="ca-add-company" type="text" placeholder="" style="'+inputStyle+'" onfocus="'+focusOn+'" onblur="'+focusOff+'"/>'
+    +     '</div>'
+
+    // ISIN
+    +     '<div>'
+    +       '<label style="'+labelStyle+'">ISIN</label>'
+    +       '<input id="ca-add-isin" type="text" placeholder="" style="'+monoStyle+'" onfocus="'+focusOn+'" onblur="'+focusOffMono+'"/>'
+    +     '</div>'
+
+    // Effective Date
+    +     '<div>'
+    +       '<label style="'+labelStyle+'">Effective Date</label>'
+    +       '<input id="ca-add-date" type="date" style="'+monoStyle+';color-scheme:dark" onfocus="'+focusOn+'" onblur="'+focusOffMono+'"/>'
+    +     '</div>'
+
+    // CA Type — full width dropdown, Role-style
+    +     '<div style="grid-column:1/-1">'
+    +       '<label style="'+labelStyle+'">CA Type</label>'
+    +       '<div style="position:relative">'
+    +         '<select id="ca-add-type" style="width:100%;box-sizing:border-box;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:7px;padding:9px 36px 9px 13px;font-size:13px;color:#e8edf5;font-family:\'IBM Plex Sans\',sans-serif;outline:none;cursor:pointer;appearance:none;-webkit-appearance:none;transition:border-color .15s" onfocus="this.style.borderColor=\'rgba(59,130,246,.5)\'" onblur="this.style.borderColor=\'rgba(255,255,255,.12)\'">'
+    +           '<option value="" disabled selected hidden style="background:#0f1829;color:#5d7a99"></option>'
+    +           '<option value="ISIN Change" style="background:#0f1829">ISIN Change</option>'
+    +           '<option value="Name Change" style="background:#0f1829">Name Change</option>'
+    +           '<option value="Delisting" style="background:#0f1829">Delisting</option>'
+    +           '<option value="M&A" style="background:#0f1829">M\x26A</option>'
+    +         '</select>'
+    +         '<svg style="position:absolute;right:12px;top:50%;transform:translateY(-50%);pointer-events:none" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#5d7a99" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>'
+    +       '</div>'
+    +     '</div>'
+
+    // Old Value
+    +     '<div>'
+    +       '<label style="'+labelStyle+'">Old Value</label>'
+    +       '<input id="ca-add-old" type="text" placeholder="" style="'+monoStyle+'" onfocus="'+focusOn+'" onblur="'+focusOffMono+'"/>'
+    +     '</div>'
+
+    // New Value
+    +     '<div>'
+    +       '<label style="'+labelStyle+'">New Value</label>'
+    +       '<input id="ca-add-new" type="text" placeholder="" style="'+monoStyle+'" onfocus="'+focusOn+'" onblur="'+focusOffMono+'"/>'
+    +     '</div>'
+
+    +   '</div>'
+    + '</div>'
+    + '</div>';
+
+  document.body.appendChild(m);
+
+  // Wire Save
+  document.getElementById('ca-add-save-btn').addEventListener('click', function(){
+    var reqIds = ['ca-add-company','ca-add-isin','ca-add-date','ca-add-type','ca-add-old','ca-add-new'];
+    var empty = reqIds.filter(function(id){ var el=document.getElementById(id); return el && !el.value.trim(); });
+    if(empty.length){
+      empty.forEach(function(id){
+        var el=document.getElementById(id);
+        if(el){ el.style.borderColor='rgba(239,68,68,.6)'; el.style.boxShadow='0 0 0 2px rgba(239,68,68,.12)'; }
+      });
+      return;
+    }
+    var rec = {
+      id:      CA_NEXT_ID++,
+      company: document.getElementById('ca-add-company').value.trim(),
+      date:    document.getElementById('ca-add-date').value,
+      caType:  document.getElementById('ca-add-type').value,
+      oldVal:  document.getElementById('ca-add-old').value.trim(),
+      newVal:  document.getElementById('ca-add-new').value.trim(),
+      state:   'Active',
+      status:  'Pending QC'
+    };
+    CA_DATA.unshift(rec);
+    closeCaAddModal();
+    caRender();
+    var toast = document.createElement('div');
+    toast.style.cssText = 'position:fixed;bottom:28px;right:24px;z-index:999999;background:linear-gradient(135deg,#052e16,#064e1e);border:1px solid #16a34a;border-radius:10px;padding:12px 20px;font-family:"IBM Plex Sans",sans-serif;font-size:13px;color:#4ade80;box-shadow:0 8px 32px rgba(0,0,0,.6);display:flex;align-items:center;gap:10px;animation:fadeSlideIn .2s ease';
+    toast.innerHTML = '<span style="font-size:16px">\u2713</span> CA record added successfully';
+    document.body.appendChild(toast);
+    setTimeout(function(){ toast.style.opacity='0'; toast.style.transition='opacity .4s'; setTimeout(function(){ toast.remove(); },400); }, 2800);
+  });
+
+  // Wire Close
+  document.getElementById('ca-add-close-btn').addEventListener('click', closeCaAddModal);
+  m.addEventListener('click', function(e){ if(e.target===m) closeCaAddModal(); });
+}
+
+function closeCaAddModal(){
+  var m = document.getElementById('ca-add-modal');
+  if(m) m.style.display='none';
+  var ids = ['ca-add-company','ca-add-isin','ca-add-date','ca-add-type','ca-add-old','ca-add-new'];
+  ids.forEach(function(id){ var el=document.getElementById(id); if(el){ el.value=''; el.style.borderColor=''; el.style.boxShadow=''; } });
+}
+
+function caEditRow(id){
+  var rec = CA_DATA.find(function(r){ return r.id === id; });
+  if(!rec) return;
+  CA_EDIT_ID = id;
+  document.getElementById('ca-modal-title').textContent = 'Edit Record';
+  var m = document.getElementById('ca-modal');
+  m.style.display = 'flex';
+}
+
+function caCloseModal(){
+  document.getElementById('ca-modal').style.display = 'none';
+}
+
+function caSaveRecord(){
+  caCloseModal();
+  caRender();
+}
+
+function caRefresh(){
+  var icon = document.getElementById('ca-refresh-icon');
+  if(icon){ icon.style.transition='transform .6s'; icon.style.transform='rotate(360deg)'; setTimeout(function(){ icon.style.transition=''; icon.style.transform=''; }, 650); }
+  caRender();
+}
+
+function caUploadCancel(){
+  showView('ca-analyst');
+}
+
+function caUploadHandleFile(file){
+  if(!file) return;
+  var info = document.getElementById('ca-upload-file-info');
+  document.getElementById('ca-upload-file-name').textContent = file.name;
+  document.getElementById('ca-upload-file-size').textContent = (file.size / 1024).toFixed(1) + ' KB';
+  info.style.display = 'flex';
+}
+
+function caUploadClearFile(){
+  var inp = document.getElementById('ca-upload-file-input');
+  if(inp) inp.value = '';
+  var info = document.getElementById('ca-upload-file-info');
+  if(info) info.style.display = 'none';
+}
+
+function caUploadSubmit(){
+  var inp = document.getElementById('ca-upload-file-input');
+  if(!inp || !inp.files || !inp.files[0]){ alert('Please select an xlsx file to upload.'); return; }
+  var fileName = inp.files[0].name;
+  showView('ca-analyst');
+  setTimeout(function(){
+    var toast = document.createElement('div');
+    toast.style.cssText = 'position:fixed;bottom:28px;right:24px;z-index:999999;background:linear-gradient(135deg,#052e16,#064e1e);border:1px solid #16a34a;border-radius:10px;padding:14px 22px;font-family:"IBM Plex Sans",sans-serif;font-size:13px;color:#4ade80;box-shadow:0 8px 32px rgba(0,0,0,.6);display:flex;align-items:center;gap:12px;animation:fadeSlideIn .2s ease;max-width:360px';
+    toast.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>'
+      + '<div><div style="font-weight:600;margin-bottom:2px">Upload Successful</div>'
+      + '<div style="font-size:11.5px;color:#86efac;opacity:.85">' + fileName + ' has been uploaded and validated.</div></div>';
+    document.body.appendChild(toast);
+    setTimeout(function(){ toast.style.opacity='0'; toast.style.transition='opacity .5s'; setTimeout(function(){ toast.remove(); },500); }, 3500);
+  }, 150);
+}
+
+function caDownload(){
+  if(typeof XLSX === 'undefined'){ alert('Excel library not loaded yet, please try again.'); return; }
+  var headers = ['Company Name','Effective Date','CA Type','Old Value','New Value','State','Status'];
+  var wsData = [headers].concat(CA_DATA.map(function(r){ return [r.company,r.date,r.caType,r.oldVal,r.newVal,r.state,r.status]; }));
+  var ws = XLSX.utils.aoa_to_sheet(wsData);
+  ws['!cols'] = [{wch:32},{wch:14},{wch:16},{wch:22},{wch:22},{wch:10},{wch:18}];
+  var wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'CA Analyst');
+  XLSX.writeFile(wb, 'CA_Handling.xlsx');
+}
+
+function caDownloadTemplate(){
+  if(typeof XLSX === 'undefined'){ alert('Excel library not loaded yet, please try again.'); return; }
+  var headers = ['Company Name','Effective Date','CA Type','Old Value','New Value','State','Status'];
+  var ws = XLSX.utils.aoa_to_sheet([headers]);
+  ws['!cols'] = [{wch:32},{wch:14},{wch:16},{wch:22},{wch:22},{wch:10},{wch:18}];
+  var wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'CA Template');
+  XLSX.writeFile(wb, 'CA_Template.xlsx');
+}
+
+function initCaAnalyst(){
+  CA_CUR_PAGE    = 1;
+  CA_PER_PAGE    = 20;
+  CA_SEARCH      = '';
+  var srch = document.getElementById('ca-search'); if(srch) srch.value = '';
+  caSortCol      = null;
+  caSortAsc      = true;
+  caStateFilter  = null;
+  caStatusFilter = null;
+  caUpdateFilterIcons();
+  // Reset all sort icons
+  ['company','date','caType','oldVal','newVal'].forEach(function(f){
+    var ic = document.getElementById('ca-sort-icon-'+f);
+    if(ic){ ic.innerHTML='\u21C5'; ic.style.color='#e8edf5'; }
+    var th = document.getElementById('ca-th-'+['company','date','caType','oldVal','newVal'].indexOf(f));
+    if(th) th.style.color='#e8edf5';
+  });
+  caSetTab('idmgmt'); // no-op - tabs removed
+  caRender();
+}
+
+
+/* ══ GOLDEN COPY MODULE ══ */
+var GC_DATA = [
+  { id:1,  company:'JPMorgan Chase',              date:'2026-01-06', caType:'ISIN Change',  oldVal:'US46625H1005',  newVal:'US46625H2099',                       state:'Active',   status:'Approved by QC' },
+  { id:2,  company:'Nestlé S.A.',                 date:'2026-01-09', caType:'Name Change',  oldVal:'Nestle SA',     newVal:'Nestlé S.A.',                        state:'Active',   status:'Approved by QC' },
+  { id:3,  company:'Toyota Motor Corp',           date:'2026-01-13', caType:'ISIN Change',  oldVal:'JP3633400001',  newVal:'JP3633400099',                        state:'Active',   status:'Approved by QC' },
+  { id:4,  company:'LVMH Moet Hennessy',          date:'2026-01-17', caType:'Name Change',  oldVal:'LVMH SE',       newVal:'LVMH Moet Hennessy Louis Vuitton SE', state:'Active',   status:'Approved by QC' },
+  { id:5,  company:'Novo Nordisk A/S',            date:'2026-01-20', caType:'ISIN Change',  oldVal:'DK0060534915',  newVal:'DK0060534999',                        state:'Active',   status:'Approved by QC' },
+  { id:6,  company:'HSBC Holdings PLC',           date:'2026-01-23', caType:'ISIN Change',  oldVal:'GB0005405286',  newVal:'GB0005405399',                        state:'Active',   status:'Approved by QC' },
+  { id:7,  company:'Rio Tinto PLC',               date:'2026-01-28', caType:'Name Change',  oldVal:'Rio Tinto Ltd', newVal:'Rio Tinto PLC',                       state:'Active',   status:'Approved by QC' },
+  { id:8,  company:'Shell PLC',                   date:'2026-02-01', caType:'ISIN Change',  oldVal:'GB00BP6MXD84',  newVal:'GB00BP6MXD99',                        state:'Active',   status:'Approved by QC' },
+  { id:9,  company:'Siemens AG',                  date:'2026-02-04', caType:'ISIN Change',  oldVal:'DE0007236101',  newVal:'DE0007236199',                        state:'Active',   status:'Approved by QC' },
+  { id:10, company:'AstraZeneca PLC',             date:'2026-02-07', caType:'Name Change',  oldVal:'AstraZeneca',   newVal:'AstraZeneca PLC',                     state:'Active',   status:'Approved by QC' },
+  { id:11, company:'Prosus NV',                   date:'2026-02-10', caType:'ISIN Change',  oldVal:'NL0013654783',  newVal:'NL0013654899',                        state:'Active',   status:'Approved by QC' },
+  { id:12, company:'Bank of China Ltd',           date:'2026-02-13', caType:'Name Change',  oldVal:'Bank of China', newVal:'Bank of China Ltd',                   state:'Active',   status:'Approved by QC' },
+  { id:13, company:'SAP SE',                      date:'2026-02-16', caType:'ISIN Change',  oldVal:'DE0007164600',  newVal:'DE0007164699',                        state:'Active',   status:'Approved by QC' },
+  { id:14, company:'BHP Group Ltd',               date:'2026-02-19', caType:'ISIN Change',  oldVal:'AU000000BHP4',  newVal:'AU000000BHP9',                        state:'Active',   status:'Approved by QC' },
+  { id:15, company:'Unilever PLC',                date:'2026-02-22', caType:'Name Change',  oldVal:'Unilever NV',   newVal:'Unilever PLC',                        state:'Active',   status:'Approved by QC' },
+  { id:16, company:'Commonwealth Bank',           date:'2026-02-25', caType:'ISIN Change',  oldVal:'AU000000CBA7',  newVal:'AU000000CBA9',                        state:'Active',   status:'Approved by QC' },
+  { id:17, company:'Roche Holding AG',            date:'2026-02-28', caType:'Name Change',  oldVal:'Roche Holding', newVal:'Roche Holding AG',                    state:'Active',   status:'Approved by QC' },
+  { id:18, company:'Pinduoduo Inc',               date:'2026-01-11', caType:'Delisting',    oldVal:'',              newVal:'',                                    state:'Active',   status:'Approved by QC' },
+  { id:19, company:'Grab Holdings',               date:'2026-01-16', caType:'M\x26A',        oldVal:'',              newVal:'',                                    state:'Active',   status:'Approved by QC' },
+  { id:20, company:'Delivery Hero SE',            date:'2026-01-25', caType:'Delisting',    oldVal:'',              newVal:'',                                    state:'Active',   status:'Approved by QC' },
+  { id:21, company:'Ola Electric Mobility',       date:'2026-01-29', caType:'M\x26A',        oldVal:'',              newVal:'',                                    state:'Active',   status:'Approved by QC' },
+  { id:22, company:'Sea Limited',                 date:'2026-02-05', caType:'Delisting',    oldVal:'',              newVal:'',                                    state:'Active',   status:'Approved by QC' },
+  { id:23, company:'Adani Enterprises Ltd',       date:'2026-02-08', caType:'M\x26A',        oldVal:'',              newVal:'',                                    state:'Active',   status:'Approved by QC' },
+  { id:24, company:'Paytm (One97 Communications)',date:'2026-02-12', caType:'Delisting',    oldVal:'',              newVal:'',                                    state:'Active',   status:'Approved by QC' },
+  { id:25, company:'GoTo Gojek Tokopedia',        date:'2026-02-17', caType:'Delisting',    oldVal:'',              newVal:'',                                    state:'Active',   status:'Approved by QC' },
+  { id:26, company:'Swiggy Ltd',                  date:'2026-02-20', caType:'M\x26A',        oldVal:'',              newVal:'',                                    state:'Active',   status:'Approved by QC' },
+  { id:27, company:'FirstCry (Brainbees Solutions)',date:'2026-02-24',caType:'Delisting',   oldVal:'',              newVal:'',                                    state:'Active',   status:'Approved by QC' },
+  { id:28, company:'Ixigo (Le Travenues Tech)',   date:'2026-02-28', caType:'M\x26A',        oldVal:'',              newVal:'',                                    state:'Active',   status:'Approved by QC' },
+  { id:29, company:'Indus Towers Ltd',            date:'2026-03-04', caType:'Delisting',    oldVal:'',              newVal:'',                                    state:'Active',   status:'Approved by QC' },
+  { id:30, company:'Nykaa (FSN E-Commerce)',      date:'2026-03-08', caType:'M\x26A',        oldVal:'',              newVal:'',                                    state:'Active',   status:'Approved by QC' },
+];
+var GC_SEARCH = '';
+var GC_CUR_PAGE = 1;
+var GC_PER_PAGE = 20;
+var gcSortCol = null;
+var gcSortAsc = true;
+var gcStateFilter = null;
+var gcStatusFilter = null;
+
+function gcGetFiltered(){
+  var q = GC_SEARCH.toLowerCase();
+  var rows = GC_DATA.filter(function(r){
+    var matchSearch = !q || r.company.toLowerCase().includes(q) || r.caType.toLowerCase().includes(q)
+        || r.oldVal.toLowerCase().includes(q) || r.newVal.toLowerCase().includes(q) || r.status.toLowerCase().includes(q);
+    var matchState  = gcStateFilter  === null || r.state  === gcStateFilter;
+    var matchStatus = gcStatusFilter === null || r.status === gcStatusFilter;
+    return matchSearch && matchState && matchStatus;
+  });
+  if(gcSortCol){
+    var key = gcSortCol;
+    rows.sort(function(a,b){
+      var av = a[key]||'', bv = b[key]||'';
+      return gcSortAsc ? av.localeCompare(bv) : bv.localeCompare(av);
+    });
+  }
+  return rows;
+}
+
+function gcSort(field){
+  if(gcSortCol === field){ gcSortAsc = !gcSortAsc; }
+  else { gcSortCol = field; gcSortAsc = true; }
+  ['company','date','caType','oldVal','newVal'].forEach(function(f){
+    var ic = document.getElementById('gc-sort-icon-'+f);
+    var th = document.getElementById('gc-th-'+['company','date','caType','oldVal','newVal'].indexOf(f));
+    if(ic){ ic.innerHTML = f===gcSortCol ? (gcSortAsc?'\u2191':'\u2193') : '\u21C5'; }
+    if(th){ th.style.color = f===gcSortCol ? '#60a5fa' : '#e8edf5'; }
+  });
+  gcRender();
+}
+
+function gcBuildStateFilter(){
+  var dd = document.getElementById('gc-state-dropdown'); if(!dd) return;
+  var opts = ['All','Active'];
+  dd.innerHTML = opts.map(function(o){
+    var val = o==='All'?null:o;
+    var active = gcStateFilter===val;
+    return '<button onclick="gcApplyStateFilter('+(val===null?'null':"'"+val+"'")+');event.stopPropagation()" style="display:block;width:100%;text-align:left;padding:7px 12px;font-size:12px;color:'+(active?'#60a5fa':'#94a3b8')+';background:'+(active?'rgba(59,130,246,.1)':'transparent')+';border:none;border-radius:5px;cursor:pointer;font-family:\'IBM Plex Sans\',sans-serif">'+o+'</button>';
+  }).join('');
+}
+
+function gcBuildStatusFilter(){
+  var dd = document.getElementById('gc-status-dropdown'); if(!dd) return;
+  var opts = ['All','Approved by QC'];
+  dd.innerHTML = opts.map(function(o){
+    var val = o==='All'?null:o;
+    var active = gcStatusFilter===val;
+    return '<button onclick="gcApplyStatusFilter('+(val===null?'null':"'"+val+"'")+');event.stopPropagation()" style="display:block;width:100%;text-align:left;padding:7px 12px;font-size:12px;color:'+(active?'#60a5fa':'#94a3b8')+';background:'+(active?'rgba(59,130,246,.1)':'transparent')+';border:none;border-radius:5px;cursor:pointer;font-family:\'IBM Plex Sans\',sans-serif">'+o+'</button>';
+  }).join('');
+}
+
+function gcToggleStateFilter(e){
+  e.stopPropagation();
+  var dd = document.getElementById('gc-state-dropdown');
+  var wasOpen = dd.style.display === 'block';
+  document.getElementById('gc-status-dropdown').style.display = 'none';
+  if(wasOpen){ dd.style.display='none'; return; }
+  gcBuildStateFilter();
+  dd.style.display = 'block';
+}
+
+function gcToggleStatusFilter(e){
+  e.stopPropagation();
+  var dd = document.getElementById('gc-status-dropdown');
+  var wasOpen = dd.style.display === 'block';
+  document.getElementById('gc-state-dropdown').style.display = 'none';
+  if(wasOpen){ dd.style.display='none'; return; }
+  gcBuildStatusFilter();
+  dd.style.display = 'block';
+}
+
+function gcApplyStateFilter(val){
+  gcStateFilter = val;
+  GC_CUR_PAGE = 1;
+  gcUpdateFilterIcons();
+  document.getElementById('gc-state-dropdown').style.display = 'none';
+  gcRender();
+}
+
+function gcApplyStatusFilter(val){
+  gcStatusFilter = val;
+  GC_CUR_PAGE = 1;
+  gcUpdateFilterIcons();
+  document.getElementById('gc-status-dropdown').style.display = 'none';
+  gcRender();
+}
+
+function gcUpdateFilterIcons(){
+  var si = document.getElementById('gc-state-filter-icon');
+  var sb = document.getElementById('gc-state-filter-btn');
+  if(si){ si.setAttribute('stroke', gcStateFilter ? '#60a5fa' : '#e8edf5'); si.setAttribute('fill', gcStateFilter ? 'rgba(59,130,246,.25)' : 'none'); }
+  if(sb){ sb.style.opacity = gcStateFilter ? '1' : '.7'; }
+  var ti = document.getElementById('gc-status-filter-icon');
+  var tb = document.getElementById('gc-status-filter-btn');
+  if(ti){ ti.setAttribute('stroke', gcStatusFilter ? '#60a5fa' : '#e8edf5'); ti.setAttribute('fill', gcStatusFilter ? 'rgba(59,130,246,.25)' : 'none'); }
+  if(tb){ tb.style.opacity = gcStatusFilter ? '1' : '.7'; }
+}
+
+function gcRender(){
+  var rows = gcGetFiltered();
+  var total = rows.length;
+  var pages = Math.ceil(total / GC_PER_PAGE) || 1;
+  if(GC_CUR_PAGE > pages) GC_CUR_PAGE = pages;
+  var start = (GC_CUR_PAGE-1)*GC_PER_PAGE;
+  var pageRows = rows.slice(start, start+GC_PER_PAGE);
+  var tbody = document.getElementById('gc-table-body');
+  if(!tbody) return;
+  if(!pageRows.length){
+    tbody.innerHTML = '<div style="padding:40px;text-align:center;color:#5d7a99;font-size:13px">No records found</div>';
+  } else {
+    tbody.innerHTML = pageRows.map(function(r, i){
+      var bg = i%2===0 ? 'transparent' : 'rgba(255,255,255,.015)';
+      var dotColor = '#4ade80'; // green for Approved by QC
+      return '<div style="display:grid;grid-template-columns:2fr 1.3fr 1.4fr 1.5fr 1.5fr 1fr 1.4fr;border-bottom:1px solid rgba(59,130,246,.05);background:'+bg+';transition:background .12s" onmouseenter="this.style.background=\'rgba(59,130,246,.04)\'" onmouseleave="this.style.background=\''+bg+'\'">'
+        + '<div style="padding:11px 16px;font-size:13px;font-weight:600;color:#e8edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.company+'</div>'
+        + '<div style="padding:11px 16px;font-size:13px;color:#e8edf5;font-family:\'IBM Plex Mono\',monospace">'+r.date+'</div>'
+        + '<div style="padding:11px 16px;font-size:13px;color:#e8edf5">'+r.caType+'</div>'
+        + '<div style="padding:11px 16px;font-size:13px;color:#e8edf5;font-family:\'IBM Plex Mono\',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.oldVal+'</div>'
+        + '<div style="padding:11px 16px;font-size:13px;color:#e8edf5;font-family:\'IBM Plex Mono\',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+r.newVal+'</div>'
+        + '<div style="padding:11px 16px;font-size:13px;color:#e8edf5">'+r.state+'</div>'
+        + '<div style="padding:11px 16px;font-size:13px;color:#e8edf5;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:'+dotColor+';flex-shrink:0;display:inline-block"></span>'+r.status+'</div>'
+        + '</div>';
+    }).join('');
+  }
+  gcRenderPagination(total, pages);
+}
+
+function gcRenderPagination(total, pages){
+  var wrap = document.getElementById('gc-pagination');
+  if(!wrap) return;
+  var btns = '';
+  var start = Math.max(1, GC_CUR_PAGE - 2);
+  var end   = Math.min(pages, start + 4);
+  if(end - start < 4) start = Math.max(1, end - 4);
+
+  for(var p = start; p <= end; p++){
+    var active = p === GC_CUR_PAGE;
+    btns += '<button onclick="gcGoPage('+p+')" style="min-width:28px;height:28px;padding:0 8px;border-radius:6px;font-size:12px;font-weight:'+(active?'700':'400')+';'
+      + (active ? 'background:rgba(59,130,246,.35);border:1px solid rgba(59,130,246,.6);color:#93c5fd;' : 'background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:#5d7a99;')
+      + 'cursor:pointer;font-family:\'IBM Plex Sans\',sans-serif;transition:all .13s">'+p+'</button>';
+  }
+
+  wrap.innerHTML =
+    '<div style="display:flex;align-items:center;justify-content:flex-end;gap:5px;padding:10px 16px;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap">'
+    + '<button onclick="gcGoPage(GC_CUR_PAGE-1)" style="width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:#5d7a99;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s" onmouseenter="this.style.borderColor=\'rgba(59,130,246,.4)\';this.style.color=\'#60a5fa\'" onmouseleave="this.style.borderColor=\'rgba(255,255,255,.08)\';this.style.color=\'\'">&#8249;</button>'
+    + btns
+    + '<button onclick="gcGoPage(GC_CUR_PAGE+1)" style="width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:#5d7a99;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s" onmouseenter="this.style.borderColor=\'rgba(59,130,246,.4)\';this.style.color=\'#60a5fa\'" onmouseleave="this.style.borderColor=\'rgba(255,255,255,.08)\';this.style.color=\'\'">&#8250;</button>'
+    + '<select onchange="gcChangePerPage(this.value)" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:#a8b8d0;font-size:11px;padding:5px 10px;cursor:pointer;outline:none;font-family:\'IBM Plex Sans\',sans-serif;margin-left:8px">'
+    + ['10','20','50'].map(function(v){ return '<option value="'+v+'" '+(parseInt(v)===GC_PER_PAGE?'selected':'')+' style="background:#0f1729">'+v+' / page</option>'; }).join('')
+    + '</select>'
+    + '</div>';
+}
+
+function gcGoPage(p){ var pages=Math.ceil(gcGetFiltered().length/GC_PER_PAGE)||1; if(p<1||p>pages)return; GC_CUR_PAGE=p; gcRender(); }
+function gcChangePerPage(v){ GC_PER_PAGE=parseInt(v); GC_CUR_PAGE=1; gcRender(); }
+
+function gcDownload(){
+  if(typeof XLSX === 'undefined'){ alert('Excel library not loaded yet, please try again.'); return; }
+  var headers = ['Company Name','Effective Date','CA Type','Old Value','New Value','State','Status'];
+  var wsData = [headers].concat(GC_DATA.map(function(r){ return [r.company,r.date,r.caType,r.oldVal,r.newVal,r.state,r.status]; }));
+  var ws = XLSX.utils.aoa_to_sheet(wsData);
+  ws['!cols'] = [{wch:32},{wch:14},{wch:16},{wch:22},{wch:22},{wch:10},{wch:18}];
+  var wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Golden Copy');
+  XLSX.writeFile(wb, 'Golden_Copy.xlsx');
+}
+
+function gcDownloadTemplate(){
+  if(typeof XLSX === 'undefined'){ alert('Excel library not loaded yet, please try again.'); return; }
+  var headers = ['Company Name','Effective Date','CA Type','Old Value','New Value','State','Status'];
+  var ws = XLSX.utils.aoa_to_sheet([headers]);
+  ws['!cols'] = [{wch:32},{wch:14},{wch:16},{wch:22},{wch:22},{wch:10},{wch:18}];
+  var wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'GC Template');
+  XLSX.writeFile(wb, 'Golden_Copy_Template.xlsx');
+}
+
+function initGoldenCopy(){
+  GC_CUR_PAGE = 1;
+  GC_PER_PAGE = 20;
+  GC_SEARCH = '';
+  var srch = document.getElementById('gc-search'); if(srch) srch.value = '';
+  gcSortCol = null;
+  gcSortAsc = true;
+  gcStateFilter = null;
+  gcStatusFilter = null;
+  gcUpdateFilterIcons();
+  ['company','date','caType','oldVal','newVal'].forEach(function(f){
+    var ic = document.getElementById('gc-sort-icon-'+f);
+    if(ic){ ic.innerHTML='\u21C5'; ic.style.color='#e8edf5'; }
+    var idx = ['company','date','caType','oldVal','newVal'].indexOf(f);
+    var th = document.getElementById('gc-th-'+idx);
+    if(th) th.style.color='#e8edf5';
+  });
+  gcRender();
+}
+
+// Close GC filter dropdowns on outside click
+document.addEventListener('click', function(e){
+  var sd = document.getElementById('gc-state-dropdown');
+  var td = document.getElementById('gc-status-dropdown');
+  if(sd && !sd.contains(e.target) && e.target.id !== 'gc-state-filter-btn') sd.style.display='none';
+  if(td && !td.contains(e.target) && e.target.id !== 'gc-status-filter-btn') td.style.display='none';
+});
+
+
+document.addEventListener('click', function(e){
+  var m = document.getElementById('ca-modal');
+  if(m && m.style.display === 'flex' && e.target === m){
+    caCloseModal();
   }
 });
 
