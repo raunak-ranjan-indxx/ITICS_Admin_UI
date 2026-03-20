@@ -567,11 +567,6 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
             <span class="s-subitem-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
             Master Data
           </button>
-          <!-- Master Data Request -->
-          <button class="s-subitem" data-view="master-data-request" onclick="setSubNav(this)">
-            <span class="s-subitem-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
-            Master Data Request
-          </button>
           <!-- Assign Company -->
           <button class="s-subitem" data-view="assign-company" onclick="setSubNav(this)">
             <span class="s-subitem-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
@@ -883,12 +878,33 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
               Add
             </button>
 
-            <!-- Download button -->
-            <button style="display:flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1e40af,#2563eb);border:1px solid rgba(59,130,246,.35);border-radius:7px;padding:7px 16px;font-size:12px;font-weight:600;color:rgba(255,255,255,.92);cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:filter .15s;white-space:nowrap;-webkit-font-smoothing:antialiased;box-shadow:0 2px 8px rgba(37,99,235,.2)"
-              onmouseenter="this.style.filter='brightness(1.12)'" onmouseleave="this.style.filter=''" onclick="mdDownload()">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download
+            <!-- Upload button -->
+            <button onclick="mdUploadOpen()" style="display:flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1e40af,#2563eb);border:1px solid rgba(59,130,246,.35);border-radius:7px;padding:7px 16px;font-size:12px;font-weight:600;color:rgba(255,255,255,.92);cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:filter .15s;white-space:nowrap;-webkit-font-smoothing:antialiased;box-shadow:0 2px 8px rgba(37,99,235,.2)"
+              onmouseenter="this.style.filter='brightness(1.12)'" onmouseleave="this.style.filter=''">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              Upload
             </button>
+
+            <!-- Download dropdown -->
+            <div style="position:relative" id="md-dl-wrap"
+              onmouseenter="document.getElementById('md-dl-menu').style.display='block'"
+              onmouseleave="document.getElementById('md-dl-menu').style.display='none'">
+              <button style="display:flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1e40af,#2563eb);border:1px solid rgba(59,130,246,.35);border-radius:7px;padding:7px 16px;font-size:12px;font-weight:600;color:rgba(255,255,255,.92);cursor:pointer;font-family:'IBM Plex Sans',sans-serif;white-space:nowrap;-webkit-font-smoothing:antialiased;box-shadow:0 2px 8px rgba(37,99,235,.2)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div id="md-dl-menu" style="display:none;position:absolute;top:100%;right:0;z-index:9999;background:rgba(13,18,38,.97);border:1px solid rgba(59,130,246,.2);border-radius:8px;padding:5px;min-width:180px;box-shadow:0 8px 32px rgba(0,0,0,.7);margin-top:4px">
+                <button onclick="mdDownload()" style="width:100%;text-align:left;background:transparent;border:none;border-radius:5px;padding:8px 12px;font-size:12px;color:#e8edf5;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;display:flex;align-items:center;gap:8px;transition:background .12s" onmouseenter="this.style.background='rgba(59,130,246,.12)'" onmouseleave="this.style.background='transparent'">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  Download
+                </button>
+                <button onclick="mdDownloadTemplate()" style="width:100%;text-align:left;background:transparent;border:none;border-radius:5px;padding:8px 12px;font-size:12px;color:#e8edf5;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;display:flex;align-items:center;gap:8px;transition:background .12s" onmouseenter="this.style.background='rgba(59,130,246,.12)'" onmouseleave="this.style.background='transparent'">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  Download Template
+                </button>
+              </div>
+            </div>
 
             <!-- Search box -->
             <div style="position:relative;display:flex;align-items:center">
@@ -905,40 +921,23 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
         <!-- Table -->
         <div style="flex:1;overflow:hidden;display:flex;flex-direction:column;background:#0b1628;border:1px solid rgba(255,255,255,.07);border-radius:10px">
           <div id="md-table-wrap" style="overflow:auto;overflow-x:auto;flex:1;-webkit-overflow-scrolling:touch">
-            <table id="md-table" style="width:100%;border-collapse:collapse;min-width:2200px;table-layout:fixed;height:100%">
+            <table id="md-table" style="width:100%;border-collapse:collapse;min-width:1350px;table-layout:fixed;height:100%">
               <colgroup id="md-colgroup">
                 <col style="width:240px">
                 <col style="width:170px">
                 <col style="width:130px">
-                <col style="width:220px">
-                <col style="width:220px">
-                <col style="width:220px">
-                <col style="width:140px">
                 <col style="width:250px">
                 <col style="width:200px">
                 <col style="width:200px">
-                <col style="width:160px">
               </colgroup>
               <thead id="md-thead">
                 <tr style="background:#091220;border-bottom:1px solid rgba(255,255,255,.07)">
                   <th onclick="mdSort(0)" style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=mdSortCol===0?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Company Name <span id="md-sort-icon-0" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
                   <th onclick="mdSort(1)" style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=mdSortCol===1?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">ISIN <span id="md-sort-icon-1" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
                   <th onclick="mdSort(2)" style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=mdSortCol===2?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">SEDOL <span id="md-sort-icon-2" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th onclick="mdSort(3)" style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=mdSortCol===3?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Website Link <span id="md-sort-icon-3" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th onclick="mdSort(4)" style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=mdSortCol===4?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Investor Contact No. <span id="md-sort-icon-4" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th onclick="mdSort(5)" style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=mdSortCol===5?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Investor Mail ID <span id="md-sort-icon-5" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th onclick="mdSort(6)" style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=mdSortCol===6?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">INDXX ID <span id="md-sort-icon-6" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
                   <th onclick="mdSort(7)" style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=mdSortCol===7?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Country of Incorporation <span id="md-sort-icon-7" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
                   <th onclick="mdSort(9)" style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=mdSortCol===9?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Created By <span id="md-sort-icon-9" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
                   <th onclick="mdSort(10)" style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=mdSortCol===10?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Modified By <span id="md-sort-icon-10" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;position:relative">
-                    <span style="display:inline-flex;align-items:center;gap:8px">Status
-                      <button onclick="toggleMdStatusFilter(event)" id="md-status-filter-btn" title="Filter by Status" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;border-radius:4px;padding:2px 4px;cursor:pointer;transition:opacity .15s;opacity:.7" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity=mdStatusFilter?'1':'.7'">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" id="md-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-                      </button>
-                    </span>
-                    <div id="md-status-dropdown" style="display:none;position:absolute;top:100%;left:0;z-index:9999;background:#111827;border:1px solid rgba(59,130,246,.25);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.7);min-width:200px;padding:6px;margin-top:4px"></div>
-                  </th>
                 </tr>
               </thead>
               <tbody id="md-tbody"></tbody>
@@ -974,7 +973,7 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
           </div>
           <div style="display:flex;align-items:center;gap:10px">
             <!-- Upload button -->
-            <button onclick="showView('master-upload')" style="display:flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1e40af,#2563eb);border:1px solid rgba(59,130,246,.35);border-radius:7px;padding:7px 16px;font-size:12px;font-weight:600;color:rgba(255,255,255,.92);cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:filter .15s;white-space:nowrap;box-shadow:0 2px 8px rgba(37,99,235,.2)" onmouseenter="this.style.filter='brightness(1.12)'" onmouseleave="this.style.filter=''">
+            <button onclick="mupCallerView='master-data-request';showView('master-upload')" style="display:flex;align-items:center;gap:6px;background:linear-gradient(135deg,#1e40af,#2563eb);border:1px solid rgba(59,130,246,.35);border-radius:7px;padding:7px 16px;font-size:12px;font-weight:600;color:rgba(255,255,255,.92);cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:filter .15s;white-space:nowrap;box-shadow:0 2px 8px rgba(37,99,235,.2)" onmouseenter="this.style.filter='brightness(1.12)'" onmouseleave="this.style.filter=''">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
               Upload
             </button>
@@ -1559,25 +1558,25 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
               </colgroup>
               <thead>
                 <tr style="background:#091220;border-bottom:1px solid rgba(255,255,255,.07)">
-                  <th onclick="atSort(0)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#b0c8e0;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#e2edf5'" onmouseleave="this.style.color=atSortCol===0?'#60a5fa':'#b0c8e0'"><span style="display:inline-flex;align-items:center;gap:5px">Companies <span id="at-sort-icon-0" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th onclick="atSort(1)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#b0c8e0;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#e2edf5'" onmouseleave="this.style.color=atSortCol===1?'#60a5fa':'#b0c8e0'"><span style="display:inline-flex;align-items:center;gap:5px">Module <span id="at-sort-icon-1" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th onclick="atSort(2)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#b0c8e0;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#e2edf5'" onmouseleave="this.style.color=atSortCol===2?'#60a5fa':'#b0c8e0'"><span style="display:inline-flex;align-items:center;gap:5px">Action <span id="at-sort-icon-2" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th onclick="atSort(3)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#b0c8e0;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#e2edf5'" onmouseleave="this.style.color=atSortCol===3?'#60a5fa':'#b0c8e0'">
+                  <th onclick="atSort(0)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=atSortCol===0?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Companies <span id="at-sort-icon-0" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
+                  <th onclick="atSort(1)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=atSortCol===1?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Module <span id="at-sort-icon-1" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
+                  <th onclick="atSort(2)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=atSortCol===2?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Action <span id="at-sort-icon-2" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
+                  <th onclick="atSort(3)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=atSortCol===3?'#60a5fa':'#e8edf5'">
                     <span style="display:inline-flex;align-items:center;gap:5px">
                       Action Taken By
                       <button onclick="toggleAtActionByFilter(event)" id="at-actionby-filter-btn" title="Filter" style="display:inline-flex;align-items:center;background:transparent;border:none;padding:2px 4px;cursor:pointer;opacity:.7" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='0.7'"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button>
                     </span>
                     <div id="at-actionby-dropdown" style="display:none;position:absolute;z-index:9999;background:#111827;border:1px solid rgba(59,130,246,.25);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.7);min-width:180px;padding:6px;margin-top:4px"></div>
                   </th>
-                  <th style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#b0c8e0;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;user-select:none;position:relative" onmouseenter="this.style.color='#e2edf5'" onmouseleave="this.style.color=atSortCol===4?'#60a5fa':'#b0c8e0'">
-                    <span style="display:inline-flex;align-items:center;gap:5px" onclick="atSort(4)" style="cursor:pointer">
-                      User Role <span id="at-sort-icon-4" style="font-size:13px;color:#e8edf5">&#8645;</span>
+                  <th style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;user-select:none;position:relative">
+                    <span style="display:inline-flex;align-items:center;gap:5px">
+                      User Role
                       <button onclick="toggleAtRoleFilter(event)" id="at-role-filter-btn" title="Filter by Role" style="display:inline-flex;align-items:center;background:transparent;border:none;padding:2px 4px;cursor:pointer;opacity:.7" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='0.7'"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button>
                     </span>
                     <div id="at-role-dropdown" style="display:none;position:absolute;top:100%;left:0;z-index:9999;background:#111827;border:1px solid rgba(59,130,246,.25);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.7);min-width:180px;padding:6px;margin-top:4px"></div>
                   </th>
-                  <th onclick="atSort(5)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#b0c8e0;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#e2edf5'" onmouseleave="this.style.color=atSortCol===5?'#60a5fa':'#b0c8e0'"><span style="display:inline-flex;align-items:center;gap:5px">Action Taken Date <span id="at-sort-icon-5" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th onclick="atSort(6)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#b0c8e0;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#e2edf5'" onmouseleave="this.style.color=atSortCol===6?'#60a5fa':'#b0c8e0'"><span style="display:inline-flex;align-items:center;gap:5px">Comments <span id="at-sort-icon-6" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
+                  <th onclick="atSort(5)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=atSortCol===5?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Action Taken Date <span id="at-sort-icon-5" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
+                  <th onclick="atSort(6)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=atSortCol===6?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Comments <span id="at-sort-icon-6" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
                 </tr>
               </thead>
               <tbody id="at-tbody"></tbody>
@@ -3023,7 +3022,7 @@ function drawDashboardCharts(){
     bx.imageSmoothingEnabled = false;
     var W = cssW, H = cssH;
 
-    var labels = ['Pending', 'IDK'];
+    var labels = ['Rejected', 'IDK'];
     var values = [65, 72];
     var maxV   = 80;
     var ySteps = [0,10,20,30,40,50,60,70,80];
@@ -4422,7 +4421,62 @@ function mdDownload(){
 
   var wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, 'Master Data');
-  XLSX.writeFile(wb, 'Companies.xlsx');
+  XLSX.writeFile(wb, 'Master data.xlsx');
+}
+
+/* ── MASTER DATA TEMPLATE DOWNLOAD ── */
+function mdDownloadTemplate(){
+  if(typeof XLSX === 'undefined'){ alert('Excel library not loaded yet, please try again.'); return; }
+
+  var wb = XLSX.utils.book_new();
+
+  // Helper: style a header cell
+  function hdrStyle(){
+    return {
+      font: { bold: true, color: { rgb: 'FFFFFF' } },
+      fill: { fgColor: { rgb: '1D3461' } },
+      alignment: { horizontal: 'center', vertical: 'center', wrapText: false }
+    };
+  }
+
+  // Helper: build a styled template sheet from a headers array
+  function makeSheet(headers){
+    var ws = XLSX.utils.aoa_to_sheet([headers]);
+    var range = XLSX.utils.decode_range(ws['!ref']);
+    for(var c = range.s.c; c <= range.e.c; c++){
+      var cell = ws[XLSX.utils.encode_cell({r:0, c:c})];
+      if(cell) cell.s = hdrStyle();
+    }
+    // Auto col widths — at least 20 chars
+    ws['!cols'] = headers.map(function(h){ return { wch: Math.max(h.length + 4, 20) }; });
+    return ws;
+  }
+
+  // ── Tab 1: Company ──
+  var companyHeaders = [
+    'Company Name','ISIN','SEDOL','Website Link',
+    'Investor Contact No.','Investor Mail ID','INDXX ID',
+    'Country of Incorporation','BD','Description'
+  ];
+  var wsCompany = makeSheet(companyHeaders);
+  XLSX.utils.book_append_sheet(wb, wsCompany, 'Company');
+
+  // ── Tab 2: Sector (L0) ──
+  var l0Headers = ['Level 0 Name','Level 0 Code','Description'];
+  var wsL0 = makeSheet(l0Headers);
+  XLSX.utils.book_append_sheet(wb, wsL0, 'Sector (L0)');
+
+  // ── Tab 3: Themes (L1) ──
+  var l1Headers = ['Level 1 Name','Level 1 Code','Level 0 Code','Description'];
+  var wsL1 = makeSheet(l1Headers);
+  XLSX.utils.book_append_sheet(wb, wsL1, 'Themes (L1)');
+
+  // ── Tab 4: Sub Themes (L2) ──
+  var l2Headers = ['Level 2 Name','Level 2 Code','Level 1 Code','Description'];
+  var wsL2 = makeSheet(l2Headers);
+  XLSX.utils.book_append_sheet(wb, wsL2, 'Sub Themes (L2)');
+
+  XLSX.writeFile(wb, 'Master_Data_Template.xlsx');
 }
 
 /* ── MASTER DATA TABLE ── */
@@ -4596,13 +4650,22 @@ function mdRender(){
     tr.style.transition = 'background .12s';
     tr.onmouseenter = function(){ tr.style.background = 'rgba(59,130,246,.07)'; };
     tr.onmouseleave = function(){ tr.style.background = idx % 2 === 0 ? 'transparent' : 'rgba(255,255,255,.025)'; };
+    var isZyxel = (r[0] === 'Zyxel Group Corp');
+    if(isZyxel){
+      tr.style.cursor = 'pointer';
+      tr.onmouseenter = function(){ tr.style.background = 'rgba(59,130,246,.14)'; tr.style.boxShadow = 'inset 0 0 0 1px rgba(59,130,246,.25)'; };
+      tr.onmouseleave = function(){ tr.style.background = idx % 2 === 0 ? 'transparent' : 'rgba(255,255,255,.025)'; tr.style.boxShadow = ''; };
+      (function(rowData){ tr.onclick = function(){ openCompanyUpdate(rowData); }; })(r);
+    }
     r.forEach(function(val, ci){
       if(ci === 8) return; // skip BD column
+      if(ci === 3 || ci === 4 || ci === 5 || ci === 6) return; // skip Website Link, Investor Contact, Investor Mail, INDXX ID
+      if(ci === 11) return; // skip Status column
       var td = document.createElement('td');
       td.setAttribute('style', tdStyles[ci] || tdStyles[0]);
-      // Status badge (col 11)
-      if(ci === 11){
-        td.innerHTML = statusDotBadge(val);
+      if(isZyxel) td.style.color = '#60a5fa';
+      if(ci === 0 && isZyxel){
+        td.innerHTML = '<span style="display:inline-flex;align-items:center;gap:6px"><span style="color:#60a5fa;font-weight:600">'+val+'</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7"><polyline points="9 18 15 12 9 6"/></svg></span>';
       } else {
         td.textContent = val;
       }
@@ -4615,7 +4678,7 @@ function mdRender(){
   var filler = document.createElement('tr');
   filler.style.cssText = 'height:auto';
   var ftd = document.createElement('td');
-  ftd.setAttribute('colspan','11');
+  ftd.setAttribute('colspan','6');
   ftd.style.cssText = 'padding:0;border:none';
   filler.appendChild(ftd);
   tbody.appendChild(filler);
@@ -5150,11 +5213,20 @@ function mdrDownload(){
 
 /* ══ MASTER UPLOAD ══ */
 var mupSelectedFile = null;
+var mupCallerView = 'master-data-request'; // tracks which view opened the upload
+
+function mdUploadOpen(){
+  mupCallerView = 'master-data';
+  mupClearFile();
+  showView('master-upload');
+}
+
 function mupCancel(){
   mupClearFile();
-  showView('master-data-request');
+  var returnView = mupCallerView || 'master-data-request';
+  showView(returnView);
   document.querySelectorAll('.s-subitem').forEach(function(b){ b.classList.remove('active'); });
-  var el = Array.from(document.querySelectorAll('.s-subitem')).find(function(b){ return b.dataset.view === 'master-data-request'; });
+  var el = Array.from(document.querySelectorAll('.s-subitem')).find(function(b){ return b.dataset.view === returnView; });
   if(el) el.classList.add('active');
 }
 
@@ -5183,10 +5255,11 @@ function mupSubmit(){
   document.body.appendChild(toast);
   setTimeout(function(){ toast.style.opacity='0'; toast.style.transition='opacity .4s'; setTimeout(function(){ toast.remove(); },400); }, 2800);
   mupClearFile();
-  // Navigate back to Master Data Request
-  showView('master-data-request');
+  // Navigate back to the view that opened the upload
+  var returnView = mupCallerView || 'master-data-request';
+  showView(returnView);
   document.querySelectorAll('.s-subitem').forEach(function(b){ b.classList.remove('active'); });
-  var el = Array.from(document.querySelectorAll('.s-subitem')).find(function(b){ return b.dataset.view === 'master-data-request'; });
+  var el = Array.from(document.querySelectorAll('.s-subitem')).find(function(b){ return b.dataset.view === returnView; });
   if(el) el.classList.add('active');
 }
 
@@ -5400,31 +5473,31 @@ var L2_DATA = [
 /* Table configs per category */
 var MD_TABLE_CONFIGS = {
   'Companies': {
-    minWidth: '2060px',
-    cols: [220,160,120,240,200,210,130,230,230,190,190,140],
-    headers: ['Company Name','ISIN','SEDOL','Website Link','Investor Contact No.','Investor Mail ID','INDXX ID','Country of Incorporation','BD','Created By','Modified By','Status'],
-    statusCol: 11,
+    minWidth: '1190px',
+    cols: [240,170,130,250,200,200],
+    headers: ['Company Name','ISIN','SEDOL','Country of Incorporation','Created By','Modified By'],
+    statusCol: -1,
     data: null,
   },
   'Level 0': {
-    minWidth: '1200px',
-    cols: [240,160,360,200,200,160],
-    headers: ['Level 0 Name','Level 0 Code','Description','Created By','Modified By','Status'],
-    statusCol: 5,
+    minWidth: '1040px',
+    cols: [240,160,360,200,200],
+    headers: ['Level 0 Name','Level 0 Code','Description','Created By','Modified By'],
+    statusCol: -1,
     data: L0_DATA,
   },
   'Level 1': {
-    minWidth: '1400px',
-    cols: [240,160,140,360,200,200,160],
-    headers: ['Level 1 Name','Level 1 Code','Level 0 Code','Description','Created By','Modified By','Status'],
-    statusCol: 6,
+    minWidth: '1240px',
+    cols: [240,160,140,360,200,200],
+    headers: ['Level 1 Name','Level 1 Code','Level 0 Code','Description','Created By','Modified By'],
+    statusCol: -1,
     data: L1_DATA,
   },
   'Level 2': {
-    minWidth: '1400px',
-    cols: [240,140,140,340,200,200,160],
-    headers: ['Level 2 Name','Level 2 Code','Level 1 Code','Description','Created By','Modified By','Status'],
-    statusCol: 6,
+    minWidth: '1240px',
+    cols: [240,140,140,340,200,200],
+    headers: ['Level 2 Name','Level 2 Code','Level 1 Code','Description','Created By','Modified By'],
+    statusCol: -1,
     data: L2_DATA,
   },
 };
@@ -5438,10 +5511,9 @@ function mdSwitchCategory(cat){
   if(cat === 'Companies'){
     // Restore colgroup
     var cg = document.getElementById('md-colgroup');
-    cg.innerHTML = '<col style="width:240px"><col style="width:170px"><col style="width:130px"><col style="width:220px"><col style="width:220px"><col style="width:220px"><col style="width:140px"><col style="width:250px"><col style="width:200px"><col style="width:200px"><col style="width:160px">';
-    // Restore full sortable thead
+    cg.innerHTML = '<col style="width:240px"><col style="width:170px"><col style="width:130px"><col style="width:250px"><col style="width:200px"><col style="width:200px">';
+    // Restore sortable thead — 6 visible columns (no Status)
     var thS = 'padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none';
-    var thStat = 'padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;position:relative';
     function sortTh(col, label){
       return '<th onclick="mdSort('+col+')" style="'+thS+'" onmouseenter="this.style.color=\'#fff\'" onmouseleave="this.style.color=mdSortCol==='+col+'?\'#60a5fa\':\'#e8edf5\'">'
         +'<span style="display:inline-flex;align-items:center;gap:5px">'+label+' <span id="md-sort-icon-'+col+'" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>';
@@ -5451,22 +5523,11 @@ function mdSwitchCategory(cat){
       + sortTh(0,'Company Name')
       + sortTh(1,'ISIN')
       + sortTh(2,'SEDOL')
-      + sortTh(3,'Website Link')
-      + sortTh(4,'Investor Contact No.')
-      + sortTh(5,'Investor Mail ID')
-      + sortTh(6,'INDXX ID')
       + sortTh(7,'Country of Incorporation')
       + sortTh(9,'Created By')
       + sortTh(10,'Modified By')
-      + '<th style="'+thStat+'">'
-        +'<span style="display:inline-flex;align-items:center;gap:8px">Status'
-        +'<button onclick="toggleMdStatusFilter(event)" id="md-status-filter-btn" title="Filter by Status" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;border-radius:4px;padding:2px 4px;cursor:pointer;transition:opacity .15s;opacity:.7" onmouseenter="this.style.opacity=\'1\'" onmouseleave="this.style.opacity=mdStatusFilter?\'1\':\'.7\'">'
-        +'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" id="md-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>'
-        +'</button></span>'
-        +'<div id="md-status-dropdown" style="display:none;position:absolute;top:100%;left:0;z-index:9999;background:#111827;border:1px solid rgba(59,130,246,.25);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.7);min-width:200px;padding:6px;margin-top:4px"></div>'
-        +'</th>'
       + '</tr>';
-    document.getElementById('md-table').style.minWidth = '2200px';
+    document.getElementById('md-table').style.minWidth = '1190px';
     // Reset sort state icons
     mdSortCol = -1; mdSortAsc = true;
     // Reset + render
@@ -5488,23 +5549,21 @@ function mdSwitchCategory(cat){
   // Reset level sort state
   mdLvlSortCol = -1; mdLvlSortAsc = true; mdLvlStatusFilter = null;
 
-  // Rebuild thead with sorting on all cols except last (Status)
+  // Rebuild thead with correct sort indices per category
   var thS = 'padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none';
   var thStat = 'padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;position:relative';
   var statusColIdx = cfg.statusCol;
+  // For Level 1: headers are Name/Code/L0Code(derived)/Desc/CreatedBy/ModifiedBy
+  // data indices:                    0    1    (injected)  2    3          4
+  var sortIndices = (mdCurrentCat === 'Level 1') ? [0,1,-1,2,3,4] : cfg.headers.map(function(h,i){ return i; });
   var headerHtml = '<tr style="background:#091220;border-bottom:1px solid rgba(255,255,255,.07)">';
   cfg.headers.forEach(function(h, i){
-    if(i === statusColIdx){
-      headerHtml += '<th style="'+thStat+'">'
-        +'<span style="display:inline-flex;align-items:center;gap:8px">'+h
-        +'<button onclick="toggleLvlStatusFilter(event)" id="lvl-status-filter-btn" title="Filter by Status" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;border-radius:4px;padding:2px 4px;cursor:pointer;transition:opacity .15s;opacity:.7" onmouseenter="this.style.opacity=\'1\'" onmouseleave="this.style.opacity=mdLvlStatusFilter?\'1\':\'.7\'">'
-        +'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" id="lvl-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>'
-        +'</button></span>'
-        +'<div id="lvl-status-dropdown" style="display:none;position:absolute;top:100%;left:0;z-index:9999;background:#111827;border:1px solid rgba(59,130,246,.25);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.7);min-width:180px;padding:6px;margin-top:4px"></div>'
-        +'</th>';
+    var dataIdx = sortIndices[i];
+    if(dataIdx === -1){
+      headerHtml += '<th style="'+thStat+'"><span style="display:inline-flex;align-items:center;gap:5px">'+h+'</span></th>';
     } else {
-      headerHtml += '<th onclick="mdLvlSort('+i+','+statusColIdx+')" style="'+thS+'" onmouseenter="this.style.color=\'#fff\'" onmouseleave="this.style.color=mdLvlSortCol==='+i+'?\'#60a5fa\':\'#e8edf5\'">'
-        +'<span style="display:inline-flex;align-items:center;gap:5px">'+h+' <span id="lvl-sort-icon-'+i+'" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>';
+      headerHtml += '<th onclick="mdLvlSort('+dataIdx+','+statusColIdx+')" style="'+thS+'" onmouseenter="this.style.color=\'#fff\'" onmouseleave="this.style.color=mdLvlSortCol==='+dataIdx+'?\'#60a5fa\':\'#e8edf5\'">';
+      headerHtml += '<span style="display:inline-flex;align-items:center;gap:5px">'+h+' <span id="lvl-sort-icon-'+dataIdx+'" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>';
     }
   });
   headerHtml += '</tr>';
@@ -5622,13 +5681,21 @@ function mdRenderGeneric(sourceData, statusColIdx){
       + (idx % 2 !== 0 ? 'background:rgba(255,255,255,.025)' : '');
     tr.onmouseenter = function(){ tr.style.background = 'rgba(59,130,246,.07)'; };
     tr.onmouseleave = function(){ tr.style.background = idx % 2 !== 0 ? 'rgba(255,255,255,.025)' : ''; };
+    var isFirstRow = (idx === 0);
+    if(isFirstRow){
+      tr.style.cursor = 'pointer';
+      tr.onmouseenter = function(){ tr.style.background = 'rgba(59,130,246,.14)'; tr.style.boxShadow = 'inset 0 0 0 1px rgba(59,130,246,.25)'; };
+      tr.onmouseleave = function(){ tr.style.background = idx % 2 !== 0 ? 'rgba(255,255,255,.025)' : ''; tr.style.boxShadow = ''; };
+      (function(rowData, cat){ tr.onclick = function(){ openLevelUpdate(rowData, cat); }; })(r, mdCurrentCat);
+    }
 
     r.forEach(function(val, ci){
+      if(ci === statusColIdx) return; // skip Status column
+      // Also skip the original data status column for L0 (ci=5), L1 (ci=5), L2 (ci=6)
+      if((mdCurrentCat === 'Level 0' || mdCurrentCat === 'Level 1') && ci === 5) return;
+      if(mdCurrentCat === 'Level 2' && ci === 6) return;
       var td = document.createElement('td');
-      if(ci === statusColIdx){
-        td.setAttribute('style','padding:0 20px 0 16px;white-space:nowrap');
-        td.innerHTML = statusDotBadge(val);
-      } else if(ci === 1 && mdCurrentCat === 'Companies'){
+      if(ci === 1 && mdCurrentCat === 'Companies'){
         // ISIN mono
         td.setAttribute('style','padding:0 16px;font-size:11.5px;font-family:"IBM Plex Mono",monospace;color:#e8edf5;white-space:nowrap');
         td.textContent = val;
@@ -5640,6 +5707,7 @@ function mdRenderGeneric(sourceData, statusColIdx){
         // Level 0/1 Code — plain white mono
         td.setAttribute('style','padding:0 16px;font-size:12px;font-family:"IBM Plex Mono",monospace;color:#e8edf5;white-space:nowrap;font-weight:500');
         td.textContent = val;
+        if(isFirstRow) td.style.color = '#60a5fa';
         tr.appendChild(td);
         // For Level 1: inject derived Level 0 Code cell immediately after
         if(mdCurrentCat === 'Level 1'){
@@ -5648,6 +5716,7 @@ function mdRenderGeneric(sourceData, statusColIdx){
           var tdL0 = document.createElement('td');
           tdL0.setAttribute('style','padding:0 16px;font-size:12px;font-family:"IBM Plex Mono",monospace;color:#e8edf5;white-space:nowrap;font-weight:500');
           tdL0.textContent = l0Code;
+          if(isFirstRow) tdL0.style.color = '#60a5fa';
           tr.appendChild(tdL0);
         }
         return;
@@ -5657,11 +5726,16 @@ function mdRenderGeneric(sourceData, statusColIdx){
         td.textContent = val;
       } else if(ci === 0){
         td.setAttribute('style','padding:0 16px;font-size:12px;font-weight:500;color:#e8edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap');
-        td.textContent = val;
+        if(isFirstRow){
+          td.innerHTML = '<span style="display:inline-flex;align-items:center;gap:6px"><span style="color:#60a5fa;font-weight:600">'+val+'</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:.7"><polyline points="9 18 15 12 9 6"/></svg></span>';
+        } else {
+          td.textContent = val;
+        }
       } else {
         td.setAttribute('style','padding:0 16px;font-size:11.5px;color:#e8edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap');
         td.textContent = val;
       }
+      if(isFirstRow) td.style.color = '#60a5fa';
       tr.appendChild(td);
     });
     tbody.appendChild(tr);
@@ -5728,30 +5802,33 @@ function mdPageGeneric(p){
 
 /* Master Data category dropdown */
 var MD_CATS = ['Companies','Level 0','Level 1','Level 2'];
+var MD_CAT_LABELS = {'Companies':'Companies','Level 0':'Sector (L0)','Level 1':'Themes (L1)','Level 2':'Sub Themes (L2)'};
 
 function buildMdDropdown(){
   var menu = document.getElementById('md-cat-menu');
   if(!menu || menu.children.length > 0) return;
   MD_CATS.forEach(function(cat){
     var btn = document.createElement('button');
-    btn.textContent = cat;
+    btn.textContent = MD_CAT_LABELS[cat] || cat;
     var isActive = cat === 'Companies';
     btn.style.cssText = 'display:block;width:100%;text-align:left;border:none;border-radius:5px;padding:8px 14px;font-size:12.5px;font-family:"IBM Plex Sans",sans-serif;cursor:pointer;transition:background .12s;-webkit-font-smoothing:antialiased;'
       + (isActive ? 'background:#1a3a6a;color:#60a5fa;font-weight:600;' : 'background:transparent;color:#94a3b8;font-weight:400;');
-    btn.onmouseenter = function(){ if(document.getElementById('md-cat-selected').textContent !== cat) this.style.background='rgba(59,130,246,.12)'; };
-    btn.onmouseleave = function(){ if(document.getElementById('md-cat-selected').textContent !== cat) this.style.background='transparent'; };
-    btn.onclick = function(){
-      var selectedCat = cat;
-      document.getElementById('md-cat-selected').textContent = selectedCat;
-      document.querySelectorAll('#md-cat-menu button').forEach(function(b){
-        var active = b.textContent === selectedCat;
-        b.style.background = active ? '#1a3a6a' : 'transparent';
-        b.style.color = active ? '#60a5fa' : '#94a3b8';
-        b.style.fontWeight = active ? '600' : '400';
-      });
-      closeMdDropdown();
-      mdSwitchCategory(selectedCat);
-    };
+    var labelText = MD_CAT_LABELS[cat] || cat;
+    btn.onmouseenter = function(){ if(document.getElementById('md-cat-selected').textContent !== labelText) this.style.background='rgba(59,130,246,.12)'; };
+    btn.onmouseleave = function(){ if(document.getElementById('md-cat-selected').textContent !== labelText) this.style.background='transparent'; };
+    btn.onclick = (function(internalCat, displayLabel){
+      return function(){
+        document.getElementById('md-cat-selected').textContent = displayLabel;
+        document.querySelectorAll('#md-cat-menu button').forEach(function(b){
+          var active = b.textContent === displayLabel;
+          b.style.background = active ? '#1a3a6a' : 'transparent';
+          b.style.color = active ? '#60a5fa' : '#94a3b8';
+          b.style.fontWeight = active ? '600' : '400';
+        });
+        closeMdDropdown();
+        mdSwitchCategory(internalCat);
+      };
+    })(cat, labelText);
     menu.appendChild(btn);
   });
 }
@@ -5821,7 +5898,7 @@ function buildLevelModal(cfg){
       </div>
       <div style="display:flex;align-items:center;gap:8px">
         <button id="${cfg.id}-save-btn" style="background:linear-gradient(135deg,#1e40af,#2563eb);border:1px solid rgba(59,130,246,.4);border-radius:7px;padding:7px 18px;font-size:12.5px;font-weight:600;color:#fff;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;box-shadow:0 2px 10px rgba(37,99,235,.3);transition:filter .15s" onmouseenter="this.style.filter='brightness(1.12)'" onmouseleave="this.style.filter=''">Save</button>
-        <button id="${cfg.id}-close-btn" style="width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#7a96b4;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;line-height:1" onmouseenter="this.style.background='rgba(239,68,68,.18)';this.style.color='#fca5a5'" onmouseleave="this.style.background='rgba(255,255,255,.05)';this.style.color='#7a96b4'">&#215;</button>
+        <button id="${cfg.id}-close-btn" style="background:transparent;border:1px solid rgba(255,255,255,.15);border-radius:7px;padding:7px 14px;font-size:12.5px;font-weight:600;color:#94a3b8;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:all .15s" onmouseenter="this.style.borderColor='rgba(255,255,255,.35)';this.style.color='#e8edf5'" onmouseleave="this.style.borderColor='rgba(255,255,255,.15)';this.style.color='#94a3b8'">Cancel</button>
       </div>
     </div>
     <div style="overflow-y:auto;padding:20px 22px 24px;flex:1">
@@ -5860,7 +5937,7 @@ function closeLevelAdd(modalId, fieldIds){
 function openLevel0Add(){
   buildLevelModal({
     id: 'level0-add-modal',
-    title: 'Level 0 Add',
+    title: 'Sector (L0) Add',
     subtitle: 'Fill in the details to add a new Level 0 record',
     fieldIds: ['l0-name','l0-code','l0-desc'],
     fields: [
@@ -5874,7 +5951,7 @@ function openLevel0Add(){
 function openLevel1Add(){
   buildLevelModal({
     id: 'level1-add-modal',
-    title: 'Level 1 Add',
+    title: 'Themes (L1) Add',
     subtitle: 'Fill in the details to add a new Level 1 record',
     fieldIds: ['l1-name','l1-code','l1-l0-code','l1-desc'],
     fields: [
@@ -5889,7 +5966,7 @@ function openLevel1Add(){
 function openLevel2Add(){
   buildLevelModal({
     id: 'level2-add-modal',
-    title: 'Level 2 Add',
+    title: 'Sub Themes (L2) Add',
     subtitle: 'Fill in the details to add a new Level 2 record',
     fieldIds: ['l2-name','l2-code','l2-l1-code','l2-desc'],
     fields: [
@@ -5924,7 +6001,7 @@ function openCompanyAdd(){
           Save
         </button>
         <!-- Close -->
-        <button onclick="closeCompanyAdd()" style="width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#7a96b4;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;line-height:1" onmouseenter="this.style.background='rgba(239,68,68,.18)';this.style.color='#fca5a5'" onmouseleave="this.style.background='rgba(255,255,255,.05)';this.style.color='#7a96b4'">&#215;</button>
+        <button onclick="closeCompanyAdd()" style="background:transparent;border:1px solid rgba(255,255,255,.15);border-radius:7px;padding:7px 14px;font-size:12.5px;font-weight:600;color:#94a3b8;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:all .15s" onmouseenter="this.style.borderColor='rgba(255,255,255,.35)';this.style.color='#e8edf5'" onmouseleave="this.style.borderColor='rgba(255,255,255,.15)';this.style.color='#94a3b8'">Cancel</button>
       </div>
     </div>
 
@@ -5995,15 +6072,6 @@ function openCompanyAdd(){
             onblur="this.style.borderColor='rgba(255,255,255,.1)';this.style.background='rgba(255,255,255,.04)';this.style.boxShadow=''"/>
         </div>
 
-        <!-- INDXX ID -->
-        <div>
-          <label style="display:block;font-size:10px;font-weight:700;color:#e8edf5;letter-spacing:1.1px;text-transform:uppercase;margin-bottom:6px">INDXX ID</label>
-          <input id="ca-indxx-id" type="text"
-            style="width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:9px 13px;font-size:13px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;outline:none;transition:all .15s"
-            onfocus="this.style.borderColor='rgba(59,130,246,.5)';this.style.background='rgba(59,130,246,.06)';this.style.boxShadow='0 0 0 2px rgba(59,130,246,.1)'"
-            onblur="this.style.borderColor='rgba(255,255,255,.1)';this.style.background='rgba(255,255,255,.04)';this.style.boxShadow=''"/>
-        </div>
-
         <!-- Country of Incorporation -->
         <div>
           <label style="display:block;font-size:10px;font-weight:700;color:#e8edf5;letter-spacing:1.1px;text-transform:uppercase;margin-bottom:6px">Country of Incorporation</label>
@@ -6036,7 +6104,7 @@ function closeCompanyAdd(){
   var m = document.getElementById('company-add-modal');
   if(m) m.style.display = 'none';
   // Clear all fields on close so reopening is always fresh
-  var allFields = ['ca-company-name','ca-description','ca-isin','ca-sedol','ca-website','ca-contact','ca-email','ca-indxx-id','ca-country','ca-bd'];
+  var allFields = ['ca-company-name','ca-description','ca-isin','ca-sedol','ca-website','ca-contact','ca-email','ca-country','ca-bd'];
   allFields.forEach(function(id){
     var el = document.getElementById(id);
     if(el){ el.value = ''; el.style.borderColor = ''; el.style.boxShadow = ''; }
@@ -6044,7 +6112,7 @@ function closeCompanyAdd(){
 }
 
 function saveCompanyAdd(){
-  var fields = ['ca-company-name','ca-isin','ca-sedol','ca-website','ca-contact','ca-email','ca-indxx-id','ca-country','ca-bd'];
+  var fields = ['ca-company-name','ca-isin','ca-sedol','ca-website','ca-contact','ca-email','ca-country','ca-bd'];
   var empty = fields.filter(function(id){ var el=document.getElementById(id); return el && !el.value.trim(); });
   if(empty.length){
     empty.forEach(function(id){
@@ -6054,7 +6122,7 @@ function saveCompanyAdd(){
     return;
   }
   // Success feedback — clear all fields first
-  var allFields = ['ca-company-name','ca-description','ca-isin','ca-sedol','ca-website','ca-contact','ca-email','ca-indxx-id','ca-country','ca-bd'];
+  var allFields = ['ca-company-name','ca-description','ca-isin','ca-sedol','ca-website','ca-contact','ca-email','ca-country','ca-bd'];
   allFields.forEach(function(id){
     var el = document.getElementById(id);
     if(el){ el.value = ''; el.style.borderColor = ''; el.style.boxShadow = ''; }
@@ -6067,6 +6135,210 @@ function saveCompanyAdd(){
   document.body.appendChild(toast);
   setTimeout(function(){ toast.style.opacity='0'; toast.style.transition='opacity .4s'; setTimeout(function(){ toast.remove(); },400); }, 2800);
 }
+
+function openCompanyUpdate(rowData){
+  // rowData: [Name(0), ISIN(1), SEDOL(2), Website(3), Contact(4), Email(5), INDXXID(6), Country(7), BD(8), CreatedBy(9), ModifiedBy(10), Status(11)]
+  var existing = document.getElementById('company-update-modal');
+  if(existing) existing.remove();
+
+  var m = document.createElement('div');
+  m.id = 'company-update-modal';
+  m.style.cssText = 'position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(5,10,22,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:fadeSlideIn .18s ease';
+
+  var inputStyle = "width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:9px 13px;font-size:13px;color:#e8edf5;font-family:'IBM Plex Sans',sans-serif;outline:none;transition:all .15s";
+  var inputMono  = "width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:9px 13px;font-size:13px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;outline:none;transition:all .15s";
+  var focusOn  = "this.style.borderColor='rgba(59,130,246,.5)';this.style.background='rgba(59,130,246,.06)';this.style.boxShadow='0 0 0 2px rgba(59,130,246,.1)'";
+  var focusOff = "this.style.borderColor='rgba(255,255,255,.1)';this.style.background='rgba(255,255,255,.04)';this.style.boxShadow=''";
+  var labelStyle = "display:block;font-size:10px;font-weight:700;color:#e8edf5;letter-spacing:1.1px;text-transform:uppercase;margin-bottom:6px";
+
+  m.innerHTML =
+    '<div style="background:#0f1829;border:1px solid rgba(59,130,246,.22);border-radius:14px;width:660px;max-width:96vw;max-height:92vh;display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,.85),inset 0 1px 0 rgba(255,255,255,.07);font-family:\'IBM Plex Sans\',sans-serif;overflow:hidden">' +
+
+    // Header
+    '<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 22px 14px;border-bottom:1px solid rgba(59,130,246,.14);flex-shrink:0">' +
+      '<div><div style="font-size:15px;font-weight:700;color:#e8edf5;letter-spacing:.3px">Company Update</div>' +
+      '<div style="font-size:10px;color:#5d7a99;margin-top:1px">Update the company details</div></div>' +
+      '<div style="display:flex;align-items:center;gap:8px">' +
+        '<button onclick="saveCompanyUpdate()" style="background:linear-gradient(135deg,#1e40af,#2563eb);border:1px solid rgba(59,130,246,.4);border-radius:7px;padding:7px 18px;font-size:12.5px;font-weight:600;color:#fff;cursor:pointer;font-family:\'IBM Plex Sans\',sans-serif;box-shadow:0 2px 10px rgba(37,99,235,.3);transition:filter .15s" onmouseenter="this.style.filter=\'brightness(1.12)\'" onmouseleave="this.style.filter=\'\'">Update</button>' +
+        '<button onclick="closeCompanyUpdate()" style="background:transparent;border:1px solid rgba(255,255,255,.15);border-radius:7px;padding:7px 14px;font-size:12.5px;font-weight:600;color:#94a3b8;cursor:pointer;font-family:\'IBM Plex Sans\',sans-serif;transition:all .15s" onmouseenter="this.style.borderColor=\'rgba(255,255,255,.35)\';this.style.color=\'#e8edf5\'" onmouseleave="this.style.borderColor=\'rgba(255,255,255,.15)\';this.style.color=\'#94a3b8\'">Cancel</button>' +
+      '</div>' +
+    '</div>' +
+
+    // Form body
+    '<div style="overflow-y:auto;padding:20px 22px 24px;flex:1">' +
+      '<div style="background:rgba(59,130,246,.04);border:1px solid rgba(59,130,246,.1);border-radius:10px;padding:20px 18px;display:grid;grid-template-columns:1fr 1fr;gap:16px 20px">' +
+
+        // Company Name
+        '<div style="grid-column:1/-1"><label style="' + labelStyle + '">Company Name</label>' +
+        '<input id="cu-company-name" type="text" value="" style="' + inputStyle + '" onfocus="' + focusOn + '" onblur="' + focusOff + '"/></div>' +
+
+        // Description
+        '<div style="grid-column:1/-1"><label style="' + labelStyle + '">Description</label>' +
+        '<textarea id="cu-description" rows="4" style="' + inputStyle + ';resize:vertical;line-height:1.6" onfocus="' + focusOn + '" onblur="' + focusOff + '"></textarea></div>' +
+
+        // ISIN
+        '<div><label style="' + labelStyle + '">ISIN</label>' +
+        '<input id="cu-isin" type="text" value="" style="' + inputMono + '" onfocus="' + focusOn + '" onblur="' + focusOff + '"/></div>' +
+
+        // SEDOL
+        '<div><label style="' + labelStyle + '">SEDOL</label>' +
+        '<input id="cu-sedol" type="text" value="" style="' + inputMono + '" onfocus="' + focusOn + '" onblur="' + focusOff + '"/></div>' +
+
+        // Website Link
+        '<div><label style="' + labelStyle + '">Website Link</label>' +
+        '<input id="cu-website" type="url" value="" style="' + inputStyle + '" onfocus="' + focusOn + '" onblur="' + focusOff + '"/></div>' +
+
+        // Investor Contact No.
+        '<div><label style="' + labelStyle + '">Investor Contact No.</label>' +
+        '<input id="cu-contact" type="tel" value="" style="' + inputMono + '" onfocus="' + focusOn + '" onblur="' + focusOff + '"/></div>' +
+
+        // Investor Mail ID
+        '<div><label style="' + labelStyle + '">Investor Mail ID</label>' +
+        '<input id="cu-email" type="email" value="" style="' + inputStyle + '" onfocus="' + focusOn + '" onblur="' + focusOff + '"/></div>' +
+
+        // Country of Incorporation
+        '<div><label style="' + labelStyle + '">Country of Incorporation</label>' +
+        '<input id="cu-country" type="text" value="" style="' + inputStyle + '" onfocus="' + focusOn + '" onblur="' + focusOff + '"/></div>' +
+
+        // BD
+        '<div style="grid-column:1/-1"><label style="' + labelStyle + '">BD</label>' +
+        '<textarea id="cu-bd" rows="4" style="' + inputStyle + ';resize:vertical;line-height:1.6" onfocus="' + focusOn + '" onblur="' + focusOff + '"></textarea></div>' +
+
+      '</div>' +
+    '</div>' +
+  '</div>';
+
+  m.addEventListener('click', function(e){ if(e.target === m) closeCompanyUpdate(); });
+  document.body.appendChild(m);
+
+  // Prefill fields
+  var nameEl    = document.getElementById('cu-company-name'); if(nameEl)    nameEl.value    = rowData[0]  || '';
+  var descEl    = document.getElementById('cu-description');  if(descEl)    descEl.value    = '';
+  var isinEl    = document.getElementById('cu-isin');         if(isinEl)    isinEl.value    = rowData[1]  || '';
+  var sedolEl   = document.getElementById('cu-sedol');        if(sedolEl)   sedolEl.value   = rowData[2]  || '';
+  var webEl     = document.getElementById('cu-website');      if(webEl)     webEl.value     = rowData[3]  || '';
+  var contEl    = document.getElementById('cu-contact');      if(contEl)    contEl.value    = rowData[4]  || '';
+  var emailEl   = document.getElementById('cu-email');        if(emailEl)   emailEl.value   = rowData[5]  || '';
+  var countryEl = document.getElementById('cu-country');      if(countryEl) countryEl.value = rowData[7]  || '';
+  var bdEl      = document.getElementById('cu-bd');           if(bdEl)      bdEl.value      = rowData[8]  || '';
+}
+
+function closeCompanyUpdate(){
+  var m = document.getElementById('company-update-modal');
+  if(m) m.remove();
+}
+
+function saveCompanyUpdate(){
+  var fields = ['cu-company-name','cu-isin','cu-sedol','cu-country'];
+  var empty = fields.filter(function(id){ var el=document.getElementById(id); return el && !el.value.trim(); });
+  if(empty.length){
+    empty.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el){ el.style.borderColor='rgba(239,68,68,.6)'; el.style.boxShadow='0 0 0 2px rgba(239,68,68,.12)'; }
+    });
+    return;
+  }
+  closeCompanyUpdate();
+  var toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;bottom:28px;right:24px;z-index:999999;background:linear-gradient(135deg,#052e16,#064e1e);border:1px solid #16a34a;border-radius:10px;padding:12px 20px;font-family:"IBM Plex Sans",sans-serif;font-size:13px;color:#4ade80;box-shadow:0 8px 32px rgba(0,0,0,.6);display:flex;align-items:center;gap:10px;animation:fadeSlideIn .2s ease';
+  toast.innerHTML = '<span style="font-size:16px">✓</span> Company updated successfully';
+  document.body.appendChild(toast);
+  setTimeout(function(){ toast.style.opacity='0'; toast.style.transition='opacity .4s'; setTimeout(function(){ toast.remove(); },400); }, 2800);
+}
+
+function openLevelUpdate(rowData, cat){
+  var existing = document.getElementById('level-update-modal');
+  if(existing) existing.remove();
+
+  var titles = { 'Level 0': 'Sector (L0) Update', 'Level 1': 'Themes (L1) Update', 'Level 2': 'Sub Themes (L2) Update' };
+  var subtitles = { 'Level 0': 'Update the Sector details', 'Level 1': 'Update the Theme details', 'Level 2': 'Update the Sub Theme details' };
+  var title = titles[cat] || 'Update';
+  var subtitle = subtitles[cat] || 'Update the details';
+
+  var inputStyle = "width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:9px 13px;font-size:13px;color:#e8edf5;font-family:'IBM Plex Sans',sans-serif;outline:none;transition:all .15s";
+  var inputMono  = "width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:9px 13px;font-size:13px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;outline:none;transition:all .15s";
+  var focusOn  = "this.style.borderColor='rgba(59,130,246,.5)';this.style.background='rgba(59,130,246,.06)';this.style.boxShadow='0 0 0 2px rgba(59,130,246,.1)'";
+  var focusOff = "this.style.borderColor='rgba(255,255,255,.1)';this.style.background='rgba(255,255,255,.04)';this.style.boxShadow=''";
+  var labelStyle = "display:block;font-size:10px;font-weight:700;color:#e8edf5;letter-spacing:1.1px;text-transform:uppercase;margin-bottom:6px";
+
+  // Build fields based on category
+  // L0: [Name(0), Code(1), Desc(2), CreatedBy(3), ModifiedBy(4), Status(5)]
+  // L1: [Name(0), Code(1), Desc(2), CreatedBy(3), ModifiedBy(4), Status(5)]
+  // L2: [Name(0), Code(1), L1Code(2), Desc(3), CreatedBy(4), ModifiedBy(5), Status(6)]
+  var fieldsHtml = '';
+
+  if(cat === 'Level 0'){
+    fieldsHtml =
+      '<div style="grid-column:1/-1"><label style="'+labelStyle+'">Level 0 Name</label><input id="lu-name" type="text" style="'+inputStyle+'" onfocus="'+focusOn+'" onblur="'+focusOff+'"/></div>' +
+      '<div><label style="'+labelStyle+'">Level 0 Code</label><input id="lu-code" type="text" style="'+inputMono+'" onfocus="'+focusOn+'" onblur="'+focusOff+'"/></div>' +
+      '<div style="grid-column:1/-1"><label style="'+labelStyle+'">Description</label><textarea id="lu-desc" rows="4" style="'+inputStyle+';resize:vertical;line-height:1.6" onfocus="'+focusOn+'" onblur="'+focusOff+'"></textarea></div>';
+  } else if(cat === 'Level 1'){
+    fieldsHtml =
+      '<div style="grid-column:1/-1"><label style="'+labelStyle+'">Level 1 Name</label><input id="lu-name" type="text" style="'+inputStyle+'" onfocus="'+focusOn+'" onblur="'+focusOff+'"/></div>' +
+      '<div><label style="'+labelStyle+'">Level 1 Code</label><input id="lu-code" type="text" style="'+inputMono+'" onfocus="'+focusOn+'" onblur="'+focusOff+'"/></div>' +
+      '<div><label style="'+labelStyle+'">Level 0 Code</label><input id="lu-l0code" type="text" style="'+inputMono+'" onfocus="'+focusOn+'" onblur="'+focusOff+'"/></div>' +
+      '<div style="grid-column:1/-1"><label style="'+labelStyle+'">Description</label><textarea id="lu-desc" rows="4" style="'+inputStyle+';resize:vertical;line-height:1.6" onfocus="'+focusOn+'" onblur="'+focusOff+'"></textarea></div>';
+  } else if(cat === 'Level 2'){
+    fieldsHtml =
+      '<div style="grid-column:1/-1"><label style="'+labelStyle+'">Level 2 Name</label><input id="lu-name" type="text" style="'+inputStyle+'" onfocus="'+focusOn+'" onblur="'+focusOff+'"/></div>' +
+      '<div><label style="'+labelStyle+'">Level 2 Code</label><input id="lu-code" type="text" style="'+inputMono+'" onfocus="'+focusOn+'" onblur="'+focusOff+'"/></div>' +
+      '<div><label style="'+labelStyle+'">Level 1 Code</label><input id="lu-l1code" type="text" style="'+inputMono+'" onfocus="'+focusOn+'" onblur="'+focusOff+'"/></div>' +
+      '<div style="grid-column:1/-1"><label style="'+labelStyle+'">Description</label><textarea id="lu-desc" rows="4" style="'+inputStyle+';resize:vertical;line-height:1.6" onfocus="'+focusOn+'" onblur="'+focusOff+'"></textarea></div>';
+  }
+
+  var m = document.createElement('div');
+  m.id = 'level-update-modal';
+  m.style.cssText = 'position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(5,10,22,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:fadeSlideIn .18s ease';
+  m.innerHTML =
+    '<div style="background:#0f1829;border:1px solid rgba(59,130,246,.22);border-radius:14px;width:600px;max-width:96vw;max-height:92vh;display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,.85),inset 0 1px 0 rgba(255,255,255,.07);font-family:\'IBM Plex Sans\',sans-serif;overflow:hidden">' +
+    '<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 22px 14px;border-bottom:1px solid rgba(59,130,246,.14);flex-shrink:0">' +
+      '<div><div style="font-size:15px;font-weight:700;color:#e8edf5;letter-spacing:.3px">'+title+'</div>' +
+      '<div style="font-size:10px;color:#5d7a99;margin-top:1px">'+subtitle+'</div></div>' +
+      '<div style="display:flex;align-items:center;gap:8px">' +
+        '<button onclick="saveLevelUpdate()" style="background:linear-gradient(135deg,#1e40af,#2563eb);border:1px solid rgba(59,130,246,.4);border-radius:7px;padding:7px 18px;font-size:12.5px;font-weight:600;color:#fff;cursor:pointer;font-family:\'IBM Plex Sans\',sans-serif;box-shadow:0 2px 10px rgba(37,99,235,.3);transition:filter .15s" onmouseenter="this.style.filter=\'brightness(1.12)\'" onmouseleave="this.style.filter=\'\'">Update</button>' +
+        '<button onclick="closeLevelUpdate()" style="background:transparent;border:1px solid rgba(255,255,255,.15);border-radius:7px;padding:7px 14px;font-size:12.5px;font-weight:600;color:#94a3b8;cursor:pointer;font-family:\'IBM Plex Sans\',sans-serif;transition:all .15s" onmouseenter="this.style.borderColor=\'rgba(255,255,255,.35)\';this.style.color=\'#e8edf5\'" onmouseleave="this.style.borderColor=\'rgba(255,255,255,.15)\';this.style.color=\'#94a3b8\'">Cancel</button>' +
+      '</div>' +
+    '</div>' +
+    '<div style="overflow-y:auto;padding:20px 22px 24px;flex:1">' +
+      '<div style="background:rgba(59,130,246,.04);border:1px solid rgba(59,130,246,.1);border-radius:10px;padding:20px 18px;display:grid;grid-template-columns:1fr 1fr;gap:16px 20px">' +
+        fieldsHtml +
+      '</div>' +
+    '</div>' +
+    '</div>';
+
+  m.addEventListener('click', function(e){ if(e.target === m) closeLevelUpdate(); });
+  document.body.appendChild(m);
+
+  // Prefill values
+  var nameEl = document.getElementById('lu-name'); if(nameEl) nameEl.value = rowData[0] || '';
+  var codeEl = document.getElementById('lu-code'); if(codeEl) codeEl.value = rowData[1] || '';
+  var descEl = document.getElementById('lu-desc');
+  if(cat === 'Level 0' || cat === 'Level 1'){
+    if(descEl) descEl.value = rowData[2] || '';
+    var l0El = document.getElementById('lu-l0code');
+    if(l0El){ var l0Num = parseInt((rowData[1]||'').substring(0,2),10); l0El.value = '00'+(l0Num<10?'0'+l0Num:String(l0Num)); }
+  } else if(cat === 'Level 2'){
+    var l1codeEl = document.getElementById('lu-l1code'); if(l1codeEl) l1codeEl.value = rowData[2] || '';
+    if(descEl) descEl.value = rowData[3] || '';
+  }
+}
+
+function closeLevelUpdate(){
+  var m = document.getElementById('level-update-modal');
+  if(m) m.remove();
+}
+
+function saveLevelUpdate(){
+  var nameEl = document.getElementById('lu-name');
+  if(nameEl && !nameEl.value.trim()){ nameEl.style.borderColor='rgba(239,68,68,.6)'; nameEl.style.boxShadow='0 0 0 2px rgba(239,68,68,.12)'; return; }
+  closeLevelUpdate();
+  var toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;bottom:28px;right:24px;z-index:999999;background:linear-gradient(135deg,#052e16,#064e1e);border:1px solid #16a34a;border-radius:10px;padding:12px 20px;font-family:"IBM Plex Sans",sans-serif;font-size:13px;color:#4ade80;box-shadow:0 8px 32px rgba(0,0,0,.6);display:flex;align-items:center;gap:10px;animation:fadeSlideIn .2s ease';
+  toast.innerHTML = '<span style="font-size:16px">✓</span> Record updated successfully';
+  document.body.appendChild(toast);
+  setTimeout(function(){ toast.style.opacity='0'; toast.style.transition='opacity .4s'; setTimeout(function(){ toast.remove(); },400); }, 2800);
+}
+
 
 /* ══════════════════
    REPORTS MODULE JS
