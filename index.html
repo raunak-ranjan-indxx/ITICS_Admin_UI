@@ -1153,30 +1153,47 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
 
         <!-- Table card -->
         <div style="flex:1;overflow:hidden;display:flex;flex-direction:column;background:#0b1628;border:1px solid rgba(255,255,255,.07);border-radius:10px">
-          <div style="overflow:auto;flex:1;-webkit-overflow-scrolling:touch">
-            <table id="ac-table" style="width:100%;border-collapse:collapse;table-layout:fixed;min-width:900px;height:100%">
+          <div style="overflow-x:auto;overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch">
+            <table id="ac-table" style="border-collapse:collapse;table-layout:fixed;width:100%;min-width:1050px;height:100%">
               <colgroup>
-                <col style="width:26%">
-                <col style="width:16%">
-                <col style="width:13%">
-                <col style="width:16%">
+                <col style="width:20%">
                 <col style="width:14%">
-                <col style="width:15%">
+                <col style="width:8%">
+                <col style="width:14%">
+                <col style="width:11%">
+                <col style="width:13%">
+                <col style="width:20%">
               </colgroup>
               <thead id="ac-thead">
                 <tr style="background:#091220;border-bottom:1px solid rgba(255,255,255,.07)">
-                  <th onclick="acSort(0)" style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=acSortCol===0?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Company Name <span id="ac-sort-icon-0" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th onclick="acSort(1)" style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=acSortCol===1?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">ISIN <span id="ac-sort-icon-1" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th onclick="acSort(2)" style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=acSortCol===2?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">SEDOL <span id="ac-sort-icon-2" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th onclick="acSort(3)" style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=acSortCol===3?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Analyst ID <span id="ac-sort-icon-3" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th onclick="acSort(4)" style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=acSortCol===4?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">QC ID <span id="ac-sort-icon-4" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
-                  <th style="padding:16px 20px 16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;position:relative">
-                    <span style="display:inline-flex;align-items:center;gap:8px">Status
-                      <button onclick="toggleAcStatusFilter(event)" id="ac-status-filter-btn" title="Filter" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;border-radius:4px;padding:2px 4px;cursor:pointer;opacity:.7" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity=acStatusFilter?'1':'.7'">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" id="ac-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                  <th onclick="acSort(0)" style="padding:14px 18px;text-align:left;font-size:12px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=acSortCol===0?'#60a5fa':'#e8edf5'">
+                    <span style="display:inline-flex;align-items:center;gap:6px">Company Name <span id="ac-sort-icon-0" style="font-size:12px;color:#e8edf5">&#8645;</span></span>
+                  </th>
+                  <th onclick="acSort(1)" style="padding:14px 14px;text-align:left;font-size:12px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=acSortCol===1?'#60a5fa':'#e8edf5'">
+                    <span style="display:inline-flex;align-items:center;gap:6px">ISIN <span id="ac-sort-icon-1" style="font-size:12px;color:#e8edf5">&#8645;</span></span>
+                  </th>
+                  <th onclick="acSort(2)" style="padding:14px 10px;text-align:left;font-size:12px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=acSortCol===2?'#60a5fa':'#e8edf5'">
+                    <span style="display:inline-flex;align-items:center;gap:6px">SEDOL <span id="ac-sort-icon-2" style="font-size:12px;color:#e8edf5">&#8645;</span></span>
+                  </th>
+                  <th onclick="acSort(3)" style="padding:14px 14px;text-align:left;font-size:12px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=acSortCol===3?'#60a5fa':'#e8edf5'">
+                    <span style="display:inline-flex;align-items:center;gap:6px">Analyst ID <span id="ac-sort-icon-3" style="font-size:12px;color:#e8edf5">&#8645;</span></span>
+                  </th>
+                  <th onclick="acSort(4)" style="padding:14px 14px;text-align:left;font-size:12px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=acSortCol===4?'#60a5fa':'#e8edf5'">
+                    <span style="display:inline-flex;align-items:center;gap:6px">QC ID <span id="ac-sort-icon-4" style="font-size:12px;color:#e8edf5">&#8645;</span></span>
+                  </th>
+                  <th style="padding:14px 14px;text-align:left;font-size:12px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;position:relative">
+                    <span style="display:inline-flex;align-items:center;gap:8px">Company Type
+                      <button onclick="toggleAcTypeFilter(event)" id="ac-type-filter-btn" title="Filter by Company Type" style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:5px;cursor:pointer;opacity:.8;flex-shrink:0;transition:all .15s" onmouseenter="this.style.opacity='1';this.style.background='rgba(59,130,246,.22)'" onmouseleave="this.style.opacity='.8';this.style.background='rgba(59,130,246,.1)'">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" id="ac-type-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
                       </button>
                     </span>
-                    <div id="ac-status-dropdown" style="display:none;position:absolute;top:100%;left:0;z-index:9999;background:#111827;border:1px solid rgba(59,130,246,.25);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.7);min-width:180px;padding:6px;margin-top:4px"></div>
+                  </th>
+                  <th style="padding:14px 14px;text-align:left;font-size:12px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;position:relative">
+                    <span style="display:inline-flex;align-items:center;gap:8px">Status
+                      <button onclick="toggleAcStatusFilter(event)" id="ac-status-filter-btn" title="Filter by Status" style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:5px;cursor:pointer;opacity:.8;flex-shrink:0;transition:all .15s" onmouseenter="this.style.opacity='1';this.style.background='rgba(59,130,246,.22)'" onmouseleave="this.style.opacity='.8';this.style.background='rgba(59,130,246,.1)'">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" id="ac-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                      </button>
+                    </span>
                   </th>
                 </tr>
               </thead>
@@ -1383,20 +1400,16 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                   <th onclick="iticsSort('analyst',3)" style="padding:14px 20px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">SEDOL <span id="itics-sort-analyst-3" style="font-size:13px">&#8645;</span></span></th>
                   <th onclick="iticsSort('analyst',4)" style="padding:14px 20px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">FY Ending Date <span id="itics-sort-analyst-4" style="font-size:13px">&#8645;</span></span></th>
                   <th onclick="iticsSort('analyst',5)" style="padding:14px 20px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;position:relative;cursor:default;user-select:none">
-                    <span style="display:inline-flex;align-items:center;gap:7px">From
-                      <button onclick="iticsToggleFilter(event,'analyst','from')" id="itics-filter-btn-analyst-from" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;padding:1px 3px;cursor:pointer;border-radius:3px;transition:opacity .15s;opacity:.65" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='.65'">
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" id="itics-filter-icon-analyst-from"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-                      </button>
+                    <span style="display:inline-flex;align-items:center;gap:10px">Company Type
+                      <button onclick="iticsToggleFilter(event,'analyst','from')" id="itics-filter-btn-analyst-from" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:5px;cursor:pointer;opacity:.8;flex-shrink:0;transition:all .15s" onmouseenter="this.style.opacity='1';this.style.background='rgba(59,130,246,.22)'" onmouseleave="this.style.opacity='.8';this.style.background='rgba(59,130,246,.1)'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" id="itics-filter-icon-analyst-from"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button>
                     </span>
-                    <div id="itics-filter-analyst-from" style="display:none;position:absolute;top:calc(100% + 4px);left:0;z-index:9999;background:#0f1729;border:1px solid rgba(255,255,255,.1);border-radius:7px;box-shadow:0 8px 28px rgba(0,0,0,.65);min-width:180px;padding:4px;cursor:default"></div>
+                    
                   </th>
                   <th onclick="iticsSort('analyst',6)" style="padding:14px 20px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;position:relative;cursor:default;user-select:none">
-                    <span style="display:inline-flex;align-items:center;gap:7px">Status
-                      <button onclick="iticsToggleFilter(event,'analyst','status')" id="itics-filter-btn-analyst-status" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;padding:1px 3px;cursor:pointer;border-radius:3px;transition:opacity .15s;opacity:.65" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='.65'">
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" id="itics-filter-icon-analyst-status"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-                      </button>
+                    <span style="display:inline-flex;align-items:center;gap:10px">Status
+                      <button onclick="iticsToggleFilter(event,'analyst','status')" id="itics-filter-btn-analyst-status" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:5px;cursor:pointer;opacity:.8;flex-shrink:0;transition:all .15s" onmouseenter="this.style.opacity='1';this.style.background='rgba(59,130,246,.22)'" onmouseleave="this.style.opacity='.8';this.style.background='rgba(59,130,246,.1)'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" id="itics-filter-icon-analyst-status"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button>
                     </span>
-                    <div id="itics-filter-analyst-status" style="display:none;position:absolute;top:calc(100% + 4px);right:0;z-index:9999;background:#0f1729;border:1px solid rgba(255,255,255,.1);border-radius:7px;box-shadow:0 8px 28px rgba(0,0,0,.65);min-width:180px;padding:4px;cursor:default"></div>
+                    
                   </th>
                 </tr>
               </thead>
@@ -1431,20 +1444,16 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                   <th onclick="iticsSort('qc',3)" style="padding:14px 20px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">SEDOL <span id="itics-sort-qc-3" style="font-size:13px">&#8645;</span></span></th>
                   <th onclick="iticsSort('qc',4)" style="padding:14px 20px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">FY Ending Date <span id="itics-sort-qc-4" style="font-size:13px">&#8645;</span></span></th>
                   <th onclick="iticsSort('qc',5)" style="padding:14px 20px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;position:relative;cursor:default;user-select:none">
-                    <span style="display:inline-flex;align-items:center;gap:7px">From
-                      <button onclick="iticsToggleFilter(event,'qc','from')" id="itics-filter-btn-qc-from" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;padding:1px 3px;cursor:pointer;border-radius:3px;transition:opacity .15s;opacity:.65" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='.65'">
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" id="itics-filter-icon-qc-from"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-                      </button>
+                    <span style="display:inline-flex;align-items:center;gap:10px">Company Type
+                      <button onclick="iticsToggleFilter(event,'qc','from')" id="itics-filter-btn-qc-from" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:5px;cursor:pointer;opacity:.8;flex-shrink:0;transition:all .15s" onmouseenter="this.style.opacity='1';this.style.background='rgba(59,130,246,.22)'" onmouseleave="this.style.opacity='.8';this.style.background='rgba(59,130,246,.1)'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" id="itics-filter-icon-qc-from"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button>
                     </span>
-                    <div id="itics-filter-qc-from" style="display:none;position:absolute;top:calc(100% + 4px);left:0;z-index:9999;background:#0f1729;border:1px solid rgba(255,255,255,.1);border-radius:7px;box-shadow:0 8px 28px rgba(0,0,0,.65);min-width:180px;padding:4px;cursor:default"></div>
+                    
                   </th>
                   <th onclick="iticsSort('qc',6)" style="padding:14px 20px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;position:relative;cursor:default;user-select:none">
-                    <span style="display:inline-flex;align-items:center;gap:7px">Status
-                      <button onclick="iticsToggleFilter(event,'qc','status')" id="itics-filter-btn-qc-status" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;padding:1px 3px;cursor:pointer;border-radius:3px;transition:opacity .15s;opacity:.65" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='.65'">
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" id="itics-filter-icon-qc-status"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-                      </button>
+                    <span style="display:inline-flex;align-items:center;gap:10px">Status
+                      <button onclick="iticsToggleFilter(event,'qc','status')" id="itics-filter-btn-qc-status" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:5px;cursor:pointer;opacity:.8;flex-shrink:0;transition:all .15s" onmouseenter="this.style.opacity='1';this.style.background='rgba(59,130,246,.22)'" onmouseleave="this.style.opacity='.8';this.style.background='rgba(59,130,246,.1)'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" id="itics-filter-icon-qc-status"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button>
                     </span>
-                    <div id="itics-filter-qc-status" style="display:none;position:absolute;top:calc(100% + 4px);right:0;z-index:9999;background:#0f1729;border:1px solid rgba(255,255,255,.1);border-radius:7px;box-shadow:0 8px 28px rgba(0,0,0,.65);min-width:180px;padding:4px;cursor:default"></div>
+                    
                   </th>
                 </tr>
               </thead>
@@ -1466,10 +1475,10 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
         <!-- ITICS Committee Table -->
         <div id="itics-table-committee" style="display:none;flex:1;overflow:hidden;flex-direction:column;background:#0b1628;border:1px solid rgba(255,255,255,.07);border-radius:10px">
           <div style="overflow:auto;overflow-x:auto;flex:1;-webkit-overflow-scrolling:touch">
-            <table style="width:100%;border-collapse:collapse;min-width:1100px;table-layout:fixed;height:100%">
+            <table style="width:100%;border-collapse:collapse;min-width:1180px;table-layout:fixed;height:100%">
               <colgroup>
                 <col style="width:120px"><col style="width:240px"><col style="width:175px">
-                <col style="width:120px"><col style="width:155px"><col style="width:180px"><col style="width:150px">
+                <col style="width:120px"><col style="width:155px"><col style="width:160px"><col style="width:210px">
               </colgroup>
               <thead>
                 <tr style="background:#091220;border-bottom:1px solid rgba(255,255,255,.07)">
@@ -1479,20 +1488,16 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                   <th onclick="iticsSort('committee',3)" style="padding:14px 20px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">SEDOL <span id="itics-sort-committee-3" style="font-size:13px">&#8645;</span></span></th>
                   <th onclick="iticsSort('committee',4)" style="padding:14px 20px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">FY Ending Date <span id="itics-sort-committee-4" style="font-size:13px">&#8645;</span></span></th>
                   <th onclick="iticsSort('committee',5)" style="padding:14px 20px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;position:relative;cursor:default;user-select:none">
-                    <span style="display:inline-flex;align-items:center;gap:7px">From
-                      <button onclick="iticsToggleFilter(event,'committee','from')" id="itics-filter-btn-committee-from" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;padding:1px 3px;cursor:pointer;border-radius:3px;transition:opacity .15s;opacity:.65" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='.65'">
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" id="itics-filter-icon-committee-from"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-                      </button>
+                    <span style="display:inline-flex;align-items:center;gap:10px">Company Type
+                      <button onclick="iticsToggleFilter(event,'committee','from')" id="itics-filter-btn-committee-from" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:5px;cursor:pointer;opacity:.8;flex-shrink:0;transition:all .15s" onmouseenter="this.style.opacity='1';this.style.background='rgba(59,130,246,.22)'" onmouseleave="this.style.opacity='.8';this.style.background='rgba(59,130,246,.1)'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" id="itics-filter-icon-committee-from"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button>
                     </span>
-                    <div id="itics-filter-committee-from" style="display:none;position:absolute;top:calc(100% + 4px);left:0;z-index:9999;background:#0f1729;border:1px solid rgba(255,255,255,.1);border-radius:7px;box-shadow:0 8px 28px rgba(0,0,0,.65);min-width:180px;padding:4px;cursor:default"></div>
+                    
                   </th>
                   <th onclick="iticsSort('committee',6)" style="padding:14px 20px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;position:relative;cursor:default;user-select:none">
-                    <span style="display:inline-flex;align-items:center;gap:7px">Status
-                      <button onclick="iticsToggleFilter(event,'committee','status')" id="itics-filter-btn-committee-status" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;padding:1px 3px;cursor:pointer;border-radius:3px;transition:opacity .15s;opacity:.65" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='.65'">
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" id="itics-filter-icon-committee-status"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-                      </button>
+                    <span style="display:inline-flex;align-items:center;gap:10px">Status
+                      <button onclick="iticsToggleFilter(event,'committee','status')" id="itics-filter-btn-committee-status" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:5px;cursor:pointer;opacity:.8;flex-shrink:0;transition:all .15s" onmouseenter="this.style.opacity='1';this.style.background='rgba(59,130,246,.22)'" onmouseleave="this.style.opacity='.8';this.style.background='rgba(59,130,246,.1)'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" id="itics-filter-icon-committee-status"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button>
                     </span>
-                    <div id="itics-filter-committee-status" style="display:none;position:absolute;top:calc(100% + 4px);right:0;z-index:9999;background:#0f1729;border:1px solid rgba(255,255,255,.1);border-radius:7px;box-shadow:0 8px 28px rgba(0,0,0,.65);min-width:180px;padding:4px;cursor:default"></div>
+                    
                   </th>
                 </tr>
               </thead>
@@ -1562,18 +1567,16 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                   <th onclick="atSort(1)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=atSortCol===1?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Module <span id="at-sort-icon-1" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
                   <th onclick="atSort(2)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=atSortCol===2?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Action <span id="at-sort-icon-2" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
                   <th onclick="atSort(3)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=atSortCol===3?'#60a5fa':'#e8edf5'">
-                    <span style="display:inline-flex;align-items:center;gap:5px">
+                    <span style="display:inline-flex;align-items:center;gap:10px">
                       Action Taken By
-                      <button onclick="toggleAtActionByFilter(event)" id="at-actionby-filter-btn" title="Filter" style="display:inline-flex;align-items:center;background:transparent;border:none;padding:2px 4px;cursor:pointer;opacity:.7" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='0.7'"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button>
+                      <button onclick="toggleAtActionByFilter(event)" id="at-actionby-filter-btn" title="Filter by Action Taken By" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:5px;cursor:pointer;opacity:.8;flex-shrink:0;transition:all .15s" onmouseenter="this.style.opacity='1';this.style.background='rgba(59,130,246,.22)'" onmouseleave="this.style.opacity='.8';this.style.background='rgba(59,130,246,.1)'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button>
                     </span>
-                    <div id="at-actionby-dropdown" style="display:none;position:absolute;z-index:9999;background:#111827;border:1px solid rgba(59,130,246,.25);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.7);min-width:180px;padding:6px;margin-top:4px"></div>
                   </th>
                   <th style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;user-select:none;position:relative">
-                    <span style="display:inline-flex;align-items:center;gap:5px">
+                    <span style="display:inline-flex;align-items:center;gap:10px">
                       User Role
-                      <button onclick="toggleAtRoleFilter(event)" id="at-role-filter-btn" title="Filter by Role" style="display:inline-flex;align-items:center;background:transparent;border:none;padding:2px 4px;cursor:pointer;opacity:.7" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity='0.7'"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button>
+                      <button onclick="toggleAtRoleFilter(event)" id="at-role-filter-btn" title="Filter by User Role" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:5px;cursor:pointer;opacity:.8;flex-shrink:0;transition:all .15s" onmouseenter="this.style.opacity='1';this.style.background='rgba(59,130,246,.22)'" onmouseleave="this.style.opacity='.8';this.style.background='rgba(59,130,246,.1)'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button>
                     </span>
-                    <div id="at-role-dropdown" style="display:none;position:absolute;top:100%;left:0;z-index:9999;background:#111827;border:1px solid rgba(59,130,246,.25);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.7);min-width:180px;padding:6px;margin-top:4px"></div>
                   </th>
                   <th onclick="atSort(5)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=atSortCol===5?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Action Taken Date <span id="at-sort-icon-5" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
                   <th onclick="atSort(6)" style="padding:16px 16px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color=atSortCol===6?'#60a5fa':'#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Comments <span id="at-sort-icon-6" style="font-size:13px;color:#e8edf5">&#8645;</span></span></th>
@@ -1762,22 +1765,22 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
 
               <!-- State — filter -->
               <div style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;white-space:nowrap;position:relative">
-                <span style="display:inline-flex;align-items:center;gap:8px">State
-                  <button onclick="caToggleStateFilter(event)" id="ca-state-filter-btn" title="Filter by State" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;border-radius:4px;padding:2px 4px;cursor:pointer;transition:opacity .15s;opacity:.7" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity=caStateFilter?'1':'.7'">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" id="ca-state-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                <span style="display:inline-flex;align-items:center;gap:10px">State
+                  <button onclick="caToggleStateFilter(event)" id="ca-state-filter-btn" title="Filter by State" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:5px;cursor:pointer;opacity:.8;flex-shrink:0;transition:all .15s" onmouseenter="this.style.opacity='1';this.style.background='rgba(59,130,246,.22)'" onmouseleave="this.style.opacity='.8';this.style.background='rgba(59,130,246,.1)'">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" id="ca-state-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
                   </button>
                 </span>
-                <div id="ca-state-dropdown" style="display:none;position:absolute;top:100%;left:0;z-index:9999;background:#111827;border:1px solid rgba(59,130,246,.25);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.7);min-width:160px;padding:6px;margin-top:4px"></div>
+                
               </div>
 
               <!-- Status — filter -->
               <div style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;white-space:nowrap;position:relative">
-                <span style="display:inline-flex;align-items:center;gap:8px">Status
-                  <button onclick="caToggleStatusFilter(event)" id="ca-status-filter-btn" title="Filter by Status" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;border-radius:4px;padding:2px 4px;cursor:pointer;transition:opacity .15s;opacity:.7" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity=caStatusFilter?'1':'.7'">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" id="ca-status-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                <span style="display:inline-flex;align-items:center;gap:10px">Status
+                  <button onclick="caToggleStatusFilter(event)" id="ca-status-filter-btn" title="Filter by Status" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:5px;cursor:pointer;opacity:.8;flex-shrink:0;transition:all .15s" onmouseenter="this.style.opacity='1';this.style.background='rgba(59,130,246,.22)'" onmouseleave="this.style.opacity='.8';this.style.background='rgba(59,130,246,.1)'">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" id="ca-status-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
                   </button>
                 </span>
-                <div id="ca-status-dropdown" style="display:none;position:absolute;top:100%;left:0;z-index:9999;background:#111827;border:1px solid rgba(59,130,246,.25);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.7);min-width:190px;padding:6px;margin-top:4px"></div>
+                
               </div>
 
             </div>
@@ -1969,22 +1972,22 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
 
               <!-- State filter -->
               <div style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;white-space:nowrap;position:relative">
-                <span style="display:inline-flex;align-items:center;gap:8px">State
-                  <button onclick="gcToggleStateFilter(event)" id="gc-state-filter-btn" title="Filter by State" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;border-radius:4px;padding:2px 4px;cursor:pointer;transition:opacity .15s;opacity:.7" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity=gcStateFilter?'1':'.7'">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" id="gc-state-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                <span style="display:inline-flex;align-items:center;gap:10px">State
+                  <button onclick="gcToggleStateFilter(event)" id="gc-state-filter-btn" title="Filter by State" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:5px;cursor:pointer;opacity:.8;flex-shrink:0;transition:all .15s" onmouseenter="this.style.opacity='1';this.style.background='rgba(59,130,246,.22)'" onmouseleave="this.style.opacity='.8';this.style.background='rgba(59,130,246,.1)'">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" id="gc-state-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
                   </button>
                 </span>
-                <div id="gc-state-dropdown" style="display:none;position:absolute;top:100%;left:0;z-index:9999;background:#111827;border:1px solid rgba(59,130,246,.25);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.7);min-width:160px;padding:6px;margin-top:4px"></div>
+                
               </div>
 
               <!-- Status filter -->
               <div style="padding:11px 16px;font-size:13px;font-weight:800;letter-spacing:1px;color:#e8edf5;text-transform:uppercase;white-space:nowrap;position:relative">
-                <span style="display:inline-flex;align-items:center;gap:8px">Status
-                  <button onclick="gcToggleStatusFilter(event)" id="gc-status-filter-btn" title="Filter by Status" style="display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;border-radius:4px;padding:2px 4px;cursor:pointer;transition:opacity .15s;opacity:.7" onmouseenter="this.style.opacity='1'" onmouseleave="this.style.opacity=gcStatusFilter?'1':'.7'">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" id="gc-status-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                <span style="display:inline-flex;align-items:center;gap:10px">Status
+                  <button onclick="gcToggleStatusFilter(event)" id="gc-status-filter-btn" title="Filter by Status" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:5px;cursor:pointer;opacity:.8;flex-shrink:0;transition:all .15s" onmouseenter="this.style.opacity='1';this.style.background='rgba(59,130,246,.22)'" onmouseleave="this.style.opacity='.8';this.style.background='rgba(59,130,246,.1)'">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e8edf5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" id="gc-status-filter-icon"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
                   </button>
                 </span>
-                <div id="gc-status-dropdown" style="display:none;position:absolute;top:100%;left:0;z-index:9999;background:#111827;border:1px solid rgba(59,130,246,.25);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.7);min-width:190px;padding:6px;margin-top:4px"></div>
+                
               </div>
 
             </div>
@@ -2049,16 +2052,20 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
               <div class="meta-field"><label>&#128222; Contact No</label><div class="meta-val" style="font-family:'IBM Plex Mono',monospace">+91 9009192678</div></div>
               <div class="meta-field"><label>&#128197; Published Date</label><div class="meta-val" style="font-family:'IBM Plex Mono',monospace">2024-06-23</div></div>
               <div class="meta-field"><label>&#8599; Currency</label><div class="meta-val">INR</div></div>
-              <div class="meta-field"><label>&#9678; Status</label><div class="meta-val">Active</div></div>
+              <div class="meta-field"><label>&#9678; Status</label>
+                <select style="background:#162033;border:1px solid #1e2d44;border-radius:6px;padding:7px 10px;font-size:12px;color:var(--text-secondary);font-family:'IBM Plex Sans',sans-serif;width:100%;cursor:pointer;outline:none;appearance:auto">
+                  <option value="active" selected>Active</option><option value="inactive">Inactive</option>
+                </select>
+              </div>
               <div class="meta-field"><label>&#127959; Revenue Style</label>
                 <select style="background:#162033;border:1px solid #1e2d44;border-radius:6px;padding:7px 10px;font-size:12px;color:var(--text-secondary);font-family:'IBM Plex Sans',sans-serif;width:100%;cursor:pointer;outline:none;appearance:auto">
-                  <option value="direct" selected>Direct</option><option value="indirect">Indirect</option><option value="consolidated">Consolidated</option><option value="standalone">Standalone</option>
+                  <option value="direct" selected>Direct</option><option value="detailed">Detailed</option>
                 </select>
               </div>
               <div class="meta-field"><label>&#128197; FY Ending Date</label><div class="meta-val" style="font-family:'IBM Plex Mono',monospace">2025-03-31</div></div>
               <div class="meta-field"><label>&#9889; Corporate Actions</label>
                 <select style="background:#162033;border:1px solid #1e2d44;border-radius:6px;padding:7px 10px;font-size:12px;color:var(--text-secondary);font-family:'IBM Plex Sans',sans-serif;width:100%;cursor:pointer;outline:none;appearance:auto">
-                  <option value="active" selected>Active</option><option value="inactive">Inactive</option><option value="bankruptcy">Bankruptcy</option><option value="delisting">Delisting</option>
+                  <option value="delisting" selected>Delisting</option><option value="bankruptcy">Bankruptcy</option><option value="spinoff">Spinoff</option>
                 </select>
               </div>
               <div class="meta-field"><label>&#8599; Total Revenue</label><div class="meta-val" style="font-family:'IBM Plex Mono',monospace">&#8377;32,700.6 Cr</div></div>
@@ -2082,9 +2089,8 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
               <div class="pt-right"><span class="pt-meta">Total &#8377;32,700.6 Cr</span><span class="pt-badge">5 SEGMENTS</span><span class="pt-toggle">&#9660;</span></div>
             </button>
             <div class="panel-body" style="max-height:0"><div class="panel-scroll"><div class="rev-wrap">
-              <div class="rev-hdr-row"><button class="add-btn">+ Add Row</button></div>
               <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-              <table class="rev-tbl" style="min-width:780px;">
+              <table class="rev-tbl" style="min-width:880px;">
                 <thead><tr>
                   <th style="text-align:left;white-space:nowrap;color:#e8edf5">AR CLASSIFICATION</th>
                   <th style="text-align:center;white-space:nowrap;color:#e8edf5">L0</th>
@@ -2093,13 +2099,14 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                   <th style="text-align:right;white-space:nowrap;color:#e8edf5">REVENUE</th>
                   <th style="text-align:right;white-space:nowrap;color:#e8edf5">REVENUE%</th>
                   <th style="text-align:center;white-space:nowrap;color:#e8edf5">PAGE NO</th>
+                  <th style="text-align:left;white-space:nowrap;color:#e8edf5">COMMENT</th>
                 </tr></thead>
                 <tbody>
-                  <tr><td style="font-size:12px;color:#e8edf5;font-weight:500;white-space:nowrap">Capital Markets</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Financials</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Financial Services</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Trading/Capital Markets</td><td style="text-align:right;font-size:12px;color:#e8edf5;font-weight:500;font-family:'IBM Plex Mono',monospace;white-space:nowrap">&#8377;24,580.4 Cr</td><td style="text-align:right;font-size:12px;font-weight:500;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">75.2%</td><td style="text-align:center;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">98</td></tr>
-                  <tr><td style="font-size:12px;color:#e8edf5;font-weight:500;white-space:nowrap">Wealth Management</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Financials</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Financial Services</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Wealth and Asset Management</td><td style="text-align:right;font-size:12px;color:#e8edf5;font-weight:500;font-family:'IBM Plex Mono',monospace;white-space:nowrap">&#8377;5,210.1 Cr</td><td style="text-align:right;font-size:12px;font-weight:500;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">15.9%</td><td style="text-align:center;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">99</td></tr>
-                  <tr><td style="font-size:12px;color:#e8edf5;font-weight:500;white-space:nowrap">Treasury Investments</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Financials</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Others</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Internal Treasury</td><td style="text-align:right;font-size:12px;color:#e8edf5;font-weight:500;font-family:'IBM Plex Mono',monospace;white-space:nowrap">&#8377;2,100.5 Cr</td><td style="text-align:right;font-size:12px;font-weight:500;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">6.4%</td><td style="text-align:center;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">98</td></tr>
-                  <tr><td style="font-size:12px;color:#e8edf5;font-weight:500;white-space:nowrap">Home Finance</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Financials</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Financial Services</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Speciality Financing</td><td style="text-align:right;font-size:12px;color:#e8edf5;font-weight:500;font-family:'IBM Plex Mono',monospace;white-space:nowrap">&#8377;650.2 Cr</td><td style="text-align:right;font-size:12px;font-weight:500;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">2.0%</td><td style="text-align:center;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">99</td></tr>
-                  <tr><td style="font-size:12px;color:#e8edf5;font-weight:500;white-space:nowrap">Inter-Segment</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Financials</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Others</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Other Unallocated</td><td style="text-align:right;font-size:12px;color:#e8edf5;font-weight:500;font-family:'IBM Plex Mono',monospace;white-space:nowrap">&#8377;159.4 Cr</td><td style="text-align:right;font-size:12px;font-weight:500;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">0.5%</td><td style="text-align:center;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">100</td></tr>
+                  <tr><td style="font-size:12px;color:#e8edf5;font-weight:500;white-space:nowrap">Capital Markets</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Financials</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Financial Services</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Trading/Capital Markets</td><td style="text-align:right;font-size:12px;color:#e8edf5;font-weight:500;font-family:'IBM Plex Mono',monospace;white-space:nowrap">&#8377;24,580.4 Cr</td><td style="text-align:right;font-size:12px;font-weight:500;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">75.2%</td><td style="text-align:center;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">98</td><td style="font-size:11px;color:#5d7a99;white-space:nowrap;min-width:120px"></td></tr>
+                  <tr><td style="font-size:12px;color:#e8edf5;font-weight:500;white-space:nowrap">Wealth Management</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Financials</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Financial Services</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Wealth and Asset Management</td><td style="text-align:right;font-size:12px;color:#e8edf5;font-weight:500;font-family:'IBM Plex Mono',monospace;white-space:nowrap">&#8377;5,210.1 Cr</td><td style="text-align:right;font-size:12px;font-weight:500;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">15.9%</td><td style="text-align:center;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">99</td><td style="font-size:11px;color:#5d7a99;white-space:nowrap;min-width:120px"></td></tr>
+                  <tr><td style="font-size:12px;color:#e8edf5;font-weight:500;white-space:nowrap">Treasury Investments</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Financials</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Others</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Internal Treasury</td><td style="text-align:right;font-size:12px;color:#e8edf5;font-weight:500;font-family:'IBM Plex Mono',monospace;white-space:nowrap">&#8377;2,100.5 Cr</td><td style="text-align:right;font-size:12px;font-weight:500;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">6.4%</td><td style="text-align:center;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">98</td><td style="font-size:11px;color:#5d7a99;white-space:nowrap;min-width:120px"></td></tr>
+                  <tr><td style="font-size:12px;color:#e8edf5;font-weight:500;white-space:nowrap">Home Finance</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Financials</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Financial Services</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Speciality Financing</td><td style="text-align:right;font-size:12px;color:#e8edf5;font-weight:500;font-family:'IBM Plex Mono',monospace;white-space:nowrap">&#8377;650.2 Cr</td><td style="text-align:right;font-size:12px;font-weight:500;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">2.0%</td><td style="text-align:center;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">99</td><td style="font-size:11px;color:#5d7a99;white-space:nowrap;min-width:120px"></td></tr>
+                  <tr><td style="font-size:12px;color:#e8edf5;font-weight:500;white-space:nowrap">Inter-Segment</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Financials</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Others</td><td style="text-align:center;font-size:11px;color:#e8edf5;font-family:'IBM Plex Mono',monospace;white-space:nowrap">Other Unallocated</td><td style="text-align:right;font-size:12px;color:#e8edf5;font-weight:500;font-family:'IBM Plex Mono',monospace;white-space:nowrap">&#8377;159.4 Cr</td><td style="text-align:right;font-size:12px;font-weight:500;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">0.5%</td><td style="text-align:center;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">100</td><td style="font-size:11px;color:#5d7a99;white-space:nowrap;min-width:120px"></td></tr>
                 </tbody>
               </table>
               </div>
@@ -2150,7 +2157,12 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
       <div id="left-col">
         <div id="doc-viewer">
           <div class="dv-hdr">
-            <div class="dv-title">&#128196;&nbsp; ORIGINAL DOCUMENT SOURCE</div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <button id="qc-dv-back-btn" onclick="qcDvGoBack()" style="display:flex;align-items:center;justify-content:center;width:24px;height:24px;background:var(--bg-field);border:1px solid var(--border-light);border-radius:5px;color:#5d7a99;cursor:pointer;padding:0;flex-shrink:0" onmouseenter="this.style.color='#93c5fd';this.style.borderColor='rgba(59,130,246,.4)'" onmouseleave="this.style.color='#5d7a99';this.style.borderColor='var(--border-light)'"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+              <span id="qc-dv-module-label" style="font-size:11px;color:#5d7a99;font-weight:500">Analyst Review</span>
+              <span style="color:#2d4060;font-size:11px">/</span>
+              <span style="font-size:11px;color:#b0c8e0;font-weight:500">Motilal Oswal</span>
+            </div>
             <div style="display:flex;align-items:center;gap:6px">
               <span class="dv-sub" style="margin-right:8px">PAGE 12 OF 148</span>
               <button class="pdf-action-btn" onclick="expandPdf()" title="Expand PDF">
@@ -2242,15 +2254,16 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                   </div>
                   <div class="meta-field">
                     <label>&#9678; Status</label>
-                    <div class="meta-val">Active</div>
+                    <select style="background:#162033;border:1px solid #1e2d44;border-radius:6px;padding:7px 10px;font-size:12px;color:var(--text-secondary);font-family:'IBM Plex Sans',sans-serif;width:100%;cursor:pointer;outline:none;appearance:auto">
+                      <option value="active" selected>Active</option>
+                      <option value="inactive">Inactive</option>
+                    </select>
                   </div>
                   <div class="meta-field">
                     <label>&#127959; Revenue Style</label>
                     <select style="background:#162033;border:1px solid #1e2d44;border-radius:6px;padding:7px 10px;font-size:12px;color:var(--text-secondary);font-family:'IBM Plex Sans',sans-serif;width:100%;cursor:pointer;outline:none;appearance:auto">
                       <option value="direct" selected>Direct</option>
-                      <option value="indirect">Indirect</option>
-                      <option value="consolidated">Consolidated</option>
-                      <option value="standalone">Standalone</option>
+                      <option value="detailed">Detailed</option>
                     </select>
                   </div>
                   <div class="meta-field">
@@ -2260,10 +2273,9 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                   <div class="meta-field">
                     <label>&#9889; Corporate Actions</label>
                     <select style="background:#162033;border:1px solid #1e2d44;border-radius:6px;padding:7px 10px;font-size:12px;color:var(--text-secondary);font-family:'IBM Plex Sans',sans-serif;width:100%;cursor:pointer;outline:none;appearance:auto">
-                      <option value="active" selected>Active</option>
-                      <option value="inactive">Inactive</option>
+                      <option value="delisting" selected>Delisting</option>
                       <option value="bankruptcy">Bankruptcy</option>
-                      <option value="delisting">Delisting</option>
+                      <option value="spinoff">Spinoff</option>
                     </select>
                   </div>
                   <div class="meta-field">
@@ -2329,11 +2341,11 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
             <div class="panel-body" style="max-height:0">
               <div class="panel-scroll">
                 <div class="rev-wrap">
-                  <div class="rev-hdr-row">
-                    <button class="add-btn">+ Add Row</button>
+                  <div id="rev-add-row-wrap" style="display:none;justify-content:flex-end;margin-bottom:10px">
+                    <button class="add-btn" id="rev-add-row-btn">+ Add Row</button>
                   </div>
                   <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-                  <table class="rev-tbl" style="min-width:780px;">
+                  <table class="rev-tbl" style="min-width:960px;">
                     <thead>
                       <tr>
                         <th style="text-align:left;white-space:nowrap;color:#e8edf5">AR CLASSIFICATION</th>
@@ -2343,6 +2355,8 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                         <th style="text-align:right;white-space:nowrap;color:#e8edf5">REVENUE</th>
                         <th style="text-align:right;white-space:nowrap;color:#e8edf5">REVENUE%</th>
                         <th style="text-align:center;white-space:nowrap;color:#e8edf5">PAGE NO</th>
+                        <th style="text-align:left;white-space:nowrap;color:#e8edf5">COMMENT</th>
+                        <th id="rev-actions-th" style="display:none;text-align:center;white-space:nowrap;color:#e8edf5">ACTIONS</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -2354,6 +2368,8 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                         <td style="text-align:right;font-size:12px;color:#e8edf5;font-weight:500;font-family:'IBM Plex Mono',monospace;white-space:nowrap">&#8377;24,580.4 Cr</td>
                         <td style="text-align:right;font-size:12px;font-weight:500;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">75.2%</td>
                         <td style="text-align:center;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">98</td>
+                        <td style="font-size:11px;color:#5d7a99;white-space:nowrap;min-width:120px"></td>
+                        <td class="rev-action-td" style="display:none;text-align:center;white-space:nowrap;padding:0 8px"><button title="Delete row" style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s" onmouseenter="this.style.background='rgba(239,68,68,0.28)';this.style.borderColor='rgba(239,68,68,0.7)'" onmouseleave="this.style.background='rgba(239,68,68,0.12)';this.style.borderColor='rgba(239,68,68,0.35)'"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg></button></td>
                       </tr>
                       <tr>
                         <td style="font-size:12px;color:#e8edf5;font-weight:500;white-space:nowrap">Wealth Management</td>
@@ -2363,6 +2379,8 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                         <td style="text-align:right;font-size:12px;color:#e8edf5;font-weight:500;font-family:'IBM Plex Mono',monospace;white-space:nowrap">&#8377;5,210.1 Cr</td>
                         <td style="text-align:right;font-size:12px;font-weight:500;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">15.9%</td>
                         <td style="text-align:center;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">99</td>
+                        <td style="font-size:11px;color:#5d7a99;white-space:nowrap;min-width:120px"></td>
+                        <td class="rev-action-td" style="display:none;text-align:center;white-space:nowrap;padding:0 8px"><button title="Delete row" style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s" onmouseenter="this.style.background='rgba(239,68,68,0.28)';this.style.borderColor='rgba(239,68,68,0.7)'" onmouseleave="this.style.background='rgba(239,68,68,0.12)';this.style.borderColor='rgba(239,68,68,0.35)'"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg></button></td>
                       </tr>
                       <tr>
                         <td style="font-size:12px;color:#e8edf5;font-weight:500;white-space:nowrap">Treasury Investments</td>
@@ -2372,6 +2390,8 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                         <td style="text-align:right;font-size:12px;color:#e8edf5;font-weight:500;font-family:'IBM Plex Mono',monospace;white-space:nowrap">&#8377;2,100.5 Cr</td>
                         <td style="text-align:right;font-size:12px;font-weight:500;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">6.4%</td>
                         <td style="text-align:center;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">98</td>
+                        <td style="font-size:11px;color:#5d7a99;white-space:nowrap;min-width:120px"></td>
+                        <td class="rev-action-td" style="display:none;text-align:center;white-space:nowrap;padding:0 8px"><button title="Delete row" style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s" onmouseenter="this.style.background='rgba(239,68,68,0.28)';this.style.borderColor='rgba(239,68,68,0.7)'" onmouseleave="this.style.background='rgba(239,68,68,0.12)';this.style.borderColor='rgba(239,68,68,0.35)'"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg></button></td>
                       </tr>
                       <tr>
                         <td style="font-size:12px;color:#e8edf5;font-weight:500;white-space:nowrap">Home Finance</td>
@@ -2381,6 +2401,8 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                         <td style="text-align:right;font-size:12px;color:#e8edf5;font-weight:500;font-family:'IBM Plex Mono',monospace;white-space:nowrap">&#8377;650.2 Cr</td>
                         <td style="text-align:right;font-size:12px;font-weight:500;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">2.0%</td>
                         <td style="text-align:center;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">99</td>
+                        <td style="font-size:11px;color:#5d7a99;white-space:nowrap;min-width:120px"></td>
+                        <td class="rev-action-td" style="display:none;text-align:center;white-space:nowrap;padding:0 8px"><button title="Delete row" style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s" onmouseenter="this.style.background='rgba(239,68,68,0.28)';this.style.borderColor='rgba(239,68,68,0.7)'" onmouseleave="this.style.background='rgba(239,68,68,0.12)';this.style.borderColor='rgba(239,68,68,0.35)'"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg></button></td>
                       </tr>
                       <tr>
                         <td style="font-size:12px;color:#e8edf5;font-weight:500;white-space:nowrap">Inter-Segment</td>
@@ -2390,6 +2412,8 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                         <td style="text-align:right;font-size:12px;color:#e8edf5;font-weight:500;font-family:'IBM Plex Mono',monospace;white-space:nowrap">&#8377;159.4 Cr</td>
                         <td style="text-align:right;font-size:12px;font-weight:500;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">0.5%</td>
                         <td style="text-align:center;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#e8edf5;white-space:nowrap">100</td>
+                        <td style="font-size:11px;color:#5d7a99;white-space:nowrap;min-width:120px"></td>
+                        <td class="rev-action-td" style="display:none;text-align:center;white-space:nowrap;padding:0 8px"><button title="Delete row" style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.35);border-radius:6px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s" onmouseenter="this.style.background='rgba(239,68,68,0.28)';this.style.borderColor='rgba(239,68,68,0.7)'" onmouseleave="this.style.background='rgba(239,68,68,0.12)';this.style.borderColor='rgba(239,68,68,0.35)'"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg></button></td>
                       </tr>
                     </tbody>
                   </table>
@@ -2481,8 +2505,9 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
             </div>
             <p class="qc-bar-desc">Please review the source document and extracted data before submission. This action will finalize the Golden Data record for the 2025 fiscal cycle.</p>
             <div class="qc-btns">
-              <button class="qc-btn qc-rej" id="btn-rej" onclick="qcDo('rej')"><span id="btn-rej-label">&#8855; Reject Data</span></button>
-              <button class="qc-btn qc-app" id="btn-app" onclick="qcDo('app')"><span id="btn-app-label">&#10003; Accept &amp; Approve</span></button>
+              <button class="qc-btn qc-rej" id="btn-rej" onclick="qcDo('rej')"><span id="btn-rej-label">&#8855; Reject</span></button>
+              <button class="qc-btn qc-app" id="btn-save" onclick="qcDo('save')" style="display:none"><span id="btn-save-label">Save</span></button>
+              <button class="qc-btn qc-app" id="btn-app" onclick="qcDo('app')"><span id="btn-app-label">&#10003; Approve</span></button>
             </div>
             <div class="qc-fb rej" id="fb-rej">&#8855; Data rejected. Record flagged for re-extraction and analyst review.</div>
             <div class="qc-fb app" id="fb-app">&#10003; Record accepted and approved for the Golden Data repository.</div>
@@ -3277,8 +3302,47 @@ function updateCounter(){
   document.getElementById('open-count').textContent = openCount + ' of ' + total + ' sections open';
 }
 
+/* Doc-viewer back button for QC/Analyst/Committee review pages */
+function qcDvGoBack(){
+  var targetTab = (_reviewMode === 'qc') ? 'qc' : (_reviewMode === 'committee' ? 'committee' : 'analyst');
+  document.querySelectorAll('.s-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.s-subitem').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.s-module-trigger').forEach(function(b){ b.classList.remove('active'); });
+  var iwBtn = Array.from(document.querySelectorAll('.s-btn')).find(function(b){ return b.dataset && b.dataset.view === 'analyst'; });
+  if(iwBtn) iwBtn.classList.add('active');
+  showView('analyst');
+  setTimeout(function(){ iticsSetTab(targetTab); }, 80);
+}
+
+/* Toggle analyst-only revenue segregation elements */
+function _setRevAnalystMode(isAnalyst){
+  var addRowWrap = document.getElementById('rev-add-row-wrap');
+  var actionsTh  = document.getElementById('rev-actions-th');
+  var actionsTds = document.querySelectorAll('.rev-action-td');
+  var show = isAnalyst ? 'flex' : 'none';
+  var showCell = isAnalyst ? 'table-cell' : 'none';
+  if(addRowWrap) addRowWrap.style.display = show;
+  if(actionsTh)  actionsTh.style.display  = showCell;
+  actionsTds.forEach(function(td){ td.style.display = showCell; });
+}
+
 /* QC Decision */
 function qcDo(type){
+  // ANALYST MODE — Save: show message, keep pill as PENDING ANALYST, stay on page
+  if(_reviewMode === 'analyst' && type === 'save'){
+    var pill = document.getElementById('qc-status-pill');
+    if(pill){
+      pill.textContent = 'PENDING ANALYST';
+      pill.style.cssText = 'font-size:9px;font-weight:600;letter-spacing:.5px;padding:2px 8px;border-radius:20px;background:#172554;border:1px solid #1d4ed8;color:#60a5fa;transition:all .2s';
+    }
+    var fbApp = document.getElementById('fb-app');
+    if(fbApp){
+      fbApp.innerHTML = '&#128190; Company data saved for the year.';
+      fbApp.classList.add('show');
+      setTimeout(function(){ fbApp.classList.remove('show'); }, 2000);
+    }
+    return;
+  }
   // ANALYST / COMMITTEE MODE — Cancel: go directly back, no message
   if((_reviewMode === 'analyst' || _reviewMode === 'committee') && type === 'rej'){
     document.querySelectorAll('.s-btn').forEach(function(b){ b.classList.remove('active'); });
@@ -3813,99 +3877,103 @@ function gdDownload(){
 // ═══ ITICS WORKBENCH DATA ═══
 var ITICS_DATA = {
   analyst: [
-    [10100,'Motilal Oswal Financial Services Ltd','INE338A01027','B233M14','2025-03-31','Research','Pending Analyst'],
-    [10101,'Reliance Industries Ltd','INE002A01018','6099626','2025-03-31','Research','Pending Analyst'],
-    [10102,'Tata Consultancy Services','INE467B01029','BFGCQ52','2025-03-31','Research','Pending Analyst'],
-    [10103,'HDFC Bank Ltd','INE040A01034','B5VT2C4','2025-03-31','Research','Pending Analyst'],
-    [10104,'Infosys Ltd','INE009A01021','B156H70','2025-03-31','Research','Pending Analyst'],
-    [10105,'Bharti Airtel Ltd','INE397D01024','B00LRF8','2025-03-31','Research','Pending Analyst'],
-    [10106,'State Bank of India','INE062A01020','B0BHGL5','2025-03-31','Research','Pending Analyst'],
-    [10107,'Wipro Ltd','INE075A01022','B0FMGN2','2025-03-31','Research','Pending Analyst'],
-    [10108,'HCL Technologies Ltd','INE860A01027','B1HKPM3','2025-03-31','From QC','QC Rejected'],
-    [10109,'Hindustan Unilever Ltd','INE030A01027','6438510','2025-03-31','From QC','QC Rejected'],
-    [10110,'Maruti Suzuki India Ltd','INE585B01010','B1BYQR1','2025-03-31','From QC','QC Rejected'],
-    [10111,'Sun Pharmaceutical','INE044A01036','B0CTWX3','2025-03-31','From QC','QC Rejected'],
-    [10112,'Titan Company Ltd','INE280A01028','B02NX66','2025-03-31','From QC','QC Rejected'],
-    [10113,'Axis Bank Ltd','INE238A01034','B1QCT32','2025-03-31','From QC','QC Rejected'],
-    [10114,'UltraTech Cement Ltd','INE481G01011','B0CHNX6','2025-03-31','From QC','QC Rejected'],
-    [10115,'Nestle India Ltd','INE239A01024','6640910','2025-03-31','From QC','QC Rejected'],
-    [10116,'ICICI Bank Ltd','INE090A01021','B1RFQ79','2025-03-31','From ITICS Committee','Pending Analyst'],
-    [10117,'Larsen & Toubro Ltd','INE018A01030','6531789','2025-03-31','From ITICS Committee','Pending Analyst'],
-    [10118,'Power Grid Corp','INE752E01010','B29MK16','2025-03-31','From ITICS Committee','Pending Analyst'],
-    [10119,'NTPC Ltd','INE733E01010','B1FZLV3','2025-03-31','From ITICS Committee','Pending Analyst'],
-    [10120,'Bajaj Auto Ltd','INE917I01010','B03MXZ5','2025-03-31','From ITICS Committee','Pending Analyst'],
-    [10121,'Grasim Industries','INE047A01021','6302985','2025-03-31','From ITICS Committee','Pending Analyst'],
-    [10122,'Tata Steel Ltd','INE081A01020','6102684','2025-03-31','From ITICS Committee','Pending Analyst'],
-    [10123,'Tech Mahindra Ltd','INE669C01036','B1BVP22','2025-03-31','From ITICS Committee','Pending Analyst'],
-    [10124,'Mahindra & Mahindra','INE101A01026','B02L0S0','2025-03-31','From ITICS Committee','Pending Analyst'],
-    [10125,'Dr. Reddy\'s Labs','INE089A01023','B0QCR27','2025-03-31','From ITICS Committee','Pending Analyst'],
-    [10126,'Cipla Ltd','INE059A01026','6273218','2025-03-31','From ITICS Committee','Pending Analyst'],
-    [10127,'Divi\'s Laboratories','INE361B01024','B04GZF6','2025-03-31','From ITICS Committee','Pending Analyst'],
-    [10128,'Bajaj Finance Ltd','INE296A01024','BYXJ4R4','2025-03-31','From ITICS Committee','Pending Analyst'],
-    [10129,'Asian Paints Ltd','INE021A01026','B0LGZL5','2025-03-31','From ITICS Committee','Pending Analyst'],
-    [10130,'Kotak Mahindra Bank','INE237A01028','B1YWRM0','2025-03-31','From ITICS Committee','Pending Analyst'],
+    [10100,'Motilal Oswal Financial Services Ltd','INE338A01027','B233M14','2025-03-31','Fresh','Pending Analyst'],
+    [10101,'Reliance Industries Ltd','INE002A01018','6099626','2025-03-31','Fresh','Pending Analyst'],
+    [10102,'Tata Consultancy Services','INE467B01029','BFGCQ52','2025-03-31','Fresh','Pending Analyst'],
+    [10103,'HDFC Bank Ltd','INE040A01034','B5VT2C4','2025-03-31','Fresh','Pending Analyst'],
+    [10104,'Infosys Ltd','INE009A01021','B156H70','2025-03-31','Fresh','Pending Analyst'],
+    [10105,'Bharti Airtel Ltd','INE397D01024','B00LRF8','2025-03-31','Fresh','Pending Analyst'],
+    [10106,'State Bank of India','INE062A01020','B0BHGL5','2025-03-31','AR Update','Pending Analyst'],
+    [10107,'Wipro Ltd','INE075A01022','B0FMGN2','2025-03-31','AR Update','Pending Analyst'],
+    [10108,'HCL Technologies Ltd','INE860A01027','B1HKPM3','2025-03-31','AR Update','Pending Analyst'],
+    [10109,'Hindustan Unilever Ltd','INE030A01027','6438510','2025-03-31','AR Update','Pending Analyst'],
+    [10110,'Maruti Suzuki India Ltd','INE585B01010','B1BYQR1','2025-03-31','AR Update','Pending Analyst'],
+    [10111,'Sun Pharmaceutical','INE044A01036','B0CTWX3','2025-03-31','AR Update','Pending Analyst'],
+    [10112,'Titan Company Ltd','INE280A01028','B02NX66','2025-03-31','AR Update','Pending Analyst'],
+    [10113,'Axis Bank Ltd','INE238A01034','B1QCT32','2025-03-31','AR Update','Pending Analyst'],
+    [10114,'UltraTech Cement Ltd','INE481G01011','B0CHNX6','2025-03-31','AR Update','Pending Analyst'],
+    [10115,'Nestle India Ltd','INE239A01024','6640910','2025-03-31','AR Update','Pending Analyst'],
+    [10116,'ICICI Bank Ltd','INE090A01021','B1RFQ79','2025-03-31','AR Update','Pending Analyst'],
+    [10117,'Larsen & Toubro Ltd','INE018A01030','6531789','2025-03-31','AR Update','Pending Analyst'],
+    [10118,'Power Grid Corp','INE752E01010','B29MK16','2025-03-31','Rejected','Pending Analyst'],
+    [10119,'NTPC Ltd','INE733E01010','B1FZLV3','2025-03-31','Rejected','Pending Analyst'],
+    [10120,'Bajaj Auto Ltd','INE917I01010','B03MXZ5','2025-03-31','Rejected','Pending Analyst'],
+    [10121,'Grasim Industries','INE047A01021','6302985','2025-03-31','Rejected','Pending Analyst'],
+    [10122,'Tata Steel Ltd','INE081A01020','6102684','2025-03-31','Rejected','Pending Analyst'],
+    [10123,'Tech Mahindra Ltd','INE669C01036','B1BVP22','2025-03-31','Rejected','Pending Analyst'],
+    [10124,'Mahindra & Mahindra','INE101A01026','B02L0S0','2025-03-31','Rejected','Pending Analyst'],
+    [10125,'Dr. Reddy\'s Labs','INE089A01023','B0QCR27','2025-03-31','Rejected','Pending Analyst'],
+    [10126,'Cipla Ltd','INE059A01026','6273218','2025-03-31','Rejected','Pending Analyst'],
+    [10127,'Divi\'s Laboratories','INE361B01024','B04GZF6','2025-03-31','Rejected','Pending Analyst'],
+    [10128,'Bajaj Finance Ltd','INE296A01024','BYXJ4R4','2025-03-31','Rejected','Pending Analyst'],
+    [10129,'Asian Paints Ltd','INE021A01026','B0LGZL5','2025-03-31','Rejected','Pending Analyst'],
+    [10130,'Kotak Mahindra Bank','INE237A01028','B1YWRM0','2025-03-31','Rejected','Pending Analyst'],
   ],
   qc: [
-    [20100,'Motilal Oswal Financial Services Ltd','INE338A01027','B233M14','2025-06-30','Research','Pending QC'],
-    [20101,'Wipro Ltd','INE075A01022','B0FMGN2','2025-06-30','Research','Pending QC'],
-    [20102,'Infosys Ltd','INE009A01021','B156H70','2025-06-30','Research','Pending QC'],
-    [20103,'Tech Mahindra Ltd','INE669C01036','B1BVP22','2025-06-30','Research','Pending QC'],
-    [20104,'Mahindra & Mahindra','INE101A01026','B02L0S0','2025-06-30','Research','Pending QC'],
-    [20105,'Dr. Reddy\'s Labs','INE089A01023','B0QCR27','2025-06-30','Research','Pending QC'],
-    [20106,'Cipla Ltd','INE059A01026','6273218','2025-06-30','Research','Pending QC'],
-    [20107,'Divi\'s Laboratories','INE361B01024','B04GZF6','2025-06-30','Research','Pending QC'],
-    [20108,'Bajaj Finserv Ltd','INE918I01026','B3D8WG3','2025-06-30','Second Time Companies','Pending QC'],
-    [20109,'SBI Life Insurance','INE123W01016','BDXT8R2','2025-06-30','Second Time Companies','Pending QC'],
-    [20110,'Shree Cement Ltd','INE070A01015','B1GBKC5','2025-06-30','Second Time Companies','Pending QC'],
-    [20111,'Interglobe Aviation','INE646L01027','BZ6RWP4','2025-06-30','Second Time Companies','Pending QC'],
-    [20112,'Apollo Hospitals','INE437A01024','B1FXTL3','2025-06-30','Second Time Companies','Pending QC'],
-    [20113,'Godrej Consumer','INE102D01028','B1FT6H2','2025-06-30','Second Time Companies','Pending QC'],
-    [20114,'Torrent Pharma','INE685A01028','B1YQ561','2025-06-30','Second Time Companies','Pending QC'],
-    [20115,'HDFC Life Insurance','INE795G01014','BFJGN43','2025-06-30','Second Time Companies','Pending QC'],
-    [20116,'Adani Ports & SEZ','INE742F01042','B1FBCF1','2025-06-30','IDK','IDK Analyst'],
-    [20117,'Colgate Palmolive','INE259A01022','6174895','2025-06-30','IDK','IDK Analyst'],
-    [20118,'Berger Paints India','INE463A01038','B0YGNG3','2025-06-30','IDK','IDK Analyst'],
-    [20119,'Abbott India Ltd','INE358A01014','B1HJNZ4','2025-06-30','IDK','IDK Analyst'],
-    [20120,'Indraprastha Gas','INE203G01027','B1FN2R3','2025-06-30','IDK','IDK Analyst'],
-    [20121,'Crompton Greaves','INE299U01018','B3LKWF2','2025-06-30','IDK','IDK Analyst'],
-    [20122,'Muthoot Finance','INE414G01012','B6W3Z55','2025-06-30','IDK','IDK Analyst'],
-    [20123,'Tata Consumer','INE192A01025','B1BL7B2','2025-06-30','IDK','IDK Analyst'],
-    [20124,'Pidilite Industries','INE318A01026','6675756','2025-06-30','IDK','IDK Analyst'],
-    [20125,'Havells India Ltd','INE176B01034','B1HMZM3','2025-06-30','IDK','IDK Analyst'],
+    [20100,'Motilal Oswal Financial Services Ltd','INE338A01027','B233M14','2025-06-30','Fresh','Pending QC'],
+    [20101,'Wipro Ltd','INE075A01022','B0FMGN2','2025-06-30','Fresh','Pending QC'],
+    [20102,'Infosys Ltd','INE009A01021','B156H70','2025-06-30','Fresh','Pending QC'],
+    [20103,'Tech Mahindra Ltd','INE669C01036','B1BVP22','2025-06-30','Fresh','Pending QC'],
+    [20104,'Mahindra & Mahindra','INE101A01026','B02L0S0','2025-06-30','Fresh','Pending QC'],
+    [20105,'Dr. Reddy\'s Labs','INE089A01023','B0QCR27','2025-06-30','AR Update','Pending QC'],
+    [20106,'Cipla Ltd','INE059A01026','6273218','2025-06-30','AR Update','Pending QC'],
+    [20107,'Divi\'s Laboratories','INE361B01024','B04GZF6','2025-06-30','AR Update','Pending QC'],
+    [20108,'Bajaj Finserv Ltd','INE918I01026','B3D8WG3','2025-06-30','AR Update','Pending QC'],
+    [20109,'SBI Life Insurance','INE123W01016','BDXT8R2','2025-06-30','AR Update','Pending QC'],
+    [20110,'Shree Cement Ltd','INE070A01015','B1GBKC5','2025-06-30','AR Update','Pending QC'],
+    [20111,'Interglobe Aviation','INE646L01027','BZ6RWP4','2025-06-30','AR Update','Pending QC'],
+    [20112,'Apollo Hospitals','INE437A01024','B1FXTL3','2025-06-30','AR Update','Pending QC'],
+    [20113,'Godrej Consumer','INE102D01028','B1FT6H2','2025-06-30','Rejected','Pending QC'],
+    [20114,'Torrent Pharma','INE685A01028','B1YQ561','2025-06-30','Rejected','Pending QC'],
+    [20115,'HDFC Life Insurance','INE795G01014','BFJGN43','2025-06-30','Rejected','Pending QC'],
+    [20116,'Adani Ports & SEZ','INE742F01042','B1FBCF1','2025-06-30','Rejected','Pending QC'],
+    [20117,'Colgate Palmolive','INE259A01022','6174895','2025-06-30','Rejected','Pending QC'],
+    [20118,'Berger Paints India','INE463A01038','B0YGNG3','2025-06-30','Rejected','Pending QC'],
+    [20119,'Abbott India Ltd','INE358A01014','B1HJNZ4','2025-06-30','Rejected','Pending QC'],
+    [20120,'Indraprastha Gas','INE203G01027','B1FN2R3','2025-06-30','Rejected','Pending QC'],
+    [20121,'Crompton Greaves','INE299U01018','B3LKWF2','2025-06-30','Rejected','Pending QC'],
+    [20122,'Muthoot Finance','INE414G01012','B6W3Z55','2025-06-30','Rejected','Pending QC'],
+    [20123,'Tata Consumer','INE192A01025','B1BL7B2','2025-06-30','IDK','Pending QC'],
+    [20124,'Pidilite Industries','INE318A01026','6675756','2025-06-30','IDK','Pending QC'],
+    [20125,'Havells India Ltd','INE176B01034','B1HMZM3','2025-06-30','IDK','Pending QC'],
+    [20126,'HDFC Bank Ltd','INE040A01034','B5VT2C4','2025-06-30','IDK','Pending QC'],
+    [20127,'Reliance Industries Ltd','INE002A01018','6099626','2025-06-30','IDK','Pending QC'],
+    [20128,'Bharti Airtel Ltd','INE397D01024','B00LRF8','2025-06-30','IDK','Pending QC'],
+    [20129,'State Bank of India','INE062A01020','B0BHGL5','2025-06-30','IDK','Pending QC'],
   ],
   committee: [
-    [30100,'Motilal Oswal Financial Services Ltd','INE338A01027','B233M14','2025-09-30','Pending','Pending ITICS Committee'],
-    [30101,'ICICI Bank Ltd','INE090A01021','B1RFQ79','2025-09-30','Pending','Pending ITICS Committee'],
-    [30102,'Larsen & Toubro Ltd','INE018A01030','6531789','2025-09-30','Pending','Pending ITICS Committee'],
-    [30103,'ONGC Ltd','INE213A01029','6624309','2025-09-30','Pending','Pending ITICS Committee'],
-    [30104,'Coal India Ltd','INE522F01014','B4TX8S6','2025-09-30','Pending','Pending ITICS Committee'],
-    [30105,'Indian Oil Corp','INE242A01010','B0CWFR6','2025-09-30','Pending','Pending ITICS Committee'],
-    [30106,'BPCL','INE029A01011','6101464','2025-09-30','Pending','Pending ITICS Committee'],
-    [30107,'GAIL India Ltd','INE129A01019','B01FM26','2025-09-30','Pending','Pending ITICS Committee'],
-    [30108,'Vedanta Ltd','INE205A01025','B0DDN31','2025-09-30','Pending','Pending ITICS Committee'],
-    [30109,'Hindalco Industries','INE038A01020','6438415','2025-09-30','Pending','Pending ITICS Committee'],
-    [30110,'JSW Steel Ltd','INE019A01038','B1BVCL6','2025-09-30','Pending','Pending ITICS Committee'],
-    [30111,'Tata Motors Ltd','INE155A01022','B03MLX5','2025-09-30','IDK','IDK QC'],
-    [30112,'Hero MotoCorp Ltd','INE158A01026','B03JVX0','2025-09-30','IDK','IDK QC'],
-    [30113,'Eicher Motors Ltd','INE066A01021','B1BVCL3','2025-09-30','IDK','IDK QC'],
-    [30114,'Bosch Ltd','INE323A01026','6099372','2025-09-30','IDK','IDK QC'],
-    [30115,'Motherson Sumi','INE775A01035','6590066','2025-09-30','IDK','IDK QC'],
-    [30116,'Mindtree Ltd','INE018I01017','B1GWQZ7','2025-09-30','IDK','IDK QC'],
-    [30117,'Mphasis Ltd','INE356A01018','B016LH2','2025-09-30','IDK','IDK QC'],
-    [30118,'L&T Infotech','INE214T01019','BGL9NF3','2025-09-30','IDK','IDK QC'],
-    [30119,'Persistent Systems','INE262H01021','B19WLC5','2025-09-30','IDK','IDK QC'],
-    [30120,'Coforge Ltd','INE591G01017','B3PVZ11','2025-09-30','IDK','IDK QC'],
-    [30121,'Voltas Ltd','INE226A01021','B01GLN5','2025-09-30','IDK','IDK QC'],
-    [30122,'Blue Star Ltd','INE247A01021','6099697','2025-09-30','IDK','IDK QC'],
-    [30123,'Whirlpool India','INE716A01013','B1FLTR3','2025-09-30','IDK','IDK QC'],
-    [30124,'Dixon Technologies','INE935N01012','BFMXLS2','2025-09-30','IDK','IDK QC'],
-    [30125,'Kaynes Technology','INE918Z01012','BMKQ9B3','2025-09-30','IDK','IDK QC']
+    [30100,'Motilal Oswal Financial Services Ltd','INE338A01027','B233M14','2025-09-30','Rejected','Pending ITICS Committee'],
+    [30101,'ICICI Bank Ltd','INE090A01021','B1RFQ79','2025-09-30','Rejected','Pending ITICS Committee'],
+    [30102,'Larsen & Toubro Ltd','INE018A01030','6531789','2025-09-30','Rejected','Pending ITICS Committee'],
+    [30103,'ONGC Ltd','INE213A01029','6624309','2025-09-30','Rejected','Pending ITICS Committee'],
+    [30104,'Coal India Ltd','INE522F01014','B4TX8S6','2025-09-30','Rejected','Pending ITICS Committee'],
+    [30105,'Indian Oil Corp','INE242A01010','B0CWFR6','2025-09-30','Rejected','Pending ITICS Committee'],
+    [30106,'BPCL','INE029A01011','6101464','2025-09-30','Rejected','Pending ITICS Committee'],
+    [30107,'GAIL India Ltd','INE129A01019','B01FM26','2025-09-30','Rejected','Pending ITICS Committee'],
+    [30108,'Vedanta Ltd','INE205A01025','B0DDN31','2025-09-30','Rejected','Pending ITICS Committee'],
+    [30109,'Hindalco Industries','INE038A01020','6438415','2025-09-30','Rejected','Pending ITICS Committee'],
+    [30110,'JSW Steel Ltd','INE019A01038','B1BVCL6','2025-09-30','IDK','Pending ITICS Committee'],
+    [30111,'Tata Motors Ltd','INE155A01022','B03MLX5','2025-09-30','IDK','Pending ITICS Committee'],
+    [30112,'Hero MotoCorp Ltd','INE158A01026','B03JVX0','2025-09-30','IDK','Pending ITICS Committee'],
+    [30113,'Eicher Motors Ltd','INE066A01021','B1BVCL3','2025-09-30','IDK','Pending ITICS Committee'],
+    [30114,'Bosch Ltd','INE323A01026','6099372','2025-09-30','IDK','Pending ITICS Committee'],
+    [30115,'Motherson Sumi','INE775A01035','6590066','2025-09-30','IDK','Pending ITICS Committee'],
+    [30116,'Mindtree Ltd','INE018I01017','B1GWQZ7','2025-09-30','IDK','Pending ITICS Committee'],
+    [30117,'Mphasis Ltd','INE356A01018','B016LH2','2025-09-30','IDK','Pending ITICS Committee'],
+    [30118,'L&T Infotech','INE214T01019','BGL9NF3','2025-09-30','IDK','Pending ITICS Committee'],
+    [30119,'Persistent Systems','INE262H01021','B19WLC5','2025-09-30','IDK','Pending ITICS Committee'],
+    [30120,'Coforge Ltd','INE591G01017','B3PVZ11','2025-09-30','IDK','Pending ITICS Committee'],
+    [30121,'Voltas Ltd','INE226A01021','B01GLN5','2025-09-30','IDK','Pending ITICS Committee'],
+    [30122,'Blue Star Ltd','INE247A01021','6099697','2025-09-30','IDK','Pending ITICS Committee'],
+    [30123,'Whirlpool India','INE716A01013','B1FLTR3','2025-09-30','IDK','Pending ITICS Committee'],
+    [30124,'Dixon Technologies','INE935N01012','BFMXLS2','2025-09-30','IDK','Pending ITICS Committee'],
+    [30125,'Kaynes Technology','INE918Z01012','BMKQ9B3','2025-09-30','IDK','Pending ITICS Committee']
   ]
 };
 
-var _iticsFromOrder = { 'Research': 0, 'From QC': 1, 'From ITICS Committee': 2 };
-var _iticsQcFromOrder = { 'Research': 0, 'Second Time Companies': 1, 'IDK': 2 };
-var _iticsCommitteeFromOrder = { 'Pending': 0, 'IDK': 1 };
+var _iticsFromOrder = { 'Fresh': 0, 'AR Update': 1, 'Rejected': 2 };
+var _iticsQcFromOrder = { 'Fresh': 0, 'AR Update': 1, 'Rejected': 2, 'IDK': 3 };
+var _iticsCommitteeFromOrder = { 'Rejected': 0, 'IDK': 1 };
 ITICS_DATA.analyst.sort(function(a,b){
   return (_iticsFromOrder[a[5]] !== undefined ? _iticsFromOrder[a[5]] : 99) - (_iticsFromOrder[b[5]] !== undefined ? _iticsFromOrder[b[5]] : 99);
 });
@@ -3928,6 +3996,9 @@ var iticsActiveFilters = {
 var iticsActiveTab  = 'analyst';
 
 var FROM_DOT_COLORS = {
+  'Fresh':                  '#34d399',
+  'AR Update':              '#f97316',
+  'Rejected':               '#ef4444',
   'Research':               '#818cf8',
   'From QC':                '#f59e0b',
   'From ITICS Committee':   '#a78bfa',
@@ -4003,60 +4074,108 @@ document.addEventListener('click', function(e){
   });
 });
 
+/* ── SHARED FILTER DROPDOWN STYLE ── */
+var _FILTER_DD_CSS = 'position:fixed;z-index:999999;background:rgba(13,18,38,.97);border:1px solid rgba(59,130,246,.3);border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.06);min-width:210px;padding:6px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)';
+
+/* Smart position: below button by default, flips above if too close to bottom */
+function _positionFilterDD(dd, btn){
+  dd.style.visibility='hidden'; dd.style.display='block';
+  var ddH=dd.offsetHeight, ddW=dd.offsetWidth;
+  dd.style.display='none'; dd.style.visibility='';
+  var r=btn.getBoundingClientRect(), vw=window.innerWidth, vh=window.innerHeight, GAP=6;
+  var top = (r.bottom+GAP+ddH<=vh) ? r.bottom+GAP : Math.max(4, r.top-ddH-GAP);
+  var left = r.left; if(left+ddW>vw-12) left=Math.max(8,vw-ddW-12);
+  dd.style.top=top+'px'; dd.style.left=left+'px';
+}
+
+/* Build a header label row inside dropdown */
+function _ddHeader(label){
+  var h=document.createElement('div');
+  h.style.cssText='padding:6px 12px 8px;font-size:9px;font-weight:700;color:#3b82f6;letter-spacing:1.5px;text-transform:uppercase;border-bottom:1px solid rgba(59,130,246,.15);margin-bottom:4px';
+  h.textContent=label; return h;
+}
+
+/* Build one option row */
+function _ddRow(label, dotColor, isActive, onClick){
+  var b=document.createElement('button');
+  b.innerHTML = dotColor
+    ? '<span style="display:inline-flex;align-items:center;gap:9px"><span style="width:8px;height:8px;border-radius:50%;background:'+dotColor+';flex-shrink:0;box-shadow:0 0 6px '+dotColor+'88"></span>'+label+'</span>'
+    : label;
+  b.style.cssText='width:100%;text-align:left;background:'+(isActive?'rgba(59,130,246,.18)':'transparent')
+    +';border:none;border-radius:6px;padding:9px 12px;font-size:12.5px;font-weight:'+(isActive?'600':'500')
+    +';color:'+(isActive?'#60a5fa':'#e8edf5')+';cursor:pointer;font-family:"IBM Plex Sans",sans-serif;display:block;transition:background .12s;letter-spacing:.1px';
+  b.addEventListener('mouseenter',function(){ if(!isActive) b.style.background='rgba(59,130,246,.1)'; });
+  b.addEventListener('mouseleave',function(){ b.style.background=isActive?'rgba(59,130,246,.18)':'transparent'; });
+  b.addEventListener('click',function(ev){ ev.stopPropagation(); onClick(); });
+  return b;
+}
+
+/* Update a filter button's visual active state */
+function _refreshFilterBtn(btnId, iconId, isActive){
+  var btn=document.getElementById(btnId), ico=document.getElementById(iconId);
+  if(btn){ btn.style.opacity=isActive?'1':'.8'; btn.style.background=isActive?'rgba(59,130,246,.25)':'rgba(59,130,246,.1)'; btn.style.borderColor=isActive?'rgba(59,130,246,.5)':'rgba(59,130,246,.2)'; }
+  if(ico){ ico.setAttribute('stroke',isActive?'#60a5fa':'#e8edf5'); ico.setAttribute('fill',isActive?'rgba(59,130,246,.18)':'none'); }
+}
+
+/* Close all global filter dropdowns */
+function _closeAllFilterDDs(){
+  ['_itics-dd','_at-actionby-dd','_at-role-dd','_ca-state-dd','_ca-status-dd','_gc-state-dd','_gc-status-dd','ac-status-dropdown','ac-type-dropdown'].forEach(function(id){
+    var el=document.getElementById(id); if(el) el.style.display='none';
+  });
+}
+
+/* ── ITICS WORKBENCH FILTER ── */
+var _ITICS_FROM_DOTS  = { 'Fresh':'#34d399','AR Update':'#f97316','Rejected':'#ef4444','Research':'#818cf8','From QC':'#f59e0b','From ITICS Committee':'#a78bfa','Second Time Companies':'#f43f5e','IDK':'#06b6d4','Pending':'#f59e0b','From Analyst':'#34d399' };
+var _ITICS_STATUS_DOTS = { 'Pending Analyst':'#f59e0b','Pending QC':'#3b82f6','QC Rejected':'#ef4444','Pending ITICS Committee':'#a855f7','IDK Analyst':'#10b981','IDK QC':'#06b6d4','IDK Committee':'#06b6d4','Pending':'#f59e0b' };
+
 function iticsToggleFilter(e, tab, col){
   e.stopPropagation();
-  var dd = document.getElementById('itics-filter-' + tab + '-' + col);
-  var isOpen = dd.style.display !== 'none';
-  // Close all
-  ['analyst','qc','committee'].forEach(function(t){
-    ['from','status'].forEach(function(c){
-      var d = document.getElementById('itics-filter-' + t + '-' + c);
-      if(d) d.style.display = 'none';
-    });
-  });
-  if(isOpen) return;
+  var ddId = '_itics-dd';
+  var existing = document.getElementById(ddId);
 
-  var colIdx = col === 'from' ? 5 : 6;
-  var vals = [];
-  ITICS_DATA[tab].forEach(function(r){ if(vals.indexOf(r[colIdx]) === -1) vals.push(r[colIdx]); });
-  vals.sort();
+  // If already showing this same filter, toggle off
+  if(existing && existing.style.display!=='none' && existing.dataset.tab===tab && existing.dataset.col===col){
+    existing.style.display='none'; return;
+  }
+  _closeAllFilterDDs();
+
+  var dd = existing || document.createElement('div');
+  if(!existing){ dd.id=ddId; document.body.appendChild(dd); }
+  dd.dataset.tab=tab; dd.dataset.col=col;
+  dd.style.cssText=_FILTER_DD_CSS;
+  dd.innerHTML='';
+
+  var colIdx = col==='from' ? 5 : 6;
+  var dotMap  = col==='from' ? _ITICS_FROM_DOTS : _ITICS_STATUS_DOTS;
+  var label   = col==='from' ? 'Filter by Company Type' : 'Filter by Status';
   var current = iticsActiveFilters[tab][col];
 
-  dd.innerHTML = '';
+  dd.appendChild(_ddHeader(label));
 
-  // "All" option
-  var allRow = document.createElement('div');
-  allRow.style.cssText = 'padding:9px 14px;font-size:12.5px;font-weight:600;border-radius:5px;cursor:pointer;font-family:"IBM Plex Sans",sans-serif;transition:background .1s;letter-spacing:.1px;'
-    + (!current ? 'color:#60a5fa;background:rgba(59,130,246,.12);' : 'color:#94a3b8;');
-  allRow.textContent = 'All';
-  allRow.onmouseenter = function(){ if(current) this.style.background='rgba(255,255,255,.06)'; };
-  allRow.onmouseleave = function(){ if(current) this.style.background='transparent'; };
-  allRow.onclick = function(ev){ ev.stopPropagation(); iticsActiveFilters[tab][col]=null; iticsApplyFilters(tab); dd.style.display='none'; iticsRefreshFilterBtn(tab,col); };
-  dd.appendChild(allRow);
+  var allLabel = col==='from' ? 'All Types' : 'All Statuses';
+  dd.appendChild(_ddRow(allLabel, '', !current, function(){
+    iticsActiveFilters[tab][col]=null; iticsApplyFilters(tab);
+    dd.style.display='none'; iticsRefreshFilterBtn(tab,col);
+  }));
 
+  var vals=[];
+  ITICS_DATA[tab].forEach(function(r){ if(vals.indexOf(r[colIdx])===-1) vals.push(r[colIdx]); });
+  vals.sort();
   vals.forEach(function(v){
-    var row = document.createElement('div');
-    row.style.cssText = 'padding:9px 14px;font-size:12.5px;border-radius:5px;cursor:pointer;font-family:"IBM Plex Sans",sans-serif;transition:background .1s;letter-spacing:.1px;'
-      + (current===v ? 'color:#60a5fa;background:rgba(59,130,246,.12);font-weight:600;' : 'color:#e8edf5;font-weight:500;');
-    row.textContent = v;
-    row.onmouseenter = function(){ if(current!==v) this.style.background='rgba(255,255,255,.06)'; };
-    row.onmouseleave = function(){ if(current!==v) this.style.background='transparent'; };
-    row.onclick = function(ev){ ev.stopPropagation(); iticsActiveFilters[tab][col]=v; iticsApplyFilters(tab); dd.style.display='none'; iticsRefreshFilterBtn(tab,col); };
-    dd.appendChild(row);
+    dd.appendChild(_ddRow(v, dotMap[v]||'', current===v, function(){
+      iticsActiveFilters[tab][col]=v; iticsApplyFilters(tab);
+      dd.style.display='none'; iticsRefreshFilterBtn(tab,col);
+    }));
   });
 
-  dd.style.display = 'block';
+  var btn = document.getElementById('itics-filter-btn-'+tab+'-'+col);
+  _positionFilterDD(dd, btn);
+  dd.style.display='block';
 }
 
 function iticsRefreshFilterBtn(tab, col){
-  var btn = document.getElementById('itics-filter-btn-' + tab + '-' + col);
-  var ico = document.getElementById('itics-filter-icon-' + tab + '-' + col);
-  if(!btn) return;
-  var active = !!iticsActiveFilters[tab][col];
-  btn.style.opacity = active ? '1' : '.65';
-  // Update onmouseleave to maintain correct opacity on hover-out
-  btn.onmouseleave = function(){ this.style.opacity = active ? '1' : '.65'; };
-  if(ico) ico.setAttribute('stroke', active ? '#60a5fa' : '#e8edf5');
+  var active=!!iticsActiveFilters[tab][col];
+  _refreshFilterBtn('itics-filter-btn-'+tab+'-'+col, 'itics-filter-icon-'+tab+'-'+col, active);
 }
 
 function iticsApplyFilters(tab){
@@ -4141,11 +4260,14 @@ function iticsRender(tab){
           var pill     = document.getElementById('qc-status-pill');
           if(sourceTab === 'analyst'){
             if(lbl)      lbl.textContent     = 'ANALYST REVIEW';
-            if(barTitle) barTitle.textContent = 'SUBMIT COMPANY DATA';
+            if(barTitle) barTitle.textContent = 'SAVE AND SUBMIT COMPANY DATA';
             if(rejLbl)   rejLbl.textContent   = 'Cancel';
             if(appLbl)   appLbl.textContent   = 'Submit';
             if(desc)     desc.textContent     = 'Please review the source document and extracted data before submission. This data will go to QC for review.';
             if(pill){ pill.textContent = 'PENDING ANALYST'; pill.style.cssText = 'font-size:9px;font-weight:600;letter-spacing:.5px;padding:2px 8px;border-radius:20px;background:#172554;border:1px solid #1d4ed8;color:#60a5fa;transition:all .2s'; }
+            var saveBtn = document.getElementById('btn-save'); if(saveBtn) saveBtn.style.display = 'flex';
+            _setRevAnalystMode(true);
+            var ml = document.getElementById('qc-dv-module-label'); if(ml) ml.textContent = 'Analyst Review';
           } else if(sourceTab === 'committee'){
             if(lbl)      lbl.textContent     = 'ITICS COMMITTEE REVIEW';
             if(barTitle) barTitle.textContent = 'ITICS COMMITTEE DECISION';
@@ -4153,13 +4275,19 @@ function iticsRender(tab){
             if(appLbl)   appLbl.textContent  = 'Submit';
             if(desc)     desc.textContent    = 'Please review the source document, extracted data and Analyst/QC remarks here.';
             if(pill){ pill.textContent = 'PENDING ITICS COMMITTEE'; pill.style.cssText = 'font-size:9px;font-weight:600;letter-spacing:.5px;padding:2px 8px;border-radius:20px;background:#172554;border:1px solid #1d4ed8;color:#60a5fa;transition:all .2s'; }
+            var saveBtn = document.getElementById('btn-save'); if(saveBtn) saveBtn.style.display = 'none';
+            _setRevAnalystMode(false);
+            var ml = document.getElementById('qc-dv-module-label'); if(ml) ml.textContent = 'ITICS Committee Review';
           } else {
             if(lbl)      lbl.textContent     = 'QC REVIEW';
             if(barTitle) barTitle.innerHTML  = '&#9874; FINAL QC DECISION';
-            if(rejLbl)   rejLbl.innerHTML    = '&#8855; Reject Data';
-            if(appLbl)   appLbl.innerHTML    = '&#10003; Accept &amp; Approve';
+            if(rejLbl)   rejLbl.innerHTML    = '&#8855; Reject';
+            if(appLbl)   appLbl.innerHTML    = '&#10003; Approve';
             if(desc)     desc.textContent    = 'Please review the source document and extracted data before submission. This action will finalize the Golden Data record for the 2025 fiscal cycle.';
             if(pill){ pill.textContent = 'PENDING QC'; pill.style.cssText = 'font-size:9px;font-weight:600;letter-spacing:.5px;padding:2px 8px;border-radius:20px;background:#172554;border:1px solid #1d4ed8;color:#60a5fa;transition:all .2s'; }
+            var saveBtn = document.getElementById('btn-save'); if(saveBtn) saveBtn.style.display = 'none';
+            _setRevAnalystMode(false);
+            var ml = document.getElementById('qc-dv-module-label'); if(ml) ml.textContent = 'QC Review';
           }
           // Hide any leftover feedback banners
           ['rej','app'].forEach(function(t){
@@ -4568,6 +4696,8 @@ function iticsStatusBadge(val){
     dotColor = '#10b981';   // Emerald green
   } else if(v === 'idk qc'){
     dotColor = '#06b6d4';   // Cyan
+  } else if(v === 'idk committee'){
+    dotColor = '#06b6d4';   // Cyan
   } else if(v === 'pending'){
     dotColor = '#f59e0b';
   } else if(v.indexOf('reject') !== -1){
@@ -4585,7 +4715,9 @@ function iticsStatusBadge(val){
 function statusDotBadge(val){
   var v = val.toLowerCase().trim();
   var dotColor;
-  if(v === 'pending analyst'){
+  if(v === 'unassigned'){
+    dotColor = '#6b7280';        // grey — not yet assigned
+  } else if(v === 'pending analyst'){
     dotColor = '#f59e0b';        // amber/yellow
   } else if(v === 'pending qc'){
     dotColor = '#3b82f6';        // blue
@@ -4594,10 +4726,11 @@ function statusDotBadge(val){
   } else if(v === 'pending itics committee'){
     dotColor = '#a855f7';        // purple
   } else if(v === 'idk analyst'){
-    dotColor = '#10b981';        // emerald green — clearly distinct from amber
+    dotColor = '#10b981';        // emerald green
   } else if(v === 'idk qc'){
-    dotColor = '#06b6d4';        // cyan — clearly distinct from red
-  } else if(v === 'approved'){
+    dotColor = '#06b6d4';        // cyan
+  } else if(v === 'idk committee'){
+    dotColor = '#06b6d4';        // cyan
     dotColor = '#22c55e';        // green
   } else if(v === 'rejected'){
     dotColor = '#ef4444';        // red
@@ -4717,35 +4850,36 @@ function mdRender(){
 
 /* ══ ASSIGN COMPANY ══ */
 var AC_DATA = [
-  ['Motilal Oswal Financial Services Ltd','INE338A01027','B233M14','shreyansh@indxx.com','harsh@indxx.com','Pending Analyst'],
-  ['G8 Education Ltd','AU000000GEM7','B296314','harsh@indxx.com','raunak@indxx.com','Pending QC'],
-  ['Kcb Group Plc','KE0000000315','B1VG917','ishan@indxx.com','ajay@indxx.com','IDK Analyst'],
-  ['Nippon Road Co Ltd','JP3740200005','6642462','shreyansh@indxx.com','raunak@indxx.com','Pending ITICS Committee'],
-  ['Zhongsheng Group Holdings Ltd','KYG9894K1085','B633D97','ajay@indxx.com','harsh@indxx.com','Rejected by QC'],
-  ['Caplin Point Laboratories Ltd','INE475E01026','BYNJC27','harsh@indxx.com','raunak@indxx.com','IDK QC'],
-  ['Sun Tv Network Ltd','INE424H01027','B128WL3','shreyansh@indxx.com','harsh@indxx.com','Pending Analyst'],
-  ['Pt Bukit Asam Tbk','ID1000094006','6565127','ishan@indxx.com','raunak@indxx.com','IDK Analyst'],
-  ['Nishimatsu Construction Co Ltd','JP3659200004','6640983','harsh@indxx.com','ajay@indxx.com','Pending ITICS Committee'],
-  ['Zurich Insurance Group Ag','CH0011075394','5983816','shreyansh@indxx.com','raunak@indxx.com','IDK QC'],
-  ['Zydus Wellness Ltd','INE768C01010','6334327','ajay@indxx.com','harsh@indxx.com','Pending Analyst'],
-  ['Zyxel Group Corp','TW0003764003','6103367','ishan@indxx.com','raunak@indxx.com','Rejected by QC'],
-  ['Zymeworks Inc','US98985Y1082','BPCQZY9','shreyansh@indxx.com','harsh@indxx.com','IDK Analyst'],
-  ['Zymergen Inc','US98985X1000','BMF1M49','harsh@indxx.com','ajay@indxx.com','Pending Analyst'],
-  ['Zylox Tonbridge Medical Tech','CNE100004JD2','BP6FHK2','ishan@indxx.com','raunak@indxx.com','IDK QC'],
-  ['Cho Pharma Inc','TW0006586001','BYQKH77','shreyansh@indxx.com','harsh@indxx.com','Pending ITICS Committee'],
-  ['Zurn Elkay Water Solutions C','US98983L1089','BMV1ZD3','ajay@indxx.com','raunak@indxx.com','IDK Analyst'],
-  ['ZYDUS LIFESCIENCES LTD','INE010B01027','BYM8TG8','harsh@indxx.com','raunak@indxx.com','Pending QC'],
-  ['Zoetis Inc','US98978V1035','B8Z4DX5','shreyansh@indxx.com','ajay@indxx.com','IDK QC'],
-  ['Zoom Video Communications','US98980L1017','BKT3VR2','ishan@indxx.com','harsh@indxx.com','Pending ITICS Committee'],
-  ['Zomato Ltd','INE083N01010','BMWFPD8','ajay@indxx.com','raunak@indxx.com','IDK Analyst'],
-  ['ZTE Corp','CNE000001B16','6169068','shreyansh@indxx.com','harsh@indxx.com','Pending QC'],
-  ['Zscaler Inc','US98980G1022','BF0GWZ1','ishan@indxx.com','raunak@indxx.com','Pending ITICS Committee'],
+  ['Motilal Oswal Financial Services Ltd','INE338A01027','B233M14','','','Fresh','Unassigned'],
+  ['G8 Education Ltd','AU000000GEM7','B296314','','','Fresh','Unassigned'],
+  ['Kcb Group Plc','KE0000000315','B1VG917','','','Fresh','Unassigned'],
+  ['Nippon Road Co Ltd','JP3740200005','6642462','','','Fresh','Unassigned'],
+  ['Zhongsheng Group Holdings Ltd','KYG9894K1085','B633D97','shreyansh@indxx.com','','Fresh','Pending Analyst'],
+  ['Caplin Point Laboratories Ltd','INE475E01026','BYNJC27','harsh@indxx.com','','Fresh','Pending Analyst'],
+  ['Sun Tv Network Ltd','INE424H01027','B128WL3','shreyansh@indxx.com','','Fresh','Pending Analyst'],
+  ['Pt Bukit Asam Tbk','ID1000094006','6565127','ishan@indxx.com','','AR Update','Pending Analyst'],
+  ['Nishimatsu Construction Co Ltd','JP3659200004','6640983','harsh@indxx.com','','AR Update','Pending Analyst'],
+  ['Zurich Insurance Group Ag','CH0011075394','5983816','shreyansh@indxx.com','ajay@indxx.com','AR Update','Pending QC'],
+  ['Zydus Wellness Ltd','INE768C01010','6334327','ajay@indxx.com','harsh@indxx.com','AR Update','Pending QC'],
+  ['Zyxel Group Corp','TW0003764003','6103367','ishan@indxx.com','raunak@indxx.com','AR Update','Pending QC'],
+  ['Zymeworks Inc','US98985Y1082','BPCQZY9','shreyansh@indxx.com','harsh@indxx.com','AR Update','Pending QC'],
+  ['Zymergen Inc','US98985X1000','BMF1M49','harsh@indxx.com','ajay@indxx.com','AR Update','Pending QC'],
+  ['Zylox Tonbridge Medical Tech','CNE100004JD2','BP6FHK2','ishan@indxx.com','raunak@indxx.com','AR Update','Pending QC'],
+  ['Cho Pharma Inc','TW0006586001','BYQKH77','shreyansh@indxx.com','harsh@indxx.com','AR Update','Pending QC'],
+  ['Zurn Elkay Water Solutions C','US98983L1089','BMV1ZD3','ajay@indxx.com','raunak@indxx.com','AR Update','Pending QC'],
+  ['ZYDUS LIFESCIENCES LTD','INE010B01027','BYM8TG8','harsh@indxx.com','raunak@indxx.com','AR Update','Pending QC'],
+  ['Zoetis Inc','US98978V1035','B8Z4DX5','shreyansh@indxx.com','ajay@indxx.com','AR Update','Pending QC'],
+  ['Nippon Road Co Ltd','JP3740200005','6642462','ishan@indxx.com','harsh@indxx.com','AR Update','Pending ITICS Committee'],
+  ['Zoom Video Communications','US98980L1017','BKT3VR2','ishan@indxx.com','harsh@indxx.com','AR Update','Pending ITICS Committee'],
+  ['Zomato Ltd','INE083N01010','BMWFPD8','ajay@indxx.com','raunak@indxx.com','AR Update','Pending ITICS Committee'],
+  ['ZTE Corp','CNE000001B16','6169068','shreyansh@indxx.com','harsh@indxx.com','AR Update','Pending ITICS Committee'],
 ];
 
 var acFiltered = AC_DATA.slice();
 var acCurPage = 1, acPerPage = 20;
 var acSortCol = -1, acSortAsc = true;
 var acStatusFilter = null;
+var acTypeFilter = null;
 
 function acTotalPages(){ return Math.max(1, Math.ceil(acFiltered.length / acPerPage)); }
 
@@ -4762,24 +4896,32 @@ function acRender(){
     tr.onmouseleave=function(){ tr.style.background=idx%2!==0?'rgba(255,255,255,.025)':''; };
     r.forEach(function(val, ci){
       var td = document.createElement('td');
-      if(ci===5){
-        td.setAttribute('style','padding:0 16px;white-space:nowrap');
+      if(ci===6){
+        td.setAttribute('style','padding:0 14px;white-space:nowrap');
         td.innerHTML = statusDotBadge(val);
-      } else if(ci===1||ci===2){
-        td.setAttribute('style','padding:0 16px;font-size:11.5px;font-family:"IBM Plex Mono",monospace;color:#e8edf5;white-space:nowrap');
+      } else if(ci===5){
+        td.setAttribute('style','padding:0 14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis');
+        var isAR = val === 'AR Update';
+        var dotColor = isAR ? '#f97316' : '#34d399';
+        td.innerHTML = '<span style="display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:500;color:#e8edf5;letter-spacing:.1px"><span style="width:8px;height:8px;border-radius:50%;background:'+dotColor+';flex-shrink:0;box-shadow:0 0 6px '+dotColor+'99"></span>'+val+'</span>';
+      } else if(ci===2){
+        td.setAttribute('style','padding:0 10px;font-size:11.5px;font-family:"IBM Plex Mono",monospace;color:#e8edf5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis');
+        td.textContent=val;
+      } else if(ci===1){
+        td.setAttribute('style','padding:0 14px;font-size:11.5px;font-family:"IBM Plex Mono",monospace;color:#e8edf5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis');
         td.textContent=val;
       } else if(ci===3||ci===4){
-        td.setAttribute('style','padding:0 16px;font-size:11.5px;color:#e8edf5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis');
-        td.textContent=val||'—';
+        td.setAttribute('style','padding:0 14px;font-size:11.5px;color:#e8edf5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis');
+        td.textContent=val||'';
       } else {
-        td.setAttribute('style','padding:0 16px;font-size:12px;font-weight:500;color:#e8edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap');
+        td.setAttribute('style','padding:0 18px;font-size:12px;font-weight:500;color:#e8edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap');
         td.textContent=val;
       }
       tr.appendChild(td);
     });
     tbody.appendChild(tr);
   });
-  var filler=document.createElement('tr'); var ftd=document.createElement('td'); ftd.setAttribute('colspan','6'); ftd.style.cssText='padding:0;border:none'; filler.appendChild(ftd); tbody.appendChild(filler);
+  var filler=document.createElement('tr'); var ftd=document.createElement('td'); ftd.setAttribute('colspan','7'); ftd.style.cssText='padding:0;border:none'; filler.appendChild(ftd); tbody.appendChild(filler);
   // Pagination
   var pages=document.getElementById('ac-pages'); if(!pages) return;
   pages.innerHTML='';
@@ -4800,7 +4942,11 @@ function acChangePerPage(){ var s=document.getElementById('ac-perpage'); if(s) a
 
 function acFilter(){
   var q=(document.getElementById('ac-search').value||'').toLowerCase();
-  acFiltered=AC_DATA.filter(function(r){ return r.join(' ').toLowerCase().indexOf(q)!==-1 && (acStatusFilter===null||r[5]===acStatusFilter); });
+  acFiltered=AC_DATA.filter(function(r){
+    return r.join(' ').toLowerCase().indexOf(q)!==-1
+      && (acStatusFilter===null||r[6]===acStatusFilter)
+      && (acTypeFilter===null||r[5]===acTypeFilter);
+  });
   acCurPage=1; acRender();
 }
 
@@ -4816,42 +4962,199 @@ function acSort(col){
 
 function acBuildStatusFilter(){
   var dd=document.getElementById('ac-status-dropdown'); if(!dd) return;
-  var statuses=[]; AC_DATA.forEach(function(r){ if(statuses.indexOf(r[5])===-1) statuses.push(r[5]); }); statuses.sort();
+  var statuses=[]; AC_DATA.forEach(function(r){ if(statuses.indexOf(r[6])===-1) statuses.push(r[6]); }); statuses.sort();
   dd.innerHTML='';
-  function mkBtn(label,val){
-    var btn=document.createElement('button'); btn.textContent=label; var active=acStatusFilter===val;
+  [null].concat(statuses).forEach(function(val){
+    var label = val===null ? 'All' : val;
+    var btn=document.createElement('button'); btn.textContent=label;
+    var active=acStatusFilter===val;
     btn.style.cssText='width:100%;text-align:left;background:'+(active?'rgba(59,130,246,.2)':'transparent')+';border:none;border-radius:5px;padding:7px 10px;font-size:12px;color:#e8edf5;cursor:pointer;font-family:"IBM Plex Sans",sans-serif;display:block';
     btn.onmouseenter=function(){ if(acStatusFilter!==val) this.style.background='rgba(255,255,255,.06)'; };
     btn.onmouseleave=function(){ this.style.background=acStatusFilter===val?'rgba(59,130,246,.2)':'transparent'; };
-    btn.onclick=function(){ acStatusFilter=val; acFilter(); closeAcStatusDropdown(); acBuildStatusFilter();
-      var icon=document.getElementById('ac-filter-icon'), fbtn=document.getElementById('ac-status-filter-btn');
-      if(icon){ icon.setAttribute('stroke',acStatusFilter?'#60a5fa':'#e8edf5'); icon.setAttribute('fill',acStatusFilter?'rgba(59,130,246,.25)':'none'); }
-      if(fbtn) fbtn.style.opacity=acStatusFilter?'1':'.7';
-    };
+    (function(v){
+      btn.onclick=function(e){
+        e.stopPropagation();
+        acStatusFilter=v; acFilter(); closeAcStatusDropdown();
+        var icon=document.getElementById('ac-filter-icon'), fbtn=document.getElementById('ac-status-filter-btn');
+        if(icon){ icon.setAttribute('stroke',acStatusFilter?'#60a5fa':'#e8edf5'); icon.setAttribute('fill',acStatusFilter?'rgba(59,130,246,.25)':'none'); }
+        if(fbtn) fbtn.style.opacity=acStatusFilter?'1':'.7';
+      };
+    })(val);
     dd.appendChild(btn);
-  }
-  mkBtn('All',null); statuses.forEach(function(s){ mkBtn(s,s); });
+  });
 }
+
+function acBuildTypeFilter(){
+  var dd=document.getElementById('ac-type-dropdown'); if(!dd) return;
+  var types=['Fresh','AR Update'];
+  dd.innerHTML='';
+  ['All','Fresh','AR Update'].forEach(function(t){
+    var val = t === 'All' ? null : t;
+    var btn=document.createElement('button');
+    btn.textContent = t;
+    var active = acTypeFilter === val;
+    btn.style.cssText='width:100%;text-align:left;background:'+(active?'rgba(59,130,246,.2)':'transparent')+';border:none;border-radius:5px;padding:7px 10px;font-size:12px;color:#e8edf5;cursor:pointer;font-family:"IBM Plex Sans",sans-serif;display:block';
+    btn.onmouseenter=function(){ if(acTypeFilter!==val) this.style.background='rgba(255,255,255,.06)'; };
+    btn.onmouseleave=function(){ this.style.background=acTypeFilter===val?'rgba(59,130,246,.2)':'transparent'; };
+    (function(v){
+      btn.onclick=function(e){
+        e.stopPropagation();
+        acTypeFilter=v;
+        acFilter();
+        closeAcTypeDropdown();
+        var icon=document.getElementById('ac-type-filter-icon'), fbtn=document.getElementById('ac-type-filter-btn');
+        if(icon){ icon.setAttribute('stroke',acTypeFilter?'#60a5fa':'#e8edf5'); icon.setAttribute('fill',acTypeFilter?'rgba(59,130,246,.25)':'none'); }
+        if(fbtn) fbtn.style.opacity=acTypeFilter?'1':'.7';
+      };
+    })(val);
+    dd.appendChild(btn);
+  });
+}
+
+/* _acPositionDropdown aliased to shared helper */
+function _acPositionDropdown(dd, btn){ _positionFilterDD(dd, btn); }
 
 function toggleAcStatusFilter(e){
   e.stopPropagation();
-  var dd=document.getElementById('ac-status-dropdown');
-  if(dd){ if(dd.style.display!=='none') dd.style.display='none'; else { acBuildStatusFilter(); dd.style.display='block'; } }
+  var tdd = document.getElementById('ac-type-dropdown');
+  if(tdd) tdd.style.display = 'none';
+
+  var dd = document.getElementById('ac-status-dropdown');
+  if(dd && dd.style.display === 'block'){ dd.style.display = 'none'; return; }
+
+  if(dd) dd.remove();
+  dd = document.createElement('div');
+  dd.id = 'ac-status-dropdown';
+  dd.style.cssText = 'position:fixed;z-index:999999;background:rgba(13,18,38,.97);border:1px solid rgba(59,130,246,.3);border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.06);min-width:210px;padding:6px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)';
+  document.body.appendChild(dd);
+
+  var statuses = [];
+  AC_DATA.forEach(function(row){ if(statuses.indexOf(row[6]) === -1) statuses.push(row[6]); });
+  statuses.sort();
+
+  // Header label inside dropdown
+  var hdr = document.createElement('div');
+  hdr.style.cssText = 'padding:6px 12px 8px;font-size:9px;font-weight:700;color:#3b82f6;letter-spacing:1.5px;text-transform:uppercase;border-bottom:1px solid rgba(59,130,246,.15);margin-bottom:4px';
+  hdr.textContent = 'Filter by Status';
+  dd.appendChild(hdr);
+
+  [null].concat(statuses).forEach(function(v){
+    var label = v === null ? 'All Statuses' : v;
+    var b = document.createElement('button');
+    var isActive = acStatusFilter === v;
+
+    // Dot indicator for non-All options
+    var dotColor = '';
+    if(v === 'Pending Analyst') dotColor = '#f59e0b';
+    else if(v === 'Pending QC') dotColor = '#3b82f6';
+    else if(v === 'Pending ITICS Committee') dotColor = '#a855f7';
+    else if(v === 'Unassigned') dotColor = '#6b7280';
+
+    b.innerHTML = dotColor
+      ? '<span style="display:inline-flex;align-items:center;gap:9px"><span style="width:8px;height:8px;border-radius:50%;background:'+dotColor+';flex-shrink:0;box-shadow:0 0 6px '+dotColor+'88"></span>'+label+'</span>'
+      : label;
+
+    b.style.cssText = 'width:100%;text-align:left;background:' + (isActive ? 'rgba(59,130,246,.18)' : 'transparent')
+      + ';border:none;border-radius:6px;padding:9px 12px;font-size:12.5px;font-weight:'+(isActive?'600':'500')+';color:'+(isActive?'#60a5fa':'#e8edf5')
+      + ';cursor:pointer;font-family:"IBM Plex Sans",sans-serif;display:block;transition:background .12s;letter-spacing:.1px';
+    b.addEventListener('mouseenter', function(){ if(!isActive) b.style.background='rgba(59,130,246,.1)'; });
+    b.addEventListener('mouseleave', function(){ b.style.background = isActive ? 'rgba(59,130,246,.18)' : 'transparent'; });
+    b.addEventListener('click', function(ev){
+      ev.stopPropagation();
+      acStatusFilter = v;
+      acFilter();
+      dd.style.display = 'none';
+      var icon = document.getElementById('ac-filter-icon');
+      var fbtn = document.getElementById('ac-status-filter-btn');
+      if(icon){ icon.setAttribute('stroke', acStatusFilter ? '#60a5fa' : '#e8edf5'); icon.setAttribute('fill', acStatusFilter ? 'rgba(59,130,246,.25)' : 'none'); }
+      if(fbtn){ fbtn.style.opacity = acStatusFilter ? '1' : '.8'; fbtn.style.background = acStatusFilter ? 'rgba(59,130,246,.25)' : 'rgba(59,130,246,.1)'; fbtn.style.borderColor = acStatusFilter ? 'rgba(59,130,246,.5)' : 'rgba(59,130,246,.2)'; }
+    });
+    dd.appendChild(b);
+  });
+
+  var btn = document.getElementById('ac-status-filter-btn');
+  _acPositionDropdown(dd, btn);
+  dd.style.display = 'block';
 }
 function closeAcStatusDropdown(){ var dd=document.getElementById('ac-status-dropdown'); if(dd) dd.style.display='none'; }
 
+function toggleAcTypeFilter(e){
+  e.stopPropagation();
+  var sdd = document.getElementById('ac-status-dropdown');
+  if(sdd) sdd.style.display = 'none';
+
+  var dd = document.getElementById('ac-type-dropdown');
+  if(dd && dd.style.display === 'block'){ dd.style.display = 'none'; return; }
+
+  if(dd) dd.remove();
+  dd = document.createElement('div');
+  dd.id = 'ac-type-dropdown';
+  dd.style.cssText = 'position:fixed;z-index:999999;background:rgba(13,18,38,.97);border:1px solid rgba(59,130,246,.3);border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.06);min-width:190px;padding:6px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)';
+  document.body.appendChild(dd);
+
+  var hdr = document.createElement('div');
+  hdr.style.cssText = 'padding:6px 12px 8px;font-size:9px;font-weight:700;color:#3b82f6;letter-spacing:1.5px;text-transform:uppercase;border-bottom:1px solid rgba(59,130,246,.15);margin-bottom:4px';
+  hdr.textContent = 'Filter by Type';
+  dd.appendChild(hdr);
+
+  var typeDotColors = { 'Fresh': '#34d399', 'AR Update': '#f97316' };
+
+  ['All Types', 'Fresh', 'AR Update'].forEach(function(label){
+    var v = label === 'All Types' ? null : label;
+    var isActive = acTypeFilter === v;
+    var dotColor = typeDotColors[label] || '';
+    var b = document.createElement('button');
+    b.innerHTML = dotColor
+      ? '<span style="display:inline-flex;align-items:center;gap:9px"><span style="width:8px;height:8px;border-radius:50%;background:'+dotColor+';flex-shrink:0;box-shadow:0 0 6px '+dotColor+'88"></span>'+label+'</span>'
+      : label;
+    b.style.cssText = 'width:100%;text-align:left;background:' + (isActive ? 'rgba(59,130,246,.18)' : 'transparent')
+      + ';border:none;border-radius:6px;padding:9px 12px;font-size:12.5px;font-weight:'+(isActive?'600':'500')+';color:'+(isActive?'#60a5fa':'#e8edf5')
+      + ';cursor:pointer;font-family:"IBM Plex Sans",sans-serif;display:block;transition:background .12s;letter-spacing:.1px';
+    b.addEventListener('mouseenter', function(){ if(!isActive) b.style.background='rgba(59,130,246,.1)'; });
+    b.addEventListener('mouseleave', function(){ b.style.background = isActive ? 'rgba(59,130,246,.18)' : 'transparent'; });
+    b.addEventListener('click', function(ev){
+      ev.stopPropagation();
+      acTypeFilter = v;
+      acFilter();
+      dd.style.display = 'none';
+      var icon = document.getElementById('ac-type-filter-icon');
+      var fbtn = document.getElementById('ac-type-filter-btn');
+      if(icon){ icon.setAttribute('stroke', acTypeFilter ? '#60a5fa' : '#e8edf5'); icon.setAttribute('fill', acTypeFilter ? 'rgba(59,130,246,.25)' : 'none'); }
+      if(fbtn){ fbtn.style.opacity = acTypeFilter ? '1' : '.8'; fbtn.style.background = acTypeFilter ? 'rgba(59,130,246,.25)' : 'rgba(59,130,246,.1)'; fbtn.style.borderColor = acTypeFilter ? 'rgba(59,130,246,.5)' : 'rgba(59,130,246,.2)'; }
+    });
+    dd.appendChild(b);
+  });
+
+  var btn = document.getElementById('ac-type-filter-btn');
+  _acPositionDropdown(dd, btn);
+  dd.style.display = 'block';
+}
+function closeAcTypeDropdown(){ var dd=document.getElementById('ac-type-dropdown'); if(dd) dd.style.display='none'; }
+
 function acDownload(){
   if(typeof XLSX==='undefined') return;
-  var headers=[['Company Name','ISIN','SEDOL','Analyst ID','QC ID','Status']];
+  var headers=[['Company Name','ISIN','SEDOL','Analyst ID','QC ID','Company Type','Status']];
   var ws=XLSX.utils.aoa_to_sheet(headers.concat(acFiltered));
   var wb=XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb,ws,'Assign Company');
   XLSX.writeFile(wb,'Assign_Company.xlsx');
 }
 function acDownloadTemplate(){
   if(typeof XLSX==='undefined') return;
-  var ws=XLSX.utils.aoa_to_sheet([['Company Name','ISIN','SEDOL','Analyst ID','QC ID','Status']]);
-  var wb=XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb,ws,'Template');
-  XLSX.writeFile(wb,'Assign_Company_Template.xlsx');
+  var headers = [['Company Name','Analyst ID','QC ID']];
+  var ws = XLSX.utils.aoa_to_sheet(headers);
+  // Style header row
+  var hdrStyle = {
+    font: { bold: true, color: { rgb: 'FFFFFF' } },
+    fill: { fgColor: { rgb: '1D3461' } },
+    alignment: { horizontal: 'center', vertical: 'center' }
+  };
+  ['A1','B1','C1'].forEach(function(ref){
+    if(ws[ref]) ws[ref].s = hdrStyle;
+  });
+  ws['!cols'] = [{wch:32},{wch:24},{wch:24}];
+  var wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Template');
+  XLSX.writeFile(wb, 'Assign_Company_Template.xlsx');
 }
 
 var acupRadioSelected = 'assignment';
@@ -6673,50 +6976,55 @@ function atSort(col){
   }
 }
 
+var _AT_ROLE_DOTS = { 'Analyst':'#34d399','QC':'#3b82f6','ITICS Committee':'#a855f7','RM':'#f59e0b','Admin':'#ef4444' };
+
 function toggleAtActionByFilter(e){
   e.stopPropagation();
-  var dd = document.getElementById('at-actionby-dropdown');
-  if(!dd) return;
-  if(dd.style.display!=='none'){ dd.style.display='none'; return; }
-  var users = [...new Set(AT_DATA.map(function(r){return r[3];}))].sort();
-  var html = '<button onclick="atSetActionByFilter(null)" style="display:block;width:100%;text-align:left;padding:7px 12px;font-size:12px;color:'+(atActionByFilter===null?'#60a5fa':'#94a3b8')+';background:'+(atActionByFilter===null?'rgba(59,130,246,.1)':'transparent')+';border:none;border-radius:5px;cursor:pointer;font-family:\'IBM Plex Sans\',sans-serif">All Users</button>';
+  var ddId='_at-actionby-dd';
+  var dd=document.getElementById(ddId);
+  if(dd && dd.style.display!=='none'){ dd.style.display='none'; return; }
+  _closeAllFilterDDs();
+  if(!dd){ dd=document.createElement('div'); dd.id=ddId; document.body.appendChild(dd); }
+  dd.style.cssText=_FILTER_DD_CSS;
+  dd.innerHTML='';
+  dd.appendChild(_ddHeader('Filter by Action Taken By'));
+  dd.appendChild(_ddRow('All Users','',atActionByFilter===null,function(){ atActionByFilter=null; atFilter(); dd.style.display='none'; _refreshFilterBtn('at-actionby-filter-btn',null,false); }));
+  var users=Array.from(new Set(AT_DATA.map(function(r){return r[3];}))).sort();
   users.forEach(function(u){
-    var active = atActionByFilter===u;
-    html += '<button onclick="atSetActionByFilter(\''+u+'\')" style="display:block;width:100%;text-align:left;padding:7px 12px;font-size:12px;color:'+(active?'#60a5fa':'#94a3b8')+';background:'+(active?'rgba(59,130,246,.1)':'transparent')+';border:none;border-radius:5px;cursor:pointer;font-family:\'IBM Plex Sans\',sans-serif">'+u+'</button>';
+    dd.appendChild(_ddRow(u,'',atActionByFilter===u,function(){ atActionByFilter=u; atFilter(); dd.style.display='none'; _refreshFilterBtn('at-actionby-filter-btn',null,!!atActionByFilter); }));
   });
-  dd.innerHTML = html;
-  dd.style.display = 'block';
+  _positionFilterDD(dd, document.getElementById('at-actionby-filter-btn'));
+  dd.style.display='block';
 }
 
 function atSetActionByFilter(val){
-  atActionByFilter = val;
-  document.getElementById('at-actionby-dropdown').style.display='none';
-  var btn = document.getElementById('at-actionby-filter-btn');
-  if(btn) btn.style.opacity = val ? '1' : '0.7';
-  atFilter();
+  atActionByFilter=val; atFilter();
+  var dd=document.getElementById('_at-actionby-dd'); if(dd) dd.style.display='none';
+  _refreshFilterBtn('at-actionby-filter-btn',null,!!val);
 }
 
 function toggleAtRoleFilter(e){
   e.stopPropagation();
-  var dd = document.getElementById('at-role-dropdown');
-  if(!dd) return;
-  if(dd.style.display!=='none'){ dd.style.display='none'; return; }
-  var roles = ['Analyst','QC','ITICS Committee','RM','Admin'];
-  var html = '<button onclick="atSetRoleFilter(null)" style="display:block;width:100%;text-align:left;padding:7px 12px;font-size:12px;color:'+(atRoleFilter===null?'#60a5fa':'#94a3b8')+';background:'+(atRoleFilter===null?'rgba(59,130,246,.1)':'transparent')+';border:none;border-radius:5px;cursor:pointer;font-family:\'IBM Plex Sans\',sans-serif">All Roles</button>';
-  roles.forEach(function(role){
-    var active = atRoleFilter===role;
-    html += '<button onclick="atSetRoleFilter(\''+role+'\')" style="display:block;width:100%;text-align:left;padding:7px 12px;font-size:12px;color:'+(active?'#60a5fa':'#94a3b8')+';background:'+(active?'rgba(59,130,246,.1)':'transparent')+';border:none;border-radius:5px;cursor:pointer;font-family:\'IBM Plex Sans\',sans-serif">'+role+'</button>';
+  var ddId='_at-role-dd';
+  var dd=document.getElementById(ddId);
+  if(dd && dd.style.display!=='none'){ dd.style.display='none'; return; }
+  _closeAllFilterDDs();
+  if(!dd){ dd=document.createElement('div'); dd.id=ddId; document.body.appendChild(dd); }
+  dd.style.cssText=_FILTER_DD_CSS;
+  dd.innerHTML='';
+  dd.appendChild(_ddHeader('Filter by User Role'));
+  dd.appendChild(_ddRow('All Roles','',atRoleFilter===null,function(){ atRoleFilter=null; atFilter(); dd.style.display='none'; _refreshFilterBtn('at-role-filter-btn',null,false); }));
+  ['Analyst','QC','ITICS Committee','RM','Admin'].forEach(function(role){
+    dd.appendChild(_ddRow(role,_AT_ROLE_DOTS[role]||'',atRoleFilter===role,function(){ atRoleFilter=role; atFilter(); dd.style.display='none'; _refreshFilterBtn('at-role-filter-btn',null,true); }));
   });
-  dd.innerHTML = html;
-  dd.style.display = 'block';
+  _positionFilterDD(dd, document.getElementById('at-role-filter-btn'));
+  dd.style.display='block';
 }
 
 function atSetRoleFilter(val){
-  atRoleFilter = val;
-  document.getElementById('at-role-dropdown').style.display='none';
-  var btn = document.getElementById('at-role-filter-btn');
-  if(btn) btn.style.opacity = val ? '1' : '0.7';
-  atFilter();
+  atRoleFilter=val; atFilter();
+  var dd=document.getElementById('_at-role-dd'); if(dd) dd.style.display='none';
+  _refreshFilterBtn('at-role-filter-btn',null,!!val);
 }
 
 function atDownload(){
@@ -6745,23 +7053,21 @@ function initAuditTrail(){
   var sel = document.getElementById('at-perpage'); if(sel) sel.value='20';
   atPerPage  = 20;
   var src = document.getElementById('at-search'); if(src) src.value='';
-  var rb = document.getElementById('at-role-filter-btn'); if(rb) rb.style.opacity='0.7';
-  var ab = document.getElementById('at-actionby-filter-btn'); if(ab) ab.style.opacity='0.7';
+  var rb = document.getElementById('at-role-filter-btn'); if(rb) _refreshFilterBtn('at-role-filter-btn',null,false);
+  var ab = document.getElementById('at-actionby-filter-btn'); if(ab) _refreshFilterBtn('at-actionby-filter-btn',null,false);
   atRender();
 }
 
-// Close AT dropdowns on outside click
+// ── Global outside-click handler closes ALL filter dropdowns ──
 document.addEventListener('click', function(e){
-  var dd = document.getElementById('at-actionby-dropdown');
-  var btn = document.getElementById('at-actionby-filter-btn');
-  if(dd && dd.style.display!=='none' && btn && !btn.contains(e.target) && !dd.contains(e.target)){
-    dd.style.display='none';
-  }
-  var rdd = document.getElementById('at-role-dropdown');
-  var rbtn = document.getElementById('at-role-filter-btn');
-  if(rdd && rdd.style.display!=='none' && rbtn && !rbtn.contains(e.target) && !rdd.contains(e.target)){
-    rdd.style.display='none';
-  }
+  var allDdIds = ['_itics-dd','_at-actionby-dd','_at-role-dd','_ca-state-dd','_ca-status-dd','_gc-state-dd','_gc-status-dd','ac-status-dropdown','ac-type-dropdown'];
+  allDdIds.forEach(function(id){
+    var dd = document.getElementById(id);
+    if(dd && dd.style.display!=='none' && !dd.contains(e.target)){
+      // Also check that the click wasn't on the trigger button
+      dd.style.display='none';
+    }
+  });
 });
 
 // ══════════════════════════════════════
@@ -6847,84 +7153,52 @@ function caSort(field){
 }
 
 /* ── STATE FILTER ── */
-function caBuildStateFilter(){
-  var dd = document.getElementById('ca-state-dropdown'); if(!dd) return;
-  var vals = ['Active','Inactive'];
-  dd.innerHTML = '';
-  // All option
-  var allBtn = document.createElement('button');
-  allBtn.textContent = 'All';
-  allBtn.style.cssText = 'width:100%;text-align:left;background:'+(caStateFilter===null?'rgba(59,130,246,.2)':'transparent')+';border:none;border-radius:5px;padding:7px 10px;font-size:12px;color:#e8edf5;cursor:pointer;font-family:"IBM Plex Sans",sans-serif;transition:background .12s;display:block';
-  allBtn.onmouseenter = function(){ if(caStateFilter!==null) this.style.background='rgba(255,255,255,.06)'; };
-  allBtn.onmouseleave = function(){ this.style.background = caStateFilter===null?'rgba(59,130,246,.2)':'transparent'; };
-  allBtn.onclick = function(){ caStateFilter=null; caApplyFilters(); closeCaStateDropdown(); };
-  dd.appendChild(allBtn);
-  vals.forEach(function(s){
-    var btn = document.createElement('button');
-    btn.textContent = s;
-    var isActive = caStateFilter === s;
-    btn.style.cssText = 'width:100%;text-align:left;background:'+(isActive?'rgba(59,130,246,.2)':'transparent')+';border:none;border-radius:5px;padding:7px 10px;font-size:12px;color:#e8edf5;cursor:pointer;font-family:"IBM Plex Sans",sans-serif;transition:background .12s;display:block';
-    btn.onmouseenter = function(){ if(caStateFilter!==s) this.style.background='rgba(255,255,255,.06)'; };
-    btn.onmouseleave = function(){ this.style.background = caStateFilter===s?'rgba(59,130,246,.2)':'transparent'; };
-    btn.onclick = function(){ caStateFilter=s; caApplyFilters(); closeCaStateDropdown(); };
-    dd.appendChild(btn);
-  });
-}
+var _CA_STATE_DOTS  = { 'Active':'#22c55e', 'Inactive':'#6b7280' };
+var _CA_STATUS_DOTS = { 'Pending QC':'#3b82f6', 'Rejected by QC':'#ef4444', 'Invalidated':'#a78bfa' };
 
 function caToggleStateFilter(e){
   e.stopPropagation();
-  caBuildStateFilter();
-  var dd = document.getElementById('ca-state-dropdown'); if(!dd) return;
-  var open = dd.style.display !== 'none';
-  closeCaStatusDropdown();
-  dd.style.display = open ? 'none' : 'block';
+  var ddId='_ca-state-dd';
+  var dd=document.getElementById(ddId);
+  if(dd && dd.style.display!=='none'){ dd.style.display='none'; return; }
+  _closeAllFilterDDs();
+  if(!dd){ dd=document.createElement('div'); dd.id=ddId; document.body.appendChild(dd); }
+  dd.style.cssText=_FILTER_DD_CSS;
+  dd.innerHTML='';
+  dd.appendChild(_ddHeader('Filter by State'));
+  dd.appendChild(_ddRow('All States','',caStateFilter===null,function(){ caStateFilter=null; caApplyFilters(); dd.style.display='none'; }));
+  ['Active','Inactive'].forEach(function(s){
+    dd.appendChild(_ddRow(s,_CA_STATE_DOTS[s]||'',caStateFilter===s,function(){ caStateFilter=s; caApplyFilters(); dd.style.display='none'; }));
+  });
+  _positionFilterDD(dd, document.getElementById('ca-state-filter-btn'));
+  dd.style.display='block';
 }
-function closeCaStateDropdown(){ var dd=document.getElementById('ca-state-dropdown'); if(dd) dd.style.display='none'; }
+function closeCaStateDropdown(){ var dd=document.getElementById('_ca-state-dd'); if(dd) dd.style.display='none'; }
 
 /* ── STATUS FILTER ── */
-function caBuildStatusFilter(){
-  var dd = document.getElementById('ca-status-dropdown'); if(!dd) return;
-  var vals = ['Pending QC','Rejected by QC','Invalidated'];
-  dd.innerHTML = '';
-  var allBtn = document.createElement('button');
-  allBtn.textContent = 'All';
-  allBtn.style.cssText = 'width:100%;text-align:left;background:'+(caStatusFilter===null?'rgba(59,130,246,.2)':'transparent')+';border:none;border-radius:5px;padding:7px 10px;font-size:12px;color:#e8edf5;cursor:pointer;font-family:"IBM Plex Sans",sans-serif;transition:background .12s;display:block';
-  allBtn.onmouseenter = function(){ if(caStatusFilter!==null) this.style.background='rgba(255,255,255,.06)'; };
-  allBtn.onmouseleave = function(){ this.style.background = caStatusFilter===null?'rgba(59,130,246,.2)':'transparent'; };
-  allBtn.onclick = function(){ caStatusFilter=null; caApplyFilters(); closeCaStatusDropdown(); };
-  dd.appendChild(allBtn);
-  vals.forEach(function(s){
-    var btn = document.createElement('button');
-    btn.textContent = s;
-    var isActive = caStatusFilter === s;
-    btn.style.cssText = 'width:100%;text-align:left;background:'+(isActive?'rgba(59,130,246,.2)':'transparent')+';border:none;border-radius:5px;padding:7px 10px;font-size:12px;color:#e8edf5;cursor:pointer;font-family:"IBM Plex Sans",sans-serif;transition:background .12s;display:block';
-    btn.onmouseenter = function(){ if(caStatusFilter!==s) this.style.background='rgba(255,255,255,.06)'; };
-    btn.onmouseleave = function(){ this.style.background = caStatusFilter===s?'rgba(59,130,246,.2)':'transparent'; };
-    btn.onclick = function(){ caStatusFilter=s; caApplyFilters(); closeCaStatusDropdown(); };
-    dd.appendChild(btn);
-  });
-}
-
 function caToggleStatusFilter(e){
   e.stopPropagation();
-  caBuildStatusFilter();
-  var dd = document.getElementById('ca-status-dropdown'); if(!dd) return;
-  var open = dd.style.display !== 'none';
-  closeCaStateDropdown();
-  dd.style.display = open ? 'none' : 'block';
+  var ddId='_ca-status-dd';
+  var dd=document.getElementById(ddId);
+  if(dd && dd.style.display!=='none'){ dd.style.display='none'; return; }
+  _closeAllFilterDDs();
+  if(!dd){ dd=document.createElement('div'); dd.id=ddId; document.body.appendChild(dd); }
+  dd.style.cssText=_FILTER_DD_CSS;
+  dd.innerHTML='';
+  dd.appendChild(_ddHeader('Filter by Status'));
+  dd.appendChild(_ddRow('All Statuses','',caStatusFilter===null,function(){ caStatusFilter=null; caApplyFilters(); dd.style.display='none'; }));
+  ['Pending QC','Rejected by QC','Invalidated'].forEach(function(s){
+    dd.appendChild(_ddRow(s,_CA_STATUS_DOTS[s]||'',caStatusFilter===s,function(){ caStatusFilter=s; caApplyFilters(); dd.style.display='none'; }));
+  });
+  _positionFilterDD(dd, document.getElementById('ca-status-filter-btn'));
+  dd.style.display='block';
 }
-function closeCaStatusDropdown(){ var dd=document.getElementById('ca-status-dropdown'); if(dd) dd.style.display='none'; }
+function closeCaStatusDropdown(){ var dd=document.getElementById('_ca-status-dd'); if(dd) dd.style.display='none'; }
 
 /* update filter icon highlight */
 function caUpdateFilterIcons(){
-  var si = document.getElementById('ca-state-filter-icon');
-  var sb = document.getElementById('ca-state-filter-btn');
-  if(si){ si.setAttribute('stroke', caStateFilter ? '#60a5fa' : '#e8edf5'); si.setAttribute('fill', caStateFilter ? 'rgba(59,130,246,.25)' : 'none'); }
-  if(sb) sb.style.opacity = caStateFilter ? '1' : '.7';
-  var ti = document.getElementById('ca-status-filter-icon');
-  var tb = document.getElementById('ca-status-filter-btn');
-  if(ti){ ti.setAttribute('stroke', caStatusFilter ? '#60a5fa' : '#e8edf5'); ti.setAttribute('fill', caStatusFilter ? 'rgba(59,130,246,.25)' : 'none'); }
-  if(tb) tb.style.opacity = caStatusFilter ? '1' : '.7';
+  _refreshFilterBtn('ca-state-filter-btn', 'ca-state-filter-icon', !!caStateFilter);
+  _refreshFilterBtn('ca-status-filter-btn', 'ca-status-filter-icon', !!caStatusFilter);
 }
 
 function caApplyFilters(){
@@ -6933,13 +7207,7 @@ function caApplyFilters(){
   caRender();
 }
 
-/* close both dropdowns on outside click */
-document.addEventListener('click', function(e){
-  var sdd=document.getElementById('ca-state-dropdown'),  sb=document.getElementById('ca-state-filter-btn');
-  if(sdd && sdd.style.display!=='none' && sb && !sb.contains(e.target) && !sdd.contains(e.target)) sdd.style.display='none';
-  var tdd=document.getElementById('ca-status-dropdown'), tb=document.getElementById('ca-status-filter-btn');
-  if(tdd && tdd.style.display!=='none' && tb && !tb.contains(e.target) && !tdd.contains(e.target)) tdd.style.display='none';
-});
+/* CA filter outside-click handled by global handler */
 
 function caRender(){
   var tbody = document.getElementById('ca-table-body');
@@ -7321,51 +7589,49 @@ function gcSort(field){
   gcRender();
 }
 
-function gcBuildStateFilter(){
-  var dd = document.getElementById('gc-state-dropdown'); if(!dd) return;
-  var opts = ['All','Active'];
-  dd.innerHTML = opts.map(function(o){
-    var val = o==='All'?null:o;
-    var active = gcStateFilter===val;
-    return '<button onclick="gcApplyStateFilter('+(val===null?'null':"'"+val+"'")+');event.stopPropagation()" style="display:block;width:100%;text-align:left;padding:7px 12px;font-size:12px;color:'+(active?'#60a5fa':'#94a3b8')+';background:'+(active?'rgba(59,130,246,.1)':'transparent')+';border:none;border-radius:5px;cursor:pointer;font-family:\'IBM Plex Sans\',sans-serif">'+o+'</button>';
-  }).join('');
-}
-
-function gcBuildStatusFilter(){
-  var dd = document.getElementById('gc-status-dropdown'); if(!dd) return;
-  var opts = ['All','Approved by QC'];
-  dd.innerHTML = opts.map(function(o){
-    var val = o==='All'?null:o;
-    var active = gcStatusFilter===val;
-    return '<button onclick="gcApplyStatusFilter('+(val===null?'null':"'"+val+"'")+');event.stopPropagation()" style="display:block;width:100%;text-align:left;padding:7px 12px;font-size:12px;color:'+(active?'#60a5fa':'#94a3b8')+';background:'+(active?'rgba(59,130,246,.1)':'transparent')+';border:none;border-radius:5px;cursor:pointer;font-family:\'IBM Plex Sans\',sans-serif">'+o+'</button>';
-  }).join('');
-}
+var _GC_STATE_DOTS  = { 'Active':'#22c55e' };
+var _GC_STATUS_DOTS = { 'Approved by QC':'#4ade80' };
 
 function gcToggleStateFilter(e){
   e.stopPropagation();
-  var dd = document.getElementById('gc-state-dropdown');
-  var wasOpen = dd.style.display === 'block';
-  document.getElementById('gc-status-dropdown').style.display = 'none';
-  if(wasOpen){ dd.style.display='none'; return; }
-  gcBuildStateFilter();
-  dd.style.display = 'block';
+  var ddId='_gc-state-dd';
+  var dd=document.getElementById(ddId);
+  if(dd && dd.style.display!=='none'){ dd.style.display='none'; return; }
+  _closeAllFilterDDs();
+  if(!dd){ dd=document.createElement('div'); dd.id=ddId; document.body.appendChild(dd); }
+  dd.style.cssText=_FILTER_DD_CSS;
+  dd.innerHTML='';
+  dd.appendChild(_ddHeader('Filter by State'));
+  dd.appendChild(_ddRow('All States','',gcStateFilter===null,function(){ gcApplyStateFilter(null); dd.style.display='none'; }));
+  ['Active'].forEach(function(s){
+    dd.appendChild(_ddRow(s,_GC_STATE_DOTS[s]||'',gcStateFilter===s,function(){ gcApplyStateFilter(s); dd.style.display='none'; }));
+  });
+  _positionFilterDD(dd, document.getElementById('gc-state-filter-btn'));
+  dd.style.display='block';
 }
 
 function gcToggleStatusFilter(e){
   e.stopPropagation();
-  var dd = document.getElementById('gc-status-dropdown');
-  var wasOpen = dd.style.display === 'block';
-  document.getElementById('gc-state-dropdown').style.display = 'none';
-  if(wasOpen){ dd.style.display='none'; return; }
-  gcBuildStatusFilter();
-  dd.style.display = 'block';
+  var ddId='_gc-status-dd';
+  var dd=document.getElementById(ddId);
+  if(dd && dd.style.display!=='none'){ dd.style.display='none'; return; }
+  _closeAllFilterDDs();
+  if(!dd){ dd=document.createElement('div'); dd.id=ddId; document.body.appendChild(dd); }
+  dd.style.cssText=_FILTER_DD_CSS;
+  dd.innerHTML='';
+  dd.appendChild(_ddHeader('Filter by Status'));
+  dd.appendChild(_ddRow('All Statuses','',gcStatusFilter===null,function(){ gcApplyStatusFilter(null); dd.style.display='none'; }));
+  ['Approved by QC'].forEach(function(s){
+    dd.appendChild(_ddRow(s,_GC_STATUS_DOTS[s]||'',gcStatusFilter===s,function(){ gcApplyStatusFilter(s); dd.style.display='none'; }));
+  });
+  _positionFilterDD(dd, document.getElementById('gc-status-filter-btn'));
+  dd.style.display='block';
 }
 
 function gcApplyStateFilter(val){
   gcStateFilter = val;
   GC_CUR_PAGE = 1;
   gcUpdateFilterIcons();
-  document.getElementById('gc-state-dropdown').style.display = 'none';
   gcRender();
 }
 
@@ -7373,19 +7639,12 @@ function gcApplyStatusFilter(val){
   gcStatusFilter = val;
   GC_CUR_PAGE = 1;
   gcUpdateFilterIcons();
-  document.getElementById('gc-status-dropdown').style.display = 'none';
   gcRender();
 }
 
 function gcUpdateFilterIcons(){
-  var si = document.getElementById('gc-state-filter-icon');
-  var sb = document.getElementById('gc-state-filter-btn');
-  if(si){ si.setAttribute('stroke', gcStateFilter ? '#60a5fa' : '#e8edf5'); si.setAttribute('fill', gcStateFilter ? 'rgba(59,130,246,.25)' : 'none'); }
-  if(sb){ sb.style.opacity = gcStateFilter ? '1' : '.7'; }
-  var ti = document.getElementById('gc-status-filter-icon');
-  var tb = document.getElementById('gc-status-filter-btn');
-  if(ti){ ti.setAttribute('stroke', gcStatusFilter ? '#60a5fa' : '#e8edf5'); ti.setAttribute('fill', gcStatusFilter ? 'rgba(59,130,246,.25)' : 'none'); }
-  if(tb){ tb.style.opacity = gcStatusFilter ? '1' : '.7'; }
+  _refreshFilterBtn('gc-state-filter-btn', 'gc-state-filter-icon', !!gcStateFilter);
+  _refreshFilterBtn('gc-status-filter-btn', 'gc-status-filter-icon', !!gcStatusFilter);
 }
 
 function gcRender(){
@@ -7487,13 +7746,7 @@ function initGoldenCopy(){
   gcRender();
 }
 
-// Close GC filter dropdowns on outside click
-document.addEventListener('click', function(e){
-  var sd = document.getElementById('gc-state-dropdown');
-  var td = document.getElementById('gc-status-dropdown');
-  if(sd && !sd.contains(e.target) && e.target.id !== 'gc-state-filter-btn') sd.style.display='none';
-  if(td && !td.contains(e.target) && e.target.id !== 'gc-status-filter-btn') td.style.display='none';
-});
+/* GC filter outside-click handled by global handler */
 
 
 document.addEventListener('click', function(e){
@@ -7516,16 +7769,13 @@ document.addEventListener('click', function(e){
   if(mdrDd && mdrDd.style.display !== 'none' && mdrFBtn && !mdrFBtn.contains(e.target) && !mdrDd.contains(e.target)){
     mdrDd.style.display = 'none';
   }
-  var acFBtn = document.getElementById('ac-status-filter-btn');
-  var acDd   = document.getElementById('ac-status-dropdown');
-  if(acDd && acDd.style.display !== 'none' && acFBtn && !acFBtn.contains(e.target) && !acDd.contains(e.target)){
-    acDd.style.display = 'none';
-  }
+  // AC dl-menu
   var acDlMenu = document.getElementById('ac-dl-menu');
   var acDlWrap = document.getElementById('ac-dl-wrap');
   if(acDlMenu && acDlMenu.style.display !== 'none' && acDlWrap && !acDlWrap.contains(e.target)){
     acDlMenu.style.display = 'none';
   }
+  // MD category dropdown
   var mdMenu = document.getElementById('md-cat-menu');
   if(mdMenu && mdMenu.dataset.open === 'true'){
     var mdBtn2 = document.getElementById('md-cat-btn');
