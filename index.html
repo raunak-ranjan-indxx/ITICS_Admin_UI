@@ -1387,10 +1387,10 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
         <!-- Analyst Table -->
         <div id="itics-table-analyst" style="flex:1;overflow:hidden;display:flex;flex-direction:column;background:#0b1628;border:1px solid rgba(255,255,255,.07);border-radius:10px">
           <div id="an-table-wrap" style="overflow:auto;overflow-x:auto;flex:1;-webkit-overflow-scrolling:touch">
-            <table id="an-table" style="width:100%;border-collapse:collapse;min-width:1100px;table-layout:fixed;height:100%">
+            <table id="an-table" style="width:100%;border-collapse:collapse;min-width:1380px;table-layout:fixed;height:100%">
               <colgroup>
                 <col style="width:120px"><col style="width:240px"><col style="width:175px">
-                <col style="width:120px"><col style="width:155px"><col style="width:180px"><col style="width:150px">
+                <col style="width:120px"><col style="width:155px"><col style="width:160px"><col style="width:150px"><col style="width:160px">
               </colgroup>
               <thead>
                 <tr style="background:#091220;border-bottom:1px solid rgba(255,255,255,.07)">
@@ -1411,6 +1411,7 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                     </span>
                     
                   </th>
+                  <th onclick="iticsSort('analyst',7)" style="padding:14px 20px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Reject Count <span id="itics-sort-analyst-7" style="font-size:13px">&#8645;</span></span></th>
                 </tr>
               </thead>
               <tbody id="an-tbody"></tbody>
@@ -1431,10 +1432,10 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
         <!-- QC Table -->
         <div id="itics-table-qc" style="display:none;flex:1;overflow:hidden;flex-direction:column;background:#0b1628;border:1px solid rgba(255,255,255,.07);border-radius:10px">
           <div style="overflow:auto;overflow-x:auto;flex:1;-webkit-overflow-scrolling:touch">
-            <table style="width:100%;border-collapse:collapse;min-width:1100px;table-layout:fixed;height:100%">
+            <table style="width:100%;border-collapse:collapse;min-width:1380px;table-layout:fixed;height:100%">
               <colgroup>
                 <col style="width:120px"><col style="width:240px"><col style="width:175px">
-                <col style="width:120px"><col style="width:155px"><col style="width:180px"><col style="width:150px">
+                <col style="width:120px"><col style="width:155px"><col style="width:160px"><col style="width:150px"><col style="width:160px">
               </colgroup>
               <thead>
                 <tr style="background:#091220;border-bottom:1px solid rgba(255,255,255,.07)">
@@ -1455,6 +1456,7 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                     </span>
                     
                   </th>
+                  <th onclick="iticsSort('qc',7)" style="padding:14px 20px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Reject Count <span id="itics-sort-qc-7" style="font-size:13px">&#8645;</span></span></th>
                 </tr>
               </thead>
               <tbody id="qc-tbody"></tbody>
@@ -1475,10 +1477,10 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
         <!-- ITICS Committee Table -->
         <div id="itics-table-committee" style="display:none;flex:1;overflow:hidden;flex-direction:column;background:#0b1628;border:1px solid rgba(255,255,255,.07);border-radius:10px">
           <div style="overflow:auto;overflow-x:auto;flex:1;-webkit-overflow-scrolling:touch">
-            <table style="width:100%;border-collapse:collapse;min-width:1180px;table-layout:fixed;height:100%">
+            <table style="width:100%;border-collapse:collapse;min-width:1380px;table-layout:fixed;height:100%">
               <colgroup>
                 <col style="width:120px"><col style="width:240px"><col style="width:175px">
-                <col style="width:120px"><col style="width:155px"><col style="width:160px"><col style="width:210px">
+                <col style="width:120px"><col style="width:155px"><col style="width:160px"><col style="width:210px"><col style="width:160px">
               </colgroup>
               <thead>
                 <tr style="background:#091220;border-bottom:1px solid rgba(255,255,255,.07)">
@@ -1499,6 +1501,7 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                     </span>
                     
                   </th>
+                  <th onclick="iticsSort('committee',7)" style="padding:14px 20px;text-align:left;font-size:13px;font-weight:800;color:#e8edf5;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;cursor:pointer;user-select:none" onmouseenter="this.style.color='#fff'" onmouseleave="this.style.color='#e8edf5'"><span style="display:inline-flex;align-items:center;gap:5px">Reject Count <span id="itics-sort-committee-7" style="font-size:13px">&#8645;</span></span></th>
                 </tr>
               </thead>
               <tbody id="committee-tbody"></tbody>
@@ -2043,7 +2046,7 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
           <div class="panel" id="gdcl-panel-meta">
             <button class="panel-trigger" onclick="gdclToggle('gdcl-panel-meta')">
               <div class="pt-left"><span class="pt-icon" style="color:#3b82f6;display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v4c0 1.657 4.03 3 9 3s9-1.343 9-3V5"/><path d="M3 9v4c0 1.657 4.03 3 9 3s9-1.343 9-3V9"/><path d="M3 13v4c0 1.657 4.03 3 9 3s9-1.343 9-3v-4"/></svg></span><span class="pt-label">Primary Metadata Fields</span></div>
-              <div class="pt-right"><span class="pt-meta">Last extracted: 09:42 AM</span><span class="pt-badge">18 FIELDS</span><span class="pt-toggle">&#9660;</span></div>
+              <div class="pt-right"><span class="pt-meta">Last extracted: 09:42 AM</span><span class="pt-badge">20 FIELDS</span><span class="pt-toggle">&#9660;</span></div>
             </button>
             <div class="panel-body" style="max-height:0"><div class="panel-scroll"><div class="meta-grid">
               <div class="meta-field"><label>&#127760; Website Link</label><div class="meta-val">https://www.motilaloswal.com &#8599;</div></div>
@@ -2063,6 +2066,11 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                 </select>
               </div>
               <div class="meta-field"><label>&#128197; FY Ending Date</label><div class="meta-val" style="font-family:'IBM Plex Mono',monospace">2025-03-31</div></div>
+              <div class="meta-field"><label>&#128197; Year</label>
+                <select style="background:#162033;border:1px solid #1e2d44;border-radius:6px;padding:7px 10px;font-size:12px;color:var(--text-secondary);font-family:'IBM Plex Sans',sans-serif;width:100%;cursor:pointer;outline:none;appearance:auto">
+                  <option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025" selected>2025</option>
+                </select>
+              </div>
               <div class="meta-field"><label>&#9889; Corporate Actions</label>
                 <select style="background:#162033;border:1px solid #1e2d44;border-radius:6px;padding:7px 10px;font-size:12px;color:var(--text-secondary);font-family:'IBM Plex Sans',sans-serif;width:100%;cursor:pointer;outline:none;appearance:auto">
                   <option value="delisting" selected>Delisting</option><option value="bankruptcy">Bankruptcy</option><option value="spinoff">Spinoff</option>
@@ -2233,7 +2241,7 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
               </div>
               <div class="pt-right">
                 <span class="pt-meta">Last extracted: 09:42 AM</span>
-                <span class="pt-badge">18 FIELDS</span>
+                <span class="pt-badge">20 FIELDS</span>
                 <span class="pt-toggle">&#9660;</span>
               </div>
             </button>
@@ -2281,6 +2289,12 @@ body{background:linear-gradient(135deg,#0d1117 0%,#111827 40%,#131e35 70%,#0f172
                   <div class="meta-field">
                     <label>&#128197; FY Ending Date</label>
                     <div class="meta-val" style="font-family:'IBM Plex Mono',monospace">2025-03-31</div>
+                  </div>
+                  <div class="meta-field">
+                    <label>&#128197; Year</label>
+                    <select style="background:#162033;border:1px solid #1e2d44;border-radius:6px;padding:7px 10px;font-size:12px;color:var(--text-secondary);font-family:'IBM Plex Sans',sans-serif;width:100%;cursor:pointer;outline:none;appearance:auto">
+                      <option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025" selected>2025</option>
+                    </select>
                   </div>
                   <div class="meta-field">
                     <label>&#9889; Corporate Actions</label>
@@ -3912,10 +3926,10 @@ var ITICS_DATA = {
     [10103,'HDFC Bank Ltd','INE040A01034','B5VT2C4','2025-03-31','Fresh','Pending Analyst'],
     [10104,'Infosys Ltd','INE009A01021','B156H70','2025-03-31','Fresh','Pending Analyst'],
     [10105,'Bharti Airtel Ltd','INE397D01024','B00LRF8','2025-03-31','Fresh','Pending Analyst'],
-    [10106,'State Bank of India','INE062A01020','B0BHGL5','2025-03-31','AR Update','Pending Analyst'],
-    [10107,'Wipro Ltd','INE075A01022','B0FMGN2','2025-03-31','AR Update','Pending Analyst'],
-    [10108,'HCL Technologies Ltd','INE860A01027','B1HKPM3','2025-03-31','AR Update','Pending Analyst'],
-    [10109,'Hindustan Unilever Ltd','INE030A01027','6438510','2025-03-31','AR Update','Pending Analyst'],
+    [10106,'State Bank of India','INE062A01020','B0BHGL5','2025-03-31','Fresh','Pending Analyst'],
+    [10107,'Wipro Ltd','INE075A01022','B0FMGN2','2025-03-31','Fresh','Pending Analyst'],
+    [10108,'HCL Technologies Ltd','INE860A01027','B1HKPM3','2025-03-31','Fresh','Pending Analyst'],
+    [10109,'Hindustan Unilever Ltd','INE030A01027','6438510','2025-03-31','Fresh','Pending Analyst'],
     [10110,'Maruti Suzuki India Ltd','INE585B01010','B1BYQR1','2025-03-31','AR Update','Pending Analyst'],
     [10111,'Sun Pharmaceutical','INE044A01036','B0CTWX3','2025-03-31','AR Update','Pending Analyst'],
     [10112,'Titan Company Ltd','INE280A01028','B02NX66','2025-03-31','AR Update','Pending Analyst'],
@@ -3924,19 +3938,19 @@ var ITICS_DATA = {
     [10115,'Nestle India Ltd','INE239A01024','6640910','2025-03-31','AR Update','Pending Analyst'],
     [10116,'ICICI Bank Ltd','INE090A01021','B1RFQ79','2025-03-31','AR Update','Pending Analyst'],
     [10117,'Larsen & Toubro Ltd','INE018A01030','6531789','2025-03-31','AR Update','Pending Analyst'],
-    [10118,'Power Grid Corp','INE752E01010','B29MK16','2025-03-31','Rejected','Pending Analyst'],
-    [10119,'NTPC Ltd','INE733E01010','B1FZLV3','2025-03-31','Rejected','Pending Analyst'],
-    [10120,'Bajaj Auto Ltd','INE917I01010','B03MXZ5','2025-03-31','Rejected','Pending Analyst'],
-    [10121,'Grasim Industries','INE047A01021','6302985','2025-03-31','Rejected','Pending Analyst'],
-    [10122,'Tata Steel Ltd','INE081A01020','6102684','2025-03-31','Rejected','Pending Analyst'],
-    [10123,'Tech Mahindra Ltd','INE669C01036','B1BVP22','2025-03-31','Rejected','Pending Analyst'],
-    [10124,'Mahindra & Mahindra','INE101A01026','B02L0S0','2025-03-31','Rejected','Pending Analyst'],
-    [10125,'Dr. Reddy\'s Labs','INE089A01023','B0QCR27','2025-03-31','Rejected','Pending Analyst'],
-    [10126,'Cipla Ltd','INE059A01026','6273218','2025-03-31','Rejected','Pending Analyst'],
-    [10127,'Divi\'s Laboratories','INE361B01024','B04GZF6','2025-03-31','Rejected','Pending Analyst'],
-    [10128,'Bajaj Finance Ltd','INE296A01024','BYXJ4R4','2025-03-31','Rejected','Pending Analyst'],
-    [10129,'Asian Paints Ltd','INE021A01026','B0LGZL5','2025-03-31','Rejected','Pending Analyst'],
-    [10130,'Kotak Mahindra Bank','INE237A01028','B1YWRM0','2025-03-31','Rejected','Pending Analyst'],
+    [10118,'Power Grid Corp','INE752E01010','B29MK16','2025-03-31','AR Update','Pending Analyst'],
+    [10119,'NTPC Ltd','INE733E01010','B1FZLV3','2025-03-31','AR Update','Pending Analyst'],
+    [10120,'Bajaj Auto Ltd','INE917I01010','B03MXZ5','2025-03-31','Invalidated','Pending Analyst'],
+    [10121,'Grasim Industries','INE047A01021','6302985','2025-03-31','Invalidated','Pending Analyst'],
+    [10122,'Tata Steel Ltd','INE081A01020','6102684','2025-03-31','Invalidated','Pending Analyst'],
+    [10123,'Tech Mahindra Ltd','INE669C01036','B1BVP22','2025-03-31','Invalidated','Pending Analyst'],
+    [10124,'Mahindra & Mahindra','INE101A01026','B02L0S0','2025-03-31','Invalidated','Pending Analyst'],
+    [10125,'Dr. Reddy\'s Labs','INE089A01023','B0QCR27','2025-03-31','Invalidated','Pending Analyst'],
+    [10126,'Cipla Ltd','INE059A01026','6273218','2025-03-31','Invalidated','Pending Analyst'],
+    [10127,'Divi\'s Laboratories','INE361B01024','B04GZF6','2025-03-31','Invalidated','Pending Analyst'],
+    [10128,'Bajaj Finance Ltd','INE296A01024','BYXJ4R4','2025-03-31','Invalidated','Pending Analyst'],
+    [10129,'Asian Paints Ltd','INE021A01026','B0LGZL5','2025-03-31','Invalidated','Pending Analyst'],
+    [10130,'Kotak Mahindra Bank','INE237A01028','B1YWRM0','2025-03-31','Invalidated','Pending Analyst'],
   ],
   qc: [
     [20100,'Motilal Oswal Financial Services Ltd','INE338A01027','B233M14','2025-06-30','Fresh','Pending QC'],
@@ -3944,65 +3958,65 @@ var ITICS_DATA = {
     [20102,'Infosys Ltd','INE009A01021','B156H70','2025-06-30','Fresh','Pending QC'],
     [20103,'Tech Mahindra Ltd','INE669C01036','B1BVP22','2025-06-30','Fresh','Pending QC'],
     [20104,'Mahindra & Mahindra','INE101A01026','B02L0S0','2025-06-30','Fresh','Pending QC'],
-    [20105,'Dr. Reddy\'s Labs','INE089A01023','B0QCR27','2025-06-30','AR Update','Pending QC'],
-    [20106,'Cipla Ltd','INE059A01026','6273218','2025-06-30','AR Update','Pending QC'],
-    [20107,'Divi\'s Laboratories','INE361B01024','B04GZF6','2025-06-30','AR Update','Pending QC'],
+    [20105,'Dr. Reddy\'s Labs','INE089A01023','B0QCR27','2025-06-30','Fresh','Pending QC'],
+    [20106,'Cipla Ltd','INE059A01026','6273218','2025-06-30','Fresh','Pending QC'],
+    [20107,'Divi\'s Laboratories','INE361B01024','B04GZF6','2025-06-30','Fresh','Pending QC'],
     [20108,'Bajaj Finserv Ltd','INE918I01026','B3D8WG3','2025-06-30','AR Update','Pending QC'],
     [20109,'SBI Life Insurance','INE123W01016','BDXT8R2','2025-06-30','AR Update','Pending QC'],
     [20110,'Shree Cement Ltd','INE070A01015','B1GBKC5','2025-06-30','AR Update','Pending QC'],
     [20111,'Interglobe Aviation','INE646L01027','BZ6RWP4','2025-06-30','AR Update','Pending QC'],
     [20112,'Apollo Hospitals','INE437A01024','B1FXTL3','2025-06-30','AR Update','Pending QC'],
-    [20113,'Godrej Consumer','INE102D01028','B1FT6H2','2025-06-30','Rejected','Pending QC'],
-    [20114,'Torrent Pharma','INE685A01028','B1YQ561','2025-06-30','Rejected','Pending QC'],
-    [20115,'HDFC Life Insurance','INE795G01014','BFJGN43','2025-06-30','Rejected','Pending QC'],
-    [20116,'Adani Ports & SEZ','INE742F01042','B1FBCF1','2025-06-30','Rejected','Pending QC'],
-    [20117,'Colgate Palmolive','INE259A01022','6174895','2025-06-30','Rejected','Pending QC'],
-    [20118,'Berger Paints India','INE463A01038','B0YGNG3','2025-06-30','Rejected','Pending QC'],
-    [20119,'Abbott India Ltd','INE358A01014','B1HJNZ4','2025-06-30','Rejected','Pending QC'],
-    [20120,'Indraprastha Gas','INE203G01027','B1FN2R3','2025-06-30','Rejected','Pending QC'],
-    [20121,'Crompton Greaves','INE299U01018','B3LKWF2','2025-06-30','Rejected','Pending QC'],
-    [20122,'Muthoot Finance','INE414G01012','B6W3Z55','2025-06-30','Rejected','Pending QC'],
-    [20123,'Tata Consumer','INE192A01025','B1BL7B2','2025-06-30','Rejected','Pending QC'],
-    [20124,'Pidilite Industries','INE318A01026','6675756','2025-06-30','Rejected','Pending QC'],
-    [20125,'Havells India Ltd','INE176B01034','B1HMZM3','2025-06-30','Rejected','Pending QC'],
-    [20126,'HDFC Bank Ltd','INE040A01034','B5VT2C4','2025-06-30','Rejected','Pending QC'],
-    [20127,'Reliance Industries Ltd','INE002A01018','6099626','2025-06-30','Rejected','Pending QC'],
-    [20128,'Bharti Airtel Ltd','INE397D01024','B00LRF8','2025-06-30','Rejected','Pending QC'],
-    [20129,'State Bank of India','INE062A01020','B0BHGL5','2025-06-30','Rejected','Pending QC'],
+    [20113,'Godrej Consumer','INE102D01028','B1FT6H2','2025-06-30','AR Update','Pending QC'],
+    [20114,'Torrent Pharma','INE685A01028','B1YQ561','2025-06-30','AR Update','Pending QC'],
+    [20115,'HDFC Life Insurance','INE795G01014','BFJGN43','2025-06-30','Invalidated','Pending QC'],
+    [20116,'Adani Ports & SEZ','INE742F01042','B1FBCF1','2025-06-30','Invalidated','Pending QC'],
+    [20117,'Colgate Palmolive','INE259A01022','6174895','2025-06-30','Invalidated','Pending QC'],
+    [20118,'Berger Paints India','INE463A01038','B0YGNG3','2025-06-30','Invalidated','Pending QC'],
+    [20119,'Abbott India Ltd','INE358A01014','B1HJNZ4','2025-06-30','Invalidated','Pending QC'],
+    [20120,'Indraprastha Gas','INE203G01027','B1FN2R3','2025-06-30','Invalidated','Pending QC'],
+    [20121,'Crompton Greaves','INE299U01018','B3LKWF2','2025-06-30','Invalidated','Pending QC'],
+    [20122,'Muthoot Finance','INE414G01012','B6W3Z55','2025-06-30','Invalidated','Pending QC'],
+    [20123,'Tata Consumer','INE192A01025','B1BL7B2','2025-06-30','Invalidated','Pending QC'],
+    [20124,'Pidilite Industries','INE318A01026','6675756','2025-06-30','Invalidated','Pending QC'],
+    [20125,'Havells India Ltd','INE176B01034','B1HMZM3','2025-06-30','Invalidated','Pending QC'],
+    [20126,'HDFC Bank Ltd','INE040A01034','B5VT2C4','2025-06-30','Invalidated','Pending QC'],
+    [20127,'Reliance Industries Ltd','INE002A01018','6099626','2025-06-30','Invalidated','Pending QC'],
+    [20128,'Bharti Airtel Ltd','INE397D01024','B00LRF8','2025-06-30','Invalidated','Pending QC'],
+    [20129,'State Bank of India','INE062A01020','B0BHGL5','2025-06-30','Invalidated','Pending QC'],
   ],
   committee: [
-    [30100,'Motilal Oswal Financial Services Ltd','INE338A01027','B233M14','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30101,'ICICI Bank Ltd','INE090A01021','B1RFQ79','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30102,'Larsen & Toubro Ltd','INE018A01030','6531789','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30103,'ONGC Ltd','INE213A01029','6624309','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30104,'Coal India Ltd','INE522F01014','B4TX8S6','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30105,'Indian Oil Corp','INE242A01010','B0CWFR6','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30106,'BPCL','INE029A01011','6101464','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30107,'GAIL India Ltd','INE129A01019','B01FM26','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30108,'Vedanta Ltd','INE205A01025','B0DDN31','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30109,'Hindalco Industries','INE038A01020','6438415','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30110,'JSW Steel Ltd','INE019A01038','B1BVCL6','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30111,'Tata Motors Ltd','INE155A01022','B03MLX5','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30112,'Hero MotoCorp Ltd','INE158A01026','B03JVX0','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30113,'Eicher Motors Ltd','INE066A01021','B1BVCL3','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30114,'Bosch Ltd','INE323A01026','6099372','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30115,'Motherson Sumi','INE775A01035','6590066','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30116,'Mindtree Ltd','INE018I01017','B1GWQZ7','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30117,'Mphasis Ltd','INE356A01018','B016LH2','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30118,'L&T Infotech','INE214T01019','BGL9NF3','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30119,'Persistent Systems','INE262H01021','B19WLC5','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30120,'Coforge Ltd','INE591G01017','B3PVZ11','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30121,'Voltas Ltd','INE226A01021','B01GLN5','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30122,'Blue Star Ltd','INE247A01021','6099697','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30123,'Whirlpool India','INE716A01013','B1FLTR3','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30124,'Dixon Technologies','INE935N01012','BFMXLS2','2025-09-30','Rejected','Pending ITICS Committee'],
-    [30125,'Kaynes Technology','INE918Z01012','BMKQ9B3','2025-09-30','Rejected','Pending ITICS Committee']
+    [30100,'Motilal Oswal Financial Services Ltd','INE338A01027','B233M14','2025-09-30','Fresh','Pending ITICS Committee'],
+    [30101,'ICICI Bank Ltd','INE090A01021','B1RFQ79','2025-09-30','Fresh','Pending ITICS Committee'],
+    [30102,'Larsen & Toubro Ltd','INE018A01030','6531789','2025-09-30','Fresh','Pending ITICS Committee'],
+    [30103,'ONGC Ltd','INE213A01029','6624309','2025-09-30','Fresh','Pending ITICS Committee'],
+    [30104,'Coal India Ltd','INE522F01014','B4TX8S6','2025-09-30','Fresh','Pending ITICS Committee'],
+    [30105,'Indian Oil Corp','INE242A01010','B0CWFR6','2025-09-30','Fresh','Pending ITICS Committee'],
+    [30106,'BPCL','INE029A01011','6101464','2025-09-30','Fresh','Pending ITICS Committee'],
+    [30107,'GAIL India Ltd','INE129A01019','B01FM26','2025-09-30','Fresh','Pending ITICS Committee'],
+    [30108,'Vedanta Ltd','INE205A01025','B0DDN31','2025-09-30','Fresh','Pending ITICS Committee'],
+    [30109,'Hindalco Industries','INE038A01020','6438415','2025-09-30','Fresh','Pending ITICS Committee'],
+    [30110,'JSW Steel Ltd','INE019A01038','B1BVCL6','2025-09-30','AR Update','Pending ITICS Committee'],
+    [30111,'Tata Motors Ltd','INE155A01022','B03MLX5','2025-09-30','AR Update','Pending ITICS Committee'],
+    [30112,'Hero MotoCorp Ltd','INE158A01026','B03JVX0','2025-09-30','AR Update','Pending ITICS Committee'],
+    [30113,'Eicher Motors Ltd','INE066A01021','B1BVCL3','2025-09-30','AR Update','Pending ITICS Committee'],
+    [30114,'Bosch Ltd','INE323A01026','6099372','2025-09-30','AR Update','Pending ITICS Committee'],
+    [30115,'Motherson Sumi','INE775A01035','6590066','2025-09-30','AR Update','Pending ITICS Committee'],
+    [30116,'Mindtree Ltd','INE018I01017','B1GWQZ7','2025-09-30','AR Update','Pending ITICS Committee'],
+    [30117,'Mphasis Ltd','INE356A01018','B016LH2','2025-09-30','Invalidated','Pending ITICS Committee'],
+    [30118,'L&T Infotech','INE214T01019','BGL9NF3','2025-09-30','Invalidated','Pending ITICS Committee'],
+    [30119,'Persistent Systems','INE262H01021','B19WLC5','2025-09-30','Invalidated','Pending ITICS Committee'],
+    [30120,'Coforge Ltd','INE591G01017','B3PVZ11','2025-09-30','Invalidated','Pending ITICS Committee'],
+    [30121,'Voltas Ltd','INE226A01021','B01GLN5','2025-09-30','Invalidated','Pending ITICS Committee'],
+    [30122,'Blue Star Ltd','INE247A01021','6099697','2025-09-30','Invalidated','Pending ITICS Committee'],
+    [30123,'Whirlpool India','INE716A01013','B1FLTR3','2025-09-30','Invalidated','Pending ITICS Committee'],
+    [30124,'Dixon Technologies','INE935N01012','BFMXLS2','2025-09-30','Invalidated','Pending ITICS Committee'],
+    [30125,'Kaynes Technology','INE918Z01012','BMKQ9B3','2025-09-30','Invalidated','Pending ITICS Committee']
   ]
 };
 
-var _iticsFromOrder = { 'Fresh': 0, 'AR Update': 1, 'Rejected': 2 };
-var _iticsQcFromOrder = { 'Fresh': 0, 'AR Update': 1, 'Rejected': 2, 'IDK': 3 };
-var _iticsCommitteeFromOrder = { 'Rejected': 0, 'IDK': 1 };
+var _iticsFromOrder = { 'Fresh': 0, 'AR Update': 1, 'Invalidated': 2 };
+var _iticsQcFromOrder = { 'Fresh': 0, 'AR Update': 1, 'Invalidated': 2 };
+var _iticsCommitteeFromOrder = { 'Fresh': 0, 'AR Update': 1, 'Invalidated': 2 };
 ITICS_DATA.analyst.sort(function(a,b){
   return (_iticsFromOrder[a[5]] !== undefined ? _iticsFromOrder[a[5]] : 99) - (_iticsFromOrder[b[5]] !== undefined ? _iticsFromOrder[b[5]] : 99);
 });
@@ -4028,6 +4042,7 @@ var FROM_DOT_COLORS = {
   'Fresh':                  '#34d399',
   'AR Update':              '#f97316',
   'Rejected':               '#ef4444',
+  'Invalidated':            '#a78bfa',
   'Research':               '#818cf8',
   'From QC':                '#f59e0b',
   'From ITICS Committee':   '#a78bfa',
@@ -4075,17 +4090,29 @@ function iticsSort(tab, col){
     iticsSortCol[tab] = col;
     iticsSortAsc[tab] = true;
   }
-  for(var c = 0; c < 7; c++){
+  var maxCols = (tab === 'analyst' || tab === 'qc' || tab === 'committee') ? 8 : 7;
+  for(var c = 0; c < maxCols; c++){
     var ic = document.getElementById('itics-sort-' + tab + '-' + c);
     if(ic) ic.innerHTML = c === col ? (iticsSortAsc[tab] ? '\u2191' : '\u2193') : '\u21C5';
     if(ic) ic.style.color = c === col ? '#60a5fa' : '#e8edf5';
   }
   var asc = iticsSortAsc[tab];
-  iticsFiltered[tab].sort(function(a, b){
-    var va = a[col], vb = b[col];
-    if(typeof va === 'number') return asc ? va - vb : vb - va;
-    return asc ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
-  });
+  if((tab === 'analyst' || tab === 'qc' || tab === 'committee') && col === 7){
+    var rcMap = tab === 'analyst' ? ANALYST_REJECT_COUNTS : (tab === 'qc' ? QC_REJECT_COUNTS : COMMITTEE_REJECT_COUNTS);
+    iticsFiltered[tab].sort(function(a, b){
+      var ra = rcMap[a[0]] || '';
+      var rb = rcMap[b[0]] || '';
+      var na = ra ? parseInt(ra.match(/\d+/)[0]) : -1;
+      var nb = rb ? parseInt(rb.match(/\d+/)[0]) : -1;
+      return asc ? na - nb : nb - na;
+    });
+  } else {
+    iticsFiltered[tab].sort(function(a, b){
+      var va = a[col], vb = b[col];
+      if(typeof va === 'number') return asc ? va - vb : vb - va;
+      return asc ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
+    });
+  }
   iticsCurPage[tab] = 1;
   iticsRender(tab);
 }
@@ -4154,7 +4181,7 @@ function _closeAllFilterDDs(){
 }
 
 /* ── ITICS WORKBENCH FILTER ── */
-var _ITICS_FROM_DOTS  = { 'Fresh':'#34d399','AR Update':'#f97316','Rejected':'#ef4444','Research':'#818cf8','From QC':'#f59e0b','From ITICS Committee':'#a78bfa','Second Time Companies':'#f43f5e','IDK':'#06b6d4','Pending':'#f59e0b','From Analyst':'#34d399' };
+var _ITICS_FROM_DOTS  = { 'Fresh':'#34d399','AR Update':'#f97316','Rejected':'#ef4444','Invalidated':'#a78bfa','Research':'#818cf8','From QC':'#f59e0b','From ITICS Committee':'#a78bfa','Second Time Companies':'#f43f5e','IDK':'#06b6d4','Pending':'#f59e0b','From Analyst':'#34d399' };
 var _ITICS_STATUS_DOTS = { 'Pending Analyst':'#f59e0b','Pending QC':'#3b82f6','QC Rejected':'#ef4444','Pending ITICS Committee':'#a855f7','IDK Analyst':'#10b981','IDK QC':'#06b6d4','IDK Committee':'#06b6d4','Pending':'#f59e0b' };
 
 function iticsToggleFilter(e, tab, col){
@@ -4238,6 +4265,39 @@ function iticsPage(tab, p){
   iticsCurPage[tab] = p;
   iticsRender(tab);
 }
+
+// Reject Count data for analyst tab — keyed by company ID (1-based position in analyst data)
+// Positions: 2nd=10101, 8th=10107, 14th=10113, 19th=10118, 23rd=10122, 28th=10127
+var ANALYST_REJECT_COUNTS = {
+  10101: 'Rejected(1)',
+  10107: 'Rejected(2)',
+  10113: 'Rejected(1)',
+  10118: 'Rejected(1)',
+  10122: 'Rejected(3)',
+  10127: 'Rejected(1)'
+};
+
+// Reject Count data for QC tab — keyed by company ID
+// Positions: 1st=20100, 7th=20106, 10th=20109, 18th=20117, 23rd=20122, 29th=20128
+var QC_REJECT_COUNTS = {
+  20100: 'Rejected(2)',
+  20106: 'Rejected(1)',
+  20109: 'Rejected(3)',
+  20117: 'Rejected(2)',
+  20122: 'Rejected(1)',
+  20128: 'Rejected(3)'
+};
+
+// Reject Count data for Committee tab — keyed by company ID
+// Positions: 3rd=30102, 10th=30109, 15th=30114, 19th=30118, 21st=30120, 26th=30125
+var COMMITTEE_REJECT_COUNTS = {
+  30102: 'Rejected(1)',
+  30109: 'Rejected(3)',
+  30114: 'Rejected(1)',
+  30118: 'Rejected(1)',
+  30120: 'Rejected(2)',
+  30125: 'Rejected(1)'
+};
 
 function iticsRender(tab){
   var tbodyId   = tab === 'analyst' ? 'an-tbody' : tab === 'qc' ? 'qc-tbody' : 'committee-tbody';
@@ -4351,6 +4411,19 @@ function iticsRender(tab){
       }
       tr.appendChild(td);
     });
+
+    // Reject Count column — analyst, qc and committee tabs
+    if(tab === 'analyst' || tab === 'qc' || tab === 'committee'){
+      var rcTd = document.createElement('td');
+      rcTd.setAttribute('style', tdBase+'padding:0 20px;white-space:nowrap');
+      var rcMap = tab === 'analyst' ? ANALYST_REJECT_COUNTS : (tab === 'qc' ? QC_REJECT_COUNTS : COMMITTEE_REJECT_COUNTS);
+      var rcVal = rcMap[r[0]] || '';
+      if(rcVal){
+        rcTd.innerHTML = '<span style="font-size:12px;font-weight:500;color:#e8edf5">' + rcVal + '</span>';
+      }
+      tr.appendChild(rcTd);
+    }
+
     tbody.appendChild(tr);
   });
 
@@ -4358,7 +4431,7 @@ function iticsRender(tab){
   var filler = document.createElement('tr');
   filler.style.height = 'auto';
   var ftd = document.createElement('td');
-  ftd.colSpan = 7; ftd.style.cssText = 'padding:0;border:none';
+  ftd.colSpan = (tab === 'analyst' || tab === 'qc' || tab === 'committee') ? 8 : 7; ftd.style.cssText = 'padding:0;border:none';
   filler.appendChild(ftd);
   tbody.appendChild(filler);
 
